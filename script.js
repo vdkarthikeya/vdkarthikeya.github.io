@@ -45,7 +45,7 @@ const siteData = {
       location: "Berkeley, CA",
       gpa: "GPA 3.82 / 4.00",
       // Optional: shows a link to the Courses page inside this card.
-      coursesLink: { href: "#all-courses", text: "View Berkeley Courses" }
+      coursesLink: { href: "#all-courses", text: "View Courses" }
     },
     {
       school: "De Anza College",
@@ -186,7 +186,7 @@ const siteData = {
         "Improved Macro F1 from 0.48 to 0.66 and achieved Micro F1 of 0.68 — Logistic Regression outperformed tree models while training significantly faster."
       ],
       tags: ["NLP", "Machine Learning", "Classification", "Python"],
-      link: ""
+      link: "https://github.com/vdkarthikeya/movie-genre-classification-nlp"
     },
     {
       title: "California Housing Regression",
@@ -197,7 +197,7 @@ const siteData = {
         "Used the project to strengthen foundations in supervised learning, regression evaluation, and end-to-end ML experimentation."
       ],
       tags: ["Regression", "Machine Learning", "Data Science", "Python"],
-      link: ""
+      link: "https://github.com/vdkarthikeya/california-housing-regression"
     },
     {
       title: "Email Spam / Ham Classifier",
