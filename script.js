@@ -43,7 +43,9 @@ const siteData = {
       degree: "B.A. in Data Science and Applied Mathematics",
       sub: "College of Computing, Data Science, and Society",
       location: "Berkeley, CA",
-      gpa: "GPA 3.82 / 4.00"
+      gpa: "GPA 3.82 / 4.00",
+      // Optional: shows a link to the Courses page inside this card.
+      coursesLink: { href: "#all-courses", text: "View Berkeley Courses" }
     },
     {
       school: "De Anza College",
@@ -58,10 +60,10 @@ const siteData = {
   /* ---------- Experience (most recent first) ---------- */
   experience: [
     {
-      home: 2,
+      home: 1,
       role: "Engineering Intern",
       org: "Guang Labs",
-      dates: "May 2026 – Aug 2026",
+      dates: "May 2026 – August 2026",
       loc: "Remote",
       bullets: [
         "Built and evaluated data science models for an AI-powered gaming platform that detects, clips, and edits high-impact gameplay moments into shareable short-form content.",
@@ -70,10 +72,10 @@ const siteData = {
       ]
     },
     {
-      home: 1,
+      home: 2,
       role: "Data Science Intern",
       org: "IDX Exchange",
-      dates: "May 2026 – Aug 2026",
+      dates: "June 2026 – August 2026",
       loc: "Remote",
       bullets: [
         "Built end-to-end machine learning pipelines on large-scale MLS sold-property data to predict California home prices, spanning ingestion, cleaning, feature engineering, leakage prevention, and regression modeling.",
@@ -98,7 +100,7 @@ const siteData = {
       home: 3,
       role: "Fung Fellow — Health + Innovation Track",
       org: "UC Berkeley",
-      dates: "May 2026 – Present",
+      dates: "August 2026 – December 2026",
       loc: "Berkeley, CA",
       bullets: [
         "Selected for UC Berkeley's Fung Fellowship Health + Innovation track, an interdisciplinary program focused on technology-driven solutions for public health challenges.",
@@ -422,6 +424,10 @@ function renderEducation() {
     if (e.sub) html += '<p class="edu-sub">' + e.sub + "</p>";
     if (e.location) html += '<p class="edu-loc">' + e.location + "</p>";
     if (e.gpa) html += '<span class="edu-gpa">' + e.gpa + "</span>";
+    if (e.coursesLink) {
+      html += '<a class="edu-courses-link" href="' + e.coursesLink.href + '">' +
+        e.coursesLink.text + ' <span aria-hidden="true">→</span></a>';
+    }
     card.innerHTML = html;
     wrap.appendChild(card);
   });
@@ -460,7 +466,7 @@ function buildProjectCard(p) {
   let html = '<h3 class="project-title">' + p.title + "</h3>" +
     '<p class="project-desc">' + p.desc + "</p>";
   if (p.link) {
-    html += '<a class="project-link" href="' + p.link + '" target="_blank" rel="noopener">View repository ' + icons.ext + "</a>";
+    html += '<a class="project-link" href="' + p.link + '" target="_blank" rel="noopener">View Repository ' + icons.ext + "</a>";
   }
   html += '<ul class="project-bullets">';
   p.bullets.forEach((b) => (html += "<li>" + b + "</li>"));
