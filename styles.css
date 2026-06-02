@@ -286,8 +286,8 @@ img { max-width: 100%; display: block; }
 /* Vertical rhythm tokens — single source of truth for section spacing.
    Scales down on smaller screens so the homepage stays calm and breathable. */
 :root {
-  --section-pad-y: 88px;   /* desktop */
-  --section-head-gap: 32px;
+  --section-pad-y: 64px;   /* desktop */
+  --section-head-gap: 28px;
 }
 
 .section {
@@ -869,7 +869,7 @@ img { max-width: 100%; display: block; }
 
   /* Consistent, breathable section rhythm on smaller screens */
   :root {
-    --section-pad-y: 80px;
+    --section-pad-y: 64px;
     --section-head-gap: 26px;
   }
 
