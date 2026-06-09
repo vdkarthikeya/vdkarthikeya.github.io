@@ -66,9 +66,9 @@ const siteData = {
       dates: "May 2026 – August 2026",
       loc: "Remote",
       bullets: [
-        "Built and evaluated data science models for an AI-powered gaming platform that detects, clips, and edits high-impact gameplay moments into shareable short-form content.",
-        "Partnered directly with engineering leadership to translate model behavior, product needs, and streamer workflows into iterative improvements for highlight-detection features.",
-        "Gained startup experience working across applied ML, product experimentation, and creator-focused AI tools in gaming and media."
+        "Built backend AI infrastructure for Guang Labs’ automated gaming-highlight detection platform, helping support video ingestion, media classification, and highlight-generation workflows."
+        "Developed a Gemini-based media classification workflow using Pydantic schemas, configurable parameters, prompt files, and prompt-loading utilities to classify images, short videos, and sampled long-video clips across 6 content domains."
+        "Collaborated with engineering and product teammates to understand creator workflows, streamer needs, and the end-to-end production pipeline behind AI-powered short-form content generation."
       ]
     },
     {
