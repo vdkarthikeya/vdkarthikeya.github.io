@@ -321,8 +321,8 @@ const siteData = {
         title: "Suits",
         type: "Series",
         status: "Finished",
-        rating: "",  // add a rating, e.g. "8.5/10" or "\u2605\u2605\u2605\u2605\u2606"
-        review: "Sharp, addictive, and carried by character chemistry more than legal realism.",
+        rating: "7/10",  // add a rating, e.g. "8.5/10" or "\u2605\u2605\u2605\u2605\u2606"
+        review: "Lawyers don't read papers! o_O",
         date: "Recently",
         poster: "media/suits.jpg",       // add media/suits.jpg, or leave a placeholder shows
         genre: "Legal Drama",
@@ -332,8 +332,8 @@ const siteData = {
         title: "Obsession",
         type: "Movie",
         status: "Watched in theaters",
-        rating: "",  // add a rating, e.g. "7/10"
-        review: "A theater watch that stayed with me more for the experience and mood than just the plot.",
+        rating: "8.5/10",  // add a rating, e.g. "7/10"
+        review: "Bear is so annoyingggg! Jumpscares were crazy ",
         date: "Recently",
         poster: "media/obsession.jpg",
         genre: "Thriller",
