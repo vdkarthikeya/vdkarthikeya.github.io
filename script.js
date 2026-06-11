@@ -63,7 +63,7 @@ const siteData = {
       home: 1,
       role: "Engineering Intern",
       org: "Guang Labs",
-      dates: "May 2026 – August 2026",
+      dates: "May 2026 – Present",
       loc: "Remote",
       bullets: [
         "Built backend AI infrastructure for Guang Labs' automated gaming-highlight detection platform, helping support video ingestion, media classification, and highlight-generation workflows.",
@@ -75,7 +75,7 @@ const siteData = {
       home: 2,
       role: "Data Science Intern",
       org: "IDX Exchange",
-      dates: "June 2026 – August 2026",
+      dates: "June 2026 – Present",
       loc: "Remote",
       bullets: [
         "Built end-to-end machine learning pipelines on large-scale MLS sold-property data to predict California home prices, spanning ingestion, cleaning, feature engineering, leakage prevention, and regression modeling.",
@@ -98,9 +98,9 @@ const siteData = {
     },
     {
       home: 3,
-      role: "Fung Fellow — Health + Innovation Track",
+      role: "Incoming Fung Fellow — Health + Innovation Track",
       org: "UC Berkeley",
-      dates: "August 2026 – December 2026",
+      dates: "Fall 2026",
       loc: "Berkeley, CA",
       bullets: [
         "Selected for UC Berkeley's Fung Fellowship Health + Innovation track, an interdisciplinary program focused on technology-driven solutions for public health challenges.",
