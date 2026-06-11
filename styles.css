@@ -740,7 +740,7 @@ img { max-width: 100%; display: block; }
 }
 .watched-review {
   font-family: "Fraunces", serif;
-  font-style: italic;
+  font-style: normal;
   color: var(--ink-soft);
   font-size: 0.96rem;
   line-height: 1.45;
@@ -779,18 +779,18 @@ img { max-width: 100%; display: block; }
   border-radius: 18px;
   padding: 36px 38px;
   box-shadow: var(--shadow);
-  text-align: center;
+  text-align: left;
 }
 .contact-lead {
   font-size: 1.1rem;
   color: var(--ink-soft);
   max-width: 56ch;
-  margin: 0 auto 24px;
+  margin: 0 0 24px;
 }
 .contact-links {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 10px;
 }
 

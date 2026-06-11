@@ -333,7 +333,7 @@ const siteData = {
         type: "Movie",
         status: "Watched in theaters",
         rating: "8.5/10",  // add a rating, e.g. "7/10"
-        review: "Bear is so annoyingggg! Jumpscares were crazy ",
+        review: "Bear is so annoyingggg! Jumpscares were crazy",
         date: "Recently",
         poster: "media/obsession.jpg",
         genre: "Thriller",
