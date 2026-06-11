@@ -294,6 +294,10 @@ img { max-width: 100%; display: block; }
   padding-top: var(--section-pad-y);
   padding-bottom: var(--section-pad-y);
   border-top: 1px solid var(--border-soft);
+  display: grid;
+  grid-template-columns: minmax(140px, 200px) minmax(0, 1fr);
+  column-gap: clamp(32px, 5vw, 60px);
+  align-items: start;
 }
 
 .section-head {
@@ -301,6 +305,27 @@ img { max-width: 100%; display: block; }
   align-items: baseline;
   gap: 14px;
   margin-bottom: var(--section-head-gap);
+}
+
+/* Editorial rail: the section label lives in a narrow left column and tracks
+   the content as you scroll; everything else fills the wider right column,
+   so a section can never leave an empty half. */
+.section > .section-head {
+  grid-column: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin-bottom: 0;
+  position: sticky;
+  top: 88px;
+}
+.section > .section-head .section-title {
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  line-height: 1.12;
+}
+.section > :not(.section-head) {
+  grid-column: 2;
+  min-width: 0;
 }
 .section-index {
   font-family: "Fraunces", serif;
@@ -641,19 +666,15 @@ img { max-width: 100%; display: block; }
   border: 1px solid var(--border);
   border-left: 3px solid var(--accent);
   border-radius: 18px;
-  padding: 40px 42px;
+  padding: 32px 34px;
   box-shadow: var(--shadow);
-  display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  gap: 44px;
-  align-items: start;
 }
 .journey-quote {
-  margin: 0;
+  margin: 0 0 20px;
   font-family: "Fraunces", serif;
-  font-size: clamp(1.35rem, 2.4vw, 1.7rem);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
   font-style: italic;
-  line-height: 1.32;
+  line-height: 1.38;
   color: var(--accent-ink);
 }
 .journey-body { color: var(--ink-soft); max-width: none; }
@@ -925,8 +946,20 @@ img { max-width: 100%; display: block; }
   }
   .watched-card { scroll-snap-align: start; }
 
+  /* Rail collapses: label stacks above content again on smaller screens */
+  .section { display: block; }
+  .section > .section-head {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: var(--section-head-gap);
+    position: static;
+  }
+  .section > .section-head .section-title {
+    font-size: clamp(1.7rem, 3.5vw, 2.2rem);
+  }
+
   .journey, .contact-card { padding: 26px 24px; }
-  .journey { grid-template-columns: 1fr; gap: 22px; }
 }
 
 @media (max-width: 480px) {
