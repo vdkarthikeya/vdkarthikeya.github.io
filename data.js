@@ -2,12 +2,12 @@
 /* ===================== content ===================== */
 const siteData = {
   name: "Dhana Karthikeya Ventrapragada",
-  photo: "profile.jpeg",
+  photo: "profile.JPG",
   resume: "resume.pdf",
   contact: {
     email: "vdkarthikeya@berkeley.edu",
     github: "https://github.com/vdkarthikeya", githubLabel: "github / vdkarthikeya",
-    linkedin: "#", linkedinLabel: "linkedin / vdkarthikeya"
+    linkedin: "https://github.com/in/vdkarthikeya", linkedinLabel: "linkedin / vdkarthikeya"
   },
   current: [
     { role:"Engineering Intern", org:"Guang Labs" },
