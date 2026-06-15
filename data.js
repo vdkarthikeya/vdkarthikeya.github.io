@@ -2,19 +2,19 @@
 /* ===================== content ===================== */
 const siteData = {
   name: "Dhana Karthikeya Ventrapragada",
-  photo: "profile.JPG",
+  photo: "profile.jpeg",
   resume: "resume.pdf",
   contact: {
     email: "vdkarthikeya@berkeley.edu",
     github: "https://github.com/vdkarthikeya", githubLabel: "github / vdkarthikeya",
-    linkedin: "https://linkedin.com/in/vdkarthikeya", linkedinLabel: "linkedin / vdkarthikeya"
+    linkedin: "#", linkedinLabel: "linkedin / vdkarthikeya"
   },
   current: [
     { role:"Engineering Intern", org:"Guang Labs" },
     { role:"Data Science Intern", org:"IDX Exchange" },
     { role:"UCS1, CS 61A", org:"UC Berkeley" }
   ],
-  intro: 'Hi!, I\'m a rising senior at <span class="hl">UC Berkeley</span> studying <span class="hl">Data Science</span>, <span class="hl">graduating December 2027</span>. Right now I\'m working as an engineering intern at Guang Labs, a data science intern at IDX Exchange, and as course staff for CS 61A. Alongside that, I\'m actively exploring opportunities in Machine Learning Research.',
+  intro: 'Hi! I\'m a rising senior at <span class="hl">UC Berkeley</span> studying <span class="hl">Data Science</span>, graduating in <span class="hl">December 2027</span>. Right now I\'m working as an engineering intern at Guang Labs, a data science intern at IDX Exchange, and as course staff for CS 61A. Alongside that, I\'m actively exploring opportunities in machine learning research.',
   about: {
     bio: [
       'I\'m a <span class="hl">Data Science</span> student at <span class="hl">UC Berkeley</span>, graduating December 2027, and a transfer from De Anza College, where I earned an Associate\'s degree in Mathematics and Computer Science.',
