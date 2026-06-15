@@ -14,7 +14,7 @@ const siteData = {
     { role:"Data Science Intern", org:"IDX Exchange" },
     { role:"UCS1, CS 61A", org:"UC Berkeley" }
   ],
-  intro: 'I\'m an undergraduate at <span class="hl">UC Berkeley</span> studying <span class="hl">Data Science</span>, graduating December 2027. Right now I\'m working as an engineering intern at Guang Labs, a data science intern at IDX Exchange, and as course staff for CS 61A. Alongside that, I\'m actively exploring opportunities in <span class="hl">Machine Learning Research</span>.',
+  intro: 'Hi!, I\'m a rising senior at <span class="hl">UC Berkeley</span> studying <span class="hl">Data Science</span>, <span class="hl">graduating December 2027</span>. Right now I\'m working as an engineering intern at Guang Labs, a data science intern at IDX Exchange, and as course staff for CS 61A. Alongside that, I\'m actively exploring opportunities in Machine Learning Research.',
   about: {
     bio: [
       'I\'m a <span class="hl">Data Science</span> student at <span class="hl">UC Berkeley</span>, graduating December 2027, and a transfer from De Anza College, where I earned an Associate\'s degree in Mathematics and Computer Science.',
