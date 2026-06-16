@@ -11,8 +11,7 @@
   }
   function projCard(p, full){
     var repo = p.repo ? '<a class="repo" href="'+p.repo+'" target="_blank" rel="noopener">View repository \u2192</a>' : "";
-    return '<article class="entry"><div class="entry-head"><span class="entry-title">'+p.title+'</span>'+
-      '<span class="entry-tag">'+p.tag+'</span></div><div class="entry-sub">'+p.stack+'</div>'+ul(full?p.full:p.home)+repo+'</article>';
+    return '<article class="entry"><div class="entry-head"><span class="entry-title">'+p.title+'</span></div><div class="entry-sub">'+p.stack+'</div>'+ul(full?p.full:p.home)+repo+'</article>';
   }
   function viewAll(href, label){ return '<a class="view-all" href="'+href+'">'+label+' <span class="arr">\u2192</span></a>'; }
 
@@ -22,7 +21,11 @@
       return x.role + " @ " + x.org;
     }).join("<br>");
     el("rail").innerHTML =
-      '<a href="#home" class="avatar-link" aria-label="Go to home"><div class="avatar"><img src="'+siteData.photo+'" alt="'+siteData.name+'" loading="eager" onerror="this.style.display=\'none\';this.parentNode.classList.add(\'noimg\')"></div></a>'+
+      '<a href="https://vdkarthikeya.github.io/" class="avatar-link" aria-label="Visit vdkarthikeya.github.io">'+
+        '<div class="avatar">'+
+          '<img class="photo" src="'+siteData.photo+'" alt="'+siteData.name+'" loading="eager" decoding="async" onerror="this.style.display=\'none\';this.closest(\'.avatar\').classList.add(\'logo-on\')">'+
+          '<div class="logo"><span class="dv">DV</span></div>'+
+        '</div></a>'+
       '<h1>'+siteData.name.replace(/ ([^ ]+)$/,"<br>$1")+'</h1>'+
       '<div class="rail-meta">'+
         '<a href="mailto:'+c.email+'">'+c.email+'</a>'+

@@ -7,7 +7,7 @@ const siteData = {
   contact: {
     email: "vdkarthikeya@berkeley.edu",
     github: "https://github.com/vdkarthikeya", githubLabel: "github / vdkarthikeya",
-    linkedin: "https://linkedin.com/in/vdkarthikeya", linkedinLabel: "linkedin / vdkarthikeya"
+    linkedin: "https://www.linkedin.com/in/vdkarthikeya", linkedinLabel: "linkedin / vdkarthikeya"
   },
   current: [
     { role:"Engineering Intern", org:"Guang Labs" },
