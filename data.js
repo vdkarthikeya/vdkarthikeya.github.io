@@ -46,20 +46,41 @@ const siteData = {
     ]
   },
   experiences: [
-    { featured:true, role:"Engineering Intern", company:"Guang Labs", location:"Remote", dates:"May 2026 \u2014 Present", bullets:[
-      "Build AI-powered video workflows that take gameplay uploads through processing and automatic highlight generation.",
-      "Develop a Gemini-based media-classification workflow with Pydantic schemas, configurable parameters, and prompt-loading utilities.",
-      "Handle image, short-video, and sampled long-video classification across 5+ content domains end to end."
-    ]},
-    { featured:true, role:"Data Science Intern", company:"IDX Exchange", location:"Remote", dates:"Jun 2026 \u2014 Present", bullets:[
-      "Build end-to-end ML pipelines on 100K+ California MLS sold-property records for home-price prediction.",
-      "Iterate on XGBoost valuation models with cross-validation and feature-importance analysis, tracking MdAPE, RMSE, MAE, and R\u00b2 across experiments.",
-      "Own ingestion, cleaning, feature engineering, and leakage prevention, documenting how data quality maps to model performance."
-    ]},
-    { featured:true, role:"Undergraduate Course Staff (UCS1)", company:"UC Berkeley \u2014 CS 61A", location:"Berkeley, CA", dates:"Jun 2026 \u2014 Present", bullets:[
-      "Serve as course staff for CS 61A, Berkeley's 250+-student introductory computer science course, owning the grading focus area across Gradescope, autograders, regrades, and extensions.",
-      "Run 2 weekly exam-prep sections and office hours and support lab and discussion sections, helping students work through the material."
-    ]},
+    { featured:true, role:"Engineering Intern", company:"Guang Labs", location:"Remote", dates:"May 2026 \u2014 Present",
+      home:[
+        "Shipped an async video domain-classification service labeling images, short clips, and long videos across 6 content domains.",
+        "Built the Gemini classifier with Pydantic schemas and a confidence-gated trust layer that resamples low-trust clips up to 10×.",
+        "Wired it into a FastAPI submit/poll API with a Postgres job store, backed by 38 passing tests."
+      ],
+      full:[
+        "Shipped an asynchronous video domain-classification service that labels images, short clips, and long videos across 6 content domains, exposed through FastAPI submit/poll endpoints backed by a Postgres job store and background workers.",
+        "Built the Gemini classifier with Pydantic-validated schemas and a confidence-gated trust layer that auto-resamples low-trust long videos up to 10×, sampling random 10-second clips via ffprobe/ffmpeg and merging them through a weighted-mode rollup.",
+        "Modularized the service into resolver, sampler, trust, and provider layers, with a deterministic fake provider enabling API-key-free testing.",
+        "Validated the workflow with 38 passing unit and API tests covering segment-sampling math, trust boundaries, and end-to-end submit/poll flows."
+      ]
+    },
+    { featured:true, role:"Data Science Intern", company:"IDX Exchange", location:"Remote", dates:"Jun 2026 \u2014 Present",
+      home:[
+        "Build end-to-end ML pipelines on 100K+ California MLS sold-property records for home-price prediction.",
+        "Iterate on XGBoost valuation models, tracking MdAPE, RMSE, MAE, and R\u00b2 across experiments.",
+        "Own ingestion, cleaning, feature engineering, and leakage prevention end to end."
+      ],
+      full:[
+        "Build end-to-end ML pipelines on 100K+ California MLS sold-property records to predict home prices, owning the full workflow from ingestion and cleaning through feature engineering and leakage prevention.",
+        "Iterate on XGBoost valuation models with cross-validation and feature-importance analysis, evaluating with MdAPE, RMSE, MAE, and R\u00b2 across experiments.",
+        "Document how data quality and design choices map to model performance, translating results into structured analytics for the team."
+      ]
+    },
+    { featured:true, role:"Undergraduate Course Staff (UCS1)", company:"UC Berkeley \u2014 CS 61A", location:"Berkeley, CA", dates:"Jun 2026 \u2014 Present",
+      home:[
+        "Course staff for CS 61A, Berkeley's 250+-student intro CS course, owning the grading focus area.",
+        "Run 2 weekly exam-prep sections plus office hours and lab/discussion support."
+      ],
+      full:[
+        "Serve as course staff for CS 61A, Berkeley's 250+-student introductory computer science course, owning the grading focus area across Gradescope, autograders, regrades, and extensions.",
+        "Run 2 weekly exam-prep sections and office hours, and support lab and discussion sections, helping students work through the material."
+      ]
+    },
     { featured:false, role:"Incoming Fellow, Health + Innovation Track", company:"UC Berkeley \u2014 Fung Fellowship", location:"Berkeley, CA", dates:"Fall 2026", bullets:[
       "Selected for Berkeley's Fung Fellowship, Health + Innovation track.",
       "Will build digital public-health tools with community partners using human-centered design."
@@ -185,8 +206,9 @@ const siteData = {
   ],
   skills: [
     { group:"Languages", items:["Python","Java","C++","SQL","Scheme"] },
-    { group:"Libraries", items:["pandas","NumPy","Matplotlib","seaborn","scikit-learn","XGBoost","LightGBM","SentenceTransformers"] },
-    { group:"Tools", items:["Git","GitHub","VS Code","IntelliJ","Jupyter","Google Colab","MATLAB"] }
+    { group:"ML & Data Science", items:["pandas","NumPy","scikit-learn","PyTorch","TensorFlow","XGBoost","LightGBM","SentenceTransformers","Matplotlib","seaborn"] },
+    { group:"Backend & Infrastructure", items:["FastAPI","Pydantic","PostgreSQL","AWS S3","Gemini API","REST APIs","pytest","ffmpeg"] },
+    { group:"Developer Tools", items:["Git","GitHub","VS Code","IntelliJ","Jupyter","Google Colab","MATLAB"] }
   ]
 };
 

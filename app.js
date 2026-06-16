@@ -4,10 +4,11 @@
   var PAGES = ["home","about","experience","projects","courses"], LIMIT = 3;
   function el(id){ return document.getElementById(id); }
   function ul(list){ return "<ul>" + list.map(function(b){ return "<li>"+b+"</li>"; }).join("") + "</ul>"; }
-  function expCard(x){
+  function expCard(x, full){
     var loc = x.location ? " \u00b7 " + x.location : "";
+    var list = full ? (x.full || x.bullets) : (x.home || x.bullets);
     return '<article class="entry"><div class="entry-head"><span class="entry-title">'+x.role+'</span>'+
-      '<span class="entry-when">'+x.dates+'</span></div><div class="entry-sub">'+x.company+loc+'</div>'+ul(x.bullets)+'</article>';
+      '<span class="entry-when">'+x.dates+'</span></div><div class="entry-sub">'+x.company+loc+'</div>'+ul(list)+'</article>';
   }
   function projCard(p, full){
     var repo = p.repo ? '<a class="repo" href="'+p.repo+'" target="_blank" rel="noopener">View repository \u2192</a>' : "";
@@ -49,7 +50,7 @@
       '<a href="mailto:'+c.email+'" aria-label="Email">'+ICON.email+'</a></div>';
     el("page-home").innerHTML =
       '<p class="intro">'+siteData.intro+'</p>'+
-      '<p class="sect-label">Experience</p>'+ fe.map(expCard).join("") + viewAll("#experience","View all experience") +
+      '<p class="sect-label">Experience</p>'+ fe.map(function(x){return expCard(x,false);}).join("") + viewAll("#experience","View all experience") +
       '<p class="sect-label gap">Projects</p>'+ fp.map(function(p){return projCard(p,false);}).join("") + viewAll("#projects","View all projects") +
       '<p class="sect-label gap">Skills</p>'+ skills + socials;
   }
@@ -78,7 +79,7 @@
     el("page-courses").innerHTML = '<p class="sect-label">Coursework &amp; Grades</p>'+terms;
   }
 
-  function renderExperience(){ el("page-experience").innerHTML = '<p class="sect-label">Experience</p>'+ siteData.experiences.map(expCard).join(""); }
+  function renderExperience(){ el("page-experience").innerHTML = '<p class="sect-label">Experience</p>'+ siteData.experiences.map(function(x){return expCard(x,true);}).join(""); }
   function renderProjects(){ el("page-projects").innerHTML = '<p class="sect-label">Projects</p>'+ siteData.projects.map(function(p){return projCard(p,true);}).join(""); }
 
   function show(page){
