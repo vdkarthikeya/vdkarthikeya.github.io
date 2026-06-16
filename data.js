@@ -73,11 +73,11 @@ const siteData = {
     },
     { featured:true, role:"Undergraduate Course Staff (UCS1)", company:"UC Berkeley \u2014 CS 61A", location:"Berkeley, CA", dates:"Jun 2026 \u2014 Present",
       home:[
-        "Course staff for CS 61A, Berkeley's 250+-student intro CS course, owning the grading focus area.",
+        "Course staff for CS 61A, Berkeley's 250+ student intro CS course, owning the grading focus area.",
         "Run 2 weekly exam-prep sections plus office hours and lab/discussion support."
       ],
       full:[
-        "Serve as course staff for CS 61A, Berkeley's 250+-student introductory computer science course, owning the grading focus area across Gradescope, autograders, regrades, and extensions.",
+        "Serve as course staff for CS 61A, Berkeley's 250+ student introductory computer science course, owning the grading focus area across Gradescope, autograders, regrades, and extensions.",
         "Run 2 weekly exam-prep sections and office hours, and support lab and discussion sections, helping students work through the material."
       ]
     },
