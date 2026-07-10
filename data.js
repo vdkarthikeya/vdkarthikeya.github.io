@@ -22,7 +22,7 @@ const siteData = {
       'My work so far spans video understanding, real-estate valuation, and NLP. In the short term my goal is to grow into a <span class="hl">Machine Learning Engineer</span>; longer term, I want to move into <span class="hl">Machine Learning Research</span>. I care more about the honest version of a result than the flattering one.'
     ],
     education: [
-      { school:"University of California, Berkeley", degree:"B.A. in Data Science", gpa:"GPA 3.82 / 4.00", detail:"College of Computing, Data Science, and Society", dates:"Aug 2025 \u2014 Dec 2027", courses:true },
+      { school:"University of California, Berkeley", degree:"B.A. in Data Science", gpa:"GPA 3.85 / 4.00", detail:"College of Computing, Data Science, and Society", dates:"Aug 2025 \u2014 Dec 2027", courses:true },
       { school:"De Anza College", degree:"Associate's Degree in Mathematics & Computer Science", gpa:"GPA 3.92 / 4.00", detail:"Cupertino, CA", dates:"Sep 2023 \u2014 Jun 2025" }
     ],
     /* NOTE: Fall/Spring placement is still a best guess except Data C140 (confirmed Spring 2026). */
