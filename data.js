@@ -37,7 +37,7 @@ const siteData = {
         { code:"Data C140", title:"Probability for Data Science", grade:"A" }
       ]},
       { term:"Summer 2026", note:"In progress", rows:[
-        { code:"CYPLAN 101", title:"Introduction to Urban Data Analytics", grade:"In progress", muted:true }
+        { code:"CYPLAN 101", title:"Introduction to Urban Data Analytics", grade:"A\u2212" }
       ]},
       { term:"Fall 2026", note:"Planned", rows:[
         { code:"CS 189",    title:"Introduction to Machine Learning", grade:"Planned", muted:true },
