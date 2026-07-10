@@ -6,7 +6,7 @@
 
   function liList(bullets, asideText){
     var items = bullets.map(function(b){ return "<li>"+b+"</li>"; });
-    if (asideText) items.push('<li class="human">'+asideText+'</li>');
+    if (asideText) items.push('<li class="human"><span class="aside-pill">'+asideText+'</span></li>');
     return "<ul>" + items.join("") + "</ul>";
   }
 
