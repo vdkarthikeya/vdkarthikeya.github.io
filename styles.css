@@ -32,8 +32,8 @@
   .content { min-width:0; }
 
   .rail-head { display:flex; align-items:center; gap:20px; margin-bottom:8px; }
-  .avatar { width:92px; height:92px; border-radius:50%; overflow:hidden; background:var(--paper); position:relative; flex-shrink:0; }
-  .avatar-link { display:block; width:92px; cursor:pointer; -webkit-tap-highlight-color:transparent; }
+  .avatar { width:112px; height:112px; border-radius:50%; overflow:hidden; background:var(--paper); position:relative; flex-shrink:0; }
+  .avatar-link { display:block; width:112px; cursor:pointer; -webkit-tap-highlight-color:transparent; }
   .avatar-link:focus-visible { outline:2px solid var(--accent); outline-offset:3px; border-radius:50%; }
   .avatar .photo { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; z-index:2; transition:opacity .4s ease; }
   .avatar .logo { position:absolute; inset:0; z-index:1; display:flex; align-items:center; justify-content:center; background:var(--paper); opacity:0; transition:opacity .4s ease; }
