@@ -2,7 +2,7 @@
 /* ===================== content ===================== */
 const siteData = {
   name: "Dhana Karthikeya Ventrapragada",
-  photo: "profile-headshot-tight.jpg",
+  photo: "profile.JPG",
   resume: "Resume.pdf",
   contact: {
     email: "vdkarthikeya@berkeley.edu",
