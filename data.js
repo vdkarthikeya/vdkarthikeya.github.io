@@ -15,7 +15,7 @@ const siteData = {
     { role:"UCS1, CS 61A", org:"UC Berkeley" }
   ],
   /* homepage intro — kept casual/lowercase per direction; About page bio below keeps the fuller De Anza story */
-  intro: 'hi, i\'m karthik — a data science student at <span class="hl">berkeley</span>, graduating in <span class="hl">december 2027</span>. right now i\'m splitting time between an engineering internship at Guang Labs, a data science internship at IDX Exchange, and course staff for CS 61A. my interests are in <span class="hl">multimodal ai + reinforcement learning</span>.',
+  intro: 'hi, i\'m karthik — i\'m an undergraduate @ <span class="hl">uc berkeley</span>, studying data science with applied math as domain emphasis. right now i\'m splitting time between an engineering internship at Guang Labs, a data science internship at IDX Exchange, and course staff for CS 61A. my interests are in <span class="hl">multimodal ai + reinforcement learning</span>.',
   about: {
     bio: [
       'I\'m a <span class="hl">Data Science</span> student at <span class="hl">UC Berkeley</span>, graduating December 2027, and a transfer from De Anza College, where I earned an Associate\'s degree in Mathematics and Computer Science.',
