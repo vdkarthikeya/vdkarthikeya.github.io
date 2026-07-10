@@ -3,17 +3,29 @@
   "use strict";
   var PAGES = ["home","about","experience","projects","courses"], LIMIT = 3;
   function el(id){ return document.getElementById(id); }
-  function ul(list){ return "<ul>" + list.map(function(b){ return "<li>"+b+"</li>"; }).join("") + "</ul>"; }
+
+  function liList(bullets, asideText){
+    var items = bullets.map(function(b){ return "<li>"+b+"</li>"; });
+    if (asideText) items.push('<li class="human">'+asideText+'</li>');
+    return "<ul>" + items.join("") + "</ul>";
+  }
+
   function expCard(x, full){
-    var loc = x.location ? " \u00b7 " + x.location : "";
     var list = full ? (x.full || x.bullets) : (x.home || x.bullets);
-    return '<article class="entry"><div class="entry-head"><span class="entry-title">'+x.role+'</span>'+
-      '<span class="entry-when">'+x.dates+'</span></div><div class="entry-sub">'+x.company+loc+'</div>'+ul(list)+'</article>';
+    var companyPart = x.url ? '<a href="'+x.url+'" target="_blank" rel="noopener">'+x.company+'</a>' : x.company;
+    var loc = x.location ? " \u00b7 " + x.location : "";
+    return '<article class="entry"><div class="entry-head"><span class="entry-title"><b>'+x.role+'</b>, '+companyPart+'</span></div>'+
+      '<div class="entry-sub exp-when">'+x.dates+loc+'</div>'+
+      liList(list, x.aside) + '</article>';
   }
+
   function projCard(p, full){
-    var repo = p.repo ? '<a class="repo" href="'+p.repo+'" target="_blank" rel="noopener">View repository \u2192</a>' : "";
-    return '<article class="entry"><div class="entry-head"><span class="entry-title">'+p.title+'</span></div><div class="entry-sub">'+p.stack+'</div>'+ul(full?p.full:p.home)+repo+'</article>';
+    var list = full ? p.full : p.home;
+    var repo = p.repo ? ' \u2014 <a class="repo-inline" href="'+p.repo+'" target="_blank" rel="noopener">repo \u2197</a>' : '';
+    return '<article class="entry"><div class="entry-head"><span class="entry-title"><b>'+p.title+'</b>'+repo+'</span></div>'+
+      liList(list, p.aside) + '</article>';
   }
+
   function viewAll(href, label){ return '<a class="view-all" href="'+href+'">'+label+' <span class="arr">\u2192</span></a>'; }
 
   function renderRail(){

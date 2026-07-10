@@ -3,7 +3,7 @@
 const siteData = {
   name: "Dhana Karthikeya Ventrapragada",
   photo: "profile.JPG",
-  resume: "resume.pdf",
+  resume: "Resume.pdf",
   contact: {
     email: "vdkarthikeya@berkeley.edu",
     github: "https://github.com/vdkarthikeya", githubLabel: "github / vdkarthikeya",
@@ -14,7 +14,8 @@ const siteData = {
     { role:"Data Science Intern", org:"IDX Exchange" },
     { role:"UCS1, CS 61A", org:"UC Berkeley" }
   ],
-  intro: 'Hi! I\'m a rising senior at <span class="hl">UC Berkeley</span> studying <span class="hl">Data Science</span>, graduating in <span class="hl">December 2027</span>. Right now I\'m working as an engineering intern at Guang Labs, a data science intern at IDX Exchange, and as course staff for CS 61A. Alongside that, I\'m actively exploring opportunities in machine learning research.',
+  /* homepage intro — kept casual/lowercase per direction; About page bio below keeps the fuller De Anza story */
+  intro: 'hi, i\'m karthik — a data science student at <span class="hl">berkeley</span>, graduating in <span class="hl">december 2027</span>. right now i\'m splitting time between an engineering internship at Guang Labs, a data science internship at IDX Exchange, and course staff for CS 61A. my interests are in <span class="hl">multimodal ai + reinforcement learning</span>.',
   about: {
     bio: [
       'I\'m a <span class="hl">Data Science</span> student at <span class="hl">UC Berkeley</span>, graduating December 2027, and a transfer from De Anza College, where I earned an Associate\'s degree in Mathematics and Computer Science.',
@@ -25,7 +26,6 @@ const siteData = {
       { school:"University of California, Berkeley", degree:"B.A. in Data Science", gpa:"GPA 3.85 / 4.00", detail:"College of Computing, Data Science, and Society", dates:"Aug 2025 \u2014 Dec 2027", courses:true },
       { school:"De Anza College", degree:"Associate's Degree in Mathematics & Computer Science", gpa:"GPA 3.92 / 4.00", detail:"Cupertino, CA", dates:"Sep 2023 \u2014 Jun 2025" }
     ],
-    /* NOTE: Fall/Spring placement is still a best guess except Data C140 (confirmed Spring 2026). */
     terms: [
       { term:"Fall 2025", rows:[
         { code:"CS 61A",   title:"Structure & Interpretation of Computer Programs", grade:"A\u2212" },
@@ -36,30 +36,31 @@ const siteData = {
         { code:"Data C100", title:"Principles & Techniques of Data Science", grade:"A\u2212" },
         { code:"Data C140", title:"Probability for Data Science", grade:"A" }
       ]},
-      { term:"Summer 2026", note:"In progress", rows:[
-        { code:"CYPLAN 101", title:"Introduction to Urban Data Analytics", grade:"A\u2212" }
+      { term:"Summer 2026", rows:[
+        { code:"CYPLAN 101", title:"Introduction to Urban Data Analytics", grade:"A" }
       ]},
-      { term:"Fall 2026", note:"Planned", rows:[
-        { code:"CS 189",    title:"Introduction to Machine Learning", grade:"Planned", muted:true },
-        { code:"Data C101", title:"Data Engineering", grade:"Planned", muted:true }
+      { term:"Fall 2026", note:"Upcoming", rows:[
+        { code:"CS 189",    title:"Introduction to Machine Learning", grade:"Upcoming", muted:true },
+        { code:"Data C101", title:"Data Engineering", grade:"Upcoming", muted:true }
       ]}
     ]
   },
   experiences: [
-    { featured:true, role:"Engineering Intern", company:"Guang Labs", location:"Remote", dates:"May 2026 \u2014 Present",
+    { featured:true, role:"Engineering Intern", company:"Guang Labs", url:"https://guanglabs.com/", location:"Remote", dates:"May 2026 \u2014 Present",
+      /* aside: add a true, specific detail whenever you have one — omitted for now rather than invented */
       home:[
         "Shipped an async video domain-classification service labeling images, short clips, and long videos across 6 content domains.",
-        "Built the Gemini classifier with Pydantic schemas and a confidence-gated trust layer that resamples low-trust clips up to 10×.",
+        "Built the Gemini classifier with Pydantic schemas and a confidence-gated trust layer that resamples low-trust clips up to 10\u00d7.",
         "Wired it into a FastAPI submit/poll API with a Postgres job store, backed by 38 passing tests."
       ],
       full:[
         "Shipped an asynchronous video domain-classification service that labels images, short clips, and long videos across 6 content domains, exposed through FastAPI submit/poll endpoints backed by a Postgres job store and background workers.",
-        "Built the Gemini classifier with Pydantic-validated schemas and a confidence-gated trust layer that auto-resamples low-trust long videos up to 10×, sampling random 10-second clips via ffprobe/ffmpeg and merging them through a weighted-mode rollup.",
+        "Built the Gemini classifier with Pydantic-validated schemas and a confidence-gated trust layer that auto-resamples low-trust long videos up to 10\u00d7, sampling random 10-second clips via ffprobe/ffmpeg and merging them through a weighted-mode rollup.",
         "Modularized the service into resolver, sampler, trust, and provider layers, with a deterministic fake provider enabling API-key-free testing.",
         "Validated the workflow with 38 passing unit and API tests covering segment-sampling math, trust boundaries, and end-to-end submit/poll flows."
       ]
     },
-    { featured:true, role:"Data Science Intern", company:"IDX Exchange", location:"Remote", dates:"Jun 2026 \u2014 Present",
+    { featured:true, role:"Data Science Intern", company:"IDX Exchange", url:"https://idxexchange.com/", location:"Remote", dates:"Jun 2026 \u2014 Present",
       home:[
         "Build end-to-end ML pipelines on 100K+ California MLS sold-property records for home-price prediction.",
         "Iterate on XGBoost valuation models, tracking MdAPE, RMSE, MAE, and R\u00b2 across experiments.",
@@ -71,14 +72,14 @@ const siteData = {
         "Document how data quality and design choices map to model performance, translating results into structured analytics for the team."
       ]
     },
-    { featured:true, role:"Undergraduate Course Staff (UCS1)", company:"UC Berkeley \u2014 CS 61A", location:"Berkeley, CA", dates:"Jun 2026 \u2014 Present",
+    { featured:true, role:"Undergraduate Course Staff (UCS1)", company:"CS 61A", url:"https://cs61a.org/", location:"Berkeley, CA", dates:"Jun 2026 \u2014 Present",
+      aside:"Failed my midterms in this class the first time around \u2014 now I'm the one grading them.",
       home:[
-        "Course staff for CS 61A, Berkeley's 250+ student intro CS course, owning the grading focus area.",
-        "Run 2 weekly exam-prep sections plus office hours and lab/discussion support."
+        "Run 2 weekly exam-prep sections, office hours, grading, and regrade/extension requests for Berkeley's 250+ student CS 61A."
       ],
       full:[
-        "Serve as course staff for CS 61A, Berkeley's 250+ student introductory computer science course, owning the grading focus area across Gradescope, autograders, regrades, and extensions.",
-        "Run 2 weekly exam-prep sections and office hours, and support lab and discussion sections, helping students work through the material."
+        "Run 2 weekly exam-prep sections and office hours for CS 61A, Berkeley's 250+ student introductory computer science course.",
+        "Handle grading, Gradescope autograders, regrade requests, and extension requests for the course."
       ]
     },
     { featured:false, role:"Incoming Fellow, Health + Innovation Track", company:"UC Berkeley \u2014 Fung Fellowship", location:"Berkeley, CA", dates:"Fall 2026", bullets:[
@@ -115,8 +116,9 @@ const siteData = {
     ]}
   ],
   projects: [
-    { featured:true, title:"Movie Genre Classification", tag:"NLP \u00b7 Embeddings", stack:"Python, PyTorch, SentenceTransformers, scikit-learn",
+    { featured:true, title:"Movie Genre Classification", stack:"Python, PyTorch, SentenceTransformers, scikit-learn",
       repo:"https://github.com/vdkarthikeya/movie-genre-classification-nlp",
+      aside:"Started as my DSS Decal project, Spring 2026.",
       home:[
         "Multi-label genre prediction on 42K+ films across 20+ genres using MiniLM, MPNet, and e5-large-v2 embeddings.",
         "Rare-genre cutoffs and per-label threshold tuning lifted Macro F1 from 0.48 to 0.66 (Micro F1 0.68).",
@@ -129,7 +131,7 @@ const siteData = {
         "Found that Logistic Regression on 1024-dim e5 embeddings outperformed the boosted trees while training roughly 12\u00d7 faster \u2014 a deliberate accuracy-vs-cost takeaway."
       ]
     },
-    { featured:true, title:"Housing Price & Assessment Bias", tag:"Regression \u00b7 Bias", stack:"pandas, NumPy, scikit-learn", repo:null,
+    { featured:true, title:"Housing Price & Assessment Bias", stack:"pandas, NumPy, scikit-learn", repo:null,
       home:[
         "Linear-regression pipeline on 200K+ Cook County records with 15+ engineered geographic and interaction features.",
         "Reached test RMSE 0.562 via 4-fold cross-validation.",
@@ -142,7 +144,7 @@ const siteData = {
         "Went beyond accuracy to quantify systematic over- and under-estimation across price bands, connecting modeling choices to documented inequities in property-tax assessment."
       ]
     },
-    { featured:true, title:"Email Spam / Ham Classifier", tag:"Classification", stack:"scikit-learn, pandas, NumPy", repo:null,
+    { featured:true, title:"Email Spam / Ham Classifier", stack:"scikit-learn, pandas, NumPy", repo:null,
       home:[
         "Engineered 50+ features from raw email text into a numeric feature matrix.",
         "L1-regularized Logistic Regression tuned with GridSearchCV and 10-fold cross-validation.",
@@ -155,7 +157,7 @@ const siteData = {
         "Reached 92.1% accuracy on a held-out leaderboard set, weighing precision against recall given the higher cost of false positives."
       ]
     },
-    { featured:false, title:"California Housing Regression", tag:"Regression", stack:"Python, scikit-learn",
+    { featured:false, title:"California Housing Regression", stack:"Python, scikit-learn",
       repo:"https://github.com/vdkarthikeya/california-housing-regression",
       home:[
         "Predicted median home values across 20K+ California block groups from demographic, geographic, and economic features.",
@@ -167,7 +169,7 @@ const siteData = {
         "Used the comparison to reason about interpretability versus predictive accuracy across an end-to-end workflow."
       ]
     },
-    { featured:false, title:"Scheme Interpreter", tag:"Interpreters", stack:"Python", repo:null,
+    { featured:false, title:"Scheme Interpreter", stack:"Python", repo:null,
       home:[
         "Interpreter for a subset of Scheme built around a scheme_eval / scheme_apply cycle.",
         "Implemented environment frames, special forms, and tail-call optimization."
@@ -179,7 +181,7 @@ const siteData = {
         "Reinforced how a language is parsed, represented, evaluated, and extended \u2014 the mechanics behind features most programmers take for granted."
       ]
     },
-    { featured:false, title:"NGordnet", tag:"Java \u00b7 Graphs", stack:"Java", repo:null,
+    { featured:false, title:"NGordnet", stack:"Java", repo:null,
       home:[
         "Java tool linking a WordNet semantic graph with Google NGrams historical word-frequency data.",
         "Built a custom directed graph to return hyponyms and surface the k most popular words over time."
@@ -191,7 +193,7 @@ const siteData = {
         "Combined the two to surface the k most historically popular words within a semantic category, served through a small web interface."
       ]
     },
-    { featured:false, title:"Build Your Own World", tag:"Java \u00b7 Systems", stack:"Java", repo:null,
+    { featured:false, title:"Build Your Own World", stack:"Java", repo:null,
       home:[
         "Java engine generating explorable 2D tile worlds from a seed, deterministic per seed.",
         "Interactive WASD movement plus save/load persistence restoring exact world state."
