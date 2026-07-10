@@ -34,12 +34,14 @@
       return x.role + " @ " + x.org;
     }).join("<br>");
     el("rail").innerHTML =
-      '<a href="https://vdkarthikeya.github.io/" class="avatar-link" aria-label="Visit vdkarthikeya.github.io">'+
-        '<div class="avatar">'+
-          '<img class="photo" src="'+siteData.photo+'" alt="'+siteData.name+'" loading="eager" decoding="async" onerror="this.style.display=\'none\';this.closest(\'.avatar\').classList.add(\'logo-on\')">'+
-          '<div class="logo"><span class="dv">DV</span></div>'+
-        '</div></a>'+
-      '<h1>'+siteData.name.replace(/ ([^ ]+)$/,"<br>$1")+'</h1>'+
+      '<div class="rail-head">'+
+        '<a href="https://vdkarthikeya.github.io/" class="avatar-link" aria-label="Visit vdkarthikeya.github.io">'+
+          '<div class="avatar">'+
+            '<img class="photo" src="'+siteData.photo+'" alt="'+siteData.name+'" loading="eager" decoding="async" onerror="this.style.display=\'none\';this.closest(\'.avatar\').classList.add(\'logo-on\')">'+
+            '<div class="logo"><span class="dv">DV</span></div>'+
+          '</div></a>'+
+        '<h1>'+siteData.name.replace(/ ([^ ]+)$/,"<br>$1")+'</h1>'+
+      '</div>'+
       '<div class="rail-meta">'+
         '<a href="mailto:'+c.email+'">'+c.email+'</a>'+
         '<a href="'+c.github+'" target="_blank" rel="noopener">'+c.githubLabel+'</a>'+
