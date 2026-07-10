@@ -46,7 +46,7 @@
         '<a href="mailto:'+c.email+'">'+c.email+'</a>'+
         '<a href="'+c.github+'" target="_blank" rel="noopener">'+c.githubLabel+'</a>'+
         '<a href="'+c.linkedin+'">'+c.linkedinLabel+'</a>'+
-        '<a href="'+siteData.resume+'" target="_blank" rel="noopener">r\u00e9sum\u00e9 \u2197</a>'
+        '<a href="'+siteData.resume+'" target="_blank" rel="noopener">r\u00e9sum\u00e9 \u2197</a>'+
       '</div>'+
       '<p class="now"><b>Currently</b><br>'+now+'</p>';
   }
