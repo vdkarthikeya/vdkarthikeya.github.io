@@ -39,9 +39,10 @@ const siteData = {
       { term:"Summer 2026", rows:[
         { code:"CYPLAN 101", title:"Introduction to Urban Data Analytics", grade:"A" }
       ]},
-      { term:"Fall 2026", note:"Upcoming", rows:[
-        { code:"CS 189",    title:"Introduction to Machine Learning", grade:"Upcoming", muted:true },
-        { code:"Data C101", title:"Data Engineering", grade:"Upcoming", muted:true }
+      { term:"Fall 2026", note:"Planned", rows:[
+        { code:"CS 189",    title:"Introduction to Machine Learning", grade:"IP", muted:true },
+        { code:"Data C101", title:"Data Engineering", grade:"IP", muted:true }
+        { code:"EECS 127", title:"Optimization Models in Engineering", grade:"IP", muted:true }
       ]}
     ]
   },
