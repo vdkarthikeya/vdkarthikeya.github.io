@@ -41,7 +41,7 @@ const siteData = {
       ]},
       { term:"Fall 2026", note:"Planned", rows:[
         { code:"CS 189",    title:"Introduction to Machine Learning", grade:"IP", muted:true },
-        { code:"Data C101", title:"Data Engineering", grade:"IP", muted:true }
+        { code:"Data C101", title:"Data Engineering", grade:"IP", muted:true },
         { code:"EECS 127", title:"Optimization Models in Engineering", grade:"IP", muted:true }
       ]}
     ]
