@@ -29,19 +29,19 @@ const siteData = {
     terms: [
       { term:"Fall 2025", rows:[
         { code:"CS 61A",   title:"Structure & Interpretation of Computer Programs", grade:"A\u2212" },
-        { code:"Data C8",  title:"Foundations of Data Science", grade:"A" }
+        { code:"DATA C8",  title:"Foundations of Data Science", grade:"A" }
       ]},
       { term:"Spring 2026", rows:[
         { code:"CS 61B",   title:"Data Structures", grade:"A\u2212" },
-        { code:"Data C100", title:"Principles & Techniques of Data Science", grade:"A\u2212" },
-        { code:"Data C140", title:"Probability for Data Science", grade:"A" }
+        { code:"DATA C100", title:"Principles & Techniques of Data Science", grade:"A\u2212" },
+        { code:"DATA C140", title:"Probability for Data Science", grade:"A" }
       ]},
       { term:"Summer 2026", rows:[
         { code:"CYPLAN 101", title:"Introduction to Urban Data Analytics", grade:"A" }
       ]},
       { term:"Fall 2026", note:"Planned", rows:[
         { code:"CS 189",    title:"Introduction to Machine Learning", grade:"IP", muted:true },
-        { code:"Data C101", title:"Data Engineering", grade:"IP", muted:true },
+        { code:"DATA C101", title:"Data Engineering", grade:"IP", muted:true },
         { code:"EECS 127", title:"Optimization Models in Engineering", grade:"IP", muted:true }
       ]}
     ]
