@@ -63,6 +63,7 @@
       '<a href="'+c.linkedin+'" target="_blank" rel="noopener" aria-label="LinkedIn">'+ICON.linkedin+'</a>'+
       '<a href="mailto:'+c.email+'" aria-label="Email">'+ICON.email+'</a></div>';
     el("page-home").innerHTML =
+      '<p class="greet">'+siteData.greeting+'</p>'+
       '<p class="intro">'+siteData.intro+'</p>'+
       '<p class="sect-label">Experience</p>'+ fe.map(function(x){return expCard(x,false);}).join("") + viewAll("#experience","View all experience") +
       '<p class="sect-label gap">Projects</p>'+ fp.map(function(p){return projCard(p,false);}).join("") + viewAll("#projects","View all projects") +

@@ -58,6 +58,8 @@
   .page.active { display:block; }
   @keyframes fade { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
 
+  .greet { font-family:'Vollkorn',serif; font-weight:700; font-size:28px; color:var(--ink); margin-bottom:14px; }
+
   .intro { font-family:'Vollkorn',serif; font-weight:400; font-size:23px; line-height:1.6; max-width:60ch; margin-bottom:64px; }
 
   /* ----- section headers: real headings, not a tiny mono tag ----- */
