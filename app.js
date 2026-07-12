@@ -48,7 +48,7 @@
         '<a href="'+c.linkedin+'">'+c.linkedinLabel+'</a>'+
         '<a href="'+siteData.resume+'" target="_blank" rel="noopener">r\u00e9sum\u00e9 \u2197</a>'+
       '</div>'+
-      '<p class="now"><b>Currently</b><br>'+now+'</p>';
+      '<p class="now"><b>currently</b><br>'+now+'</p>';
   }
 
   function renderHome(){
@@ -65,21 +65,27 @@
     el("page-home").innerHTML =
       '<p class="greet">'+siteData.greeting+'</p>'+
       '<p class="intro">'+siteData.intro+'</p>'+
-      '<p class="sect-label">Experience</p>'+ fe.map(function(x){return expCard(x,false);}).join("") + viewAll("#experience","View all experience") +
-      '<p class="sect-label gap">Projects</p>'+ fp.map(function(p){return projCard(p,false);}).join("") + viewAll("#projects","View all projects") +
-      '<p class="sect-label gap">Skills</p>'+ skills + socials;
+      '<p class="sect-label">experience</p>'+ fe.map(function(x){return expCard(x,false);}).join("") + viewAll("#experience","view all experience") +
+      '<p class="sect-label gap">projects</p>'+ fp.map(function(p){return projCard(p,false);}).join("") + viewAll("#projects","view all projects") +
+      '<p class="sect-label gap">skills</p>'+ skills + socials;
   }
 
   function renderAbout(){
     var a = siteData.about;
     var bio = '<div class="about-bio">'+a.bio.map(function(p){return "<p>"+p+"</p>";}).join("")+'</div>';
-    var edu = a.education.map(function(e){
-      return '<div class="edu"><div class="edu-head"><span class="edu-school">'+e.school+'</span><span class="edu-when">'+e.dates+'</span></div>'+
+
+    var edu = '<div class="tl">' + a.education.map(function(e){
+      var stat = (e.gpaValue) ? '<div class="stat">'+e.gpaValue+'<span class="max"> / '+e.gpaMax+'</span></div>' : '';
+      return '<div class="tl-item"><span class="tl-dot"></span>'+
+        '<div class="edu-when">'+e.dates+'</div>'+
+        '<div class="tl-head"><span class="edu-school">'+e.school+'</span>'+stat+'</div>'+
         '<div class="edu-degree">'+e.degree+'</div>'+
-        '<div class="edu-meta"><span class="gpa">'+e.gpa+'</span><span>'+e.detail+'</span></div>'+
-        (e.courses ? viewAll("#courses","View all courses") : "")+'</div>';
-    }).join("");
-    el("page-about").innerHTML = '<p class="sect-label">About</p>'+bio+'<p class="sect-label gap">Education</p>'+edu;
+        '<div class="edu-loc">'+e.location+'</div>'+
+        (e.courses ? viewAll("#courses","view all courses") : "")+
+        '</div>';
+    }).join("") + '</div>';
+
+    el("page-about").innerHTML = '<p class="sect-label">about</p>'+bio+'<p class="sect-label gap">education</p>'+edu;
   }
 
   function renderCourses(){
@@ -91,11 +97,11 @@
       var note = t.note ? '<div class="tnote">'+t.note+'</div>' : "";
       return '<div class="term"><div class="term-head"><div class="thead">'+t.term+'</div>'+note+'</div><div class="term-rows">'+rows+'</div></div>';
     }).join("");
-    el("page-courses").innerHTML = '<p class="sect-label">Coursework &amp; Grades</p>'+terms;
+    el("page-courses").innerHTML = '<p class="sect-label">coursework &amp; grades</p>'+terms;
   }
 
-  function renderExperience(){ el("page-experience").innerHTML = '<p class="sect-label">Experience</p>'+ siteData.experiences.map(function(x){return expCard(x,true);}).join(""); }
-  function renderProjects(){ el("page-projects").innerHTML = '<p class="sect-label">Projects</p>'+ siteData.projects.map(function(p){return projCard(p,true);}).join(""); }
+  function renderExperience(){ el("page-experience").innerHTML = '<p class="sect-label">experience</p>'+ siteData.experiences.map(function(x){return expCard(x,true);}).join(""); }
+  function renderProjects(){ el("page-projects").innerHTML = '<p class="sect-label">projects</p>'+ siteData.projects.map(function(p){return projCard(p,true);}).join(""); }
 
   function show(page){
     if (PAGES.indexOf(page)===-1) page="home";
