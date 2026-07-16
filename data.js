@@ -15,7 +15,7 @@ const siteData = {
     { role:"UCS1, CS 61A", org:"UC Berkeley" }
   ],
   greeting: "Hi, I'm Karthik 👋",
-  intro: 'I\'m an undergraduate @ <a class="hl" href="https://www.berkeley.edu" target="_blank" rel="noopener">UC Berkeley</a>, studying <a class="hl" href="https://cdss.berkeley.edu/dsus" target="_blank" rel="noopener">Data Science</a> with applied math as domain emphasis. Right now I\'m splitting time between an engineering internship at Guang Labs, a data science internship at IDX Exchange, and course staff for CS 61A. My interests are in <span class="hl">Multimodal AI + Reinforcement Learning</span>.',
+  intro: 'I\'m an undergraduate @ <a class="hl" href="https://www.berkeley.edu" target="_blank" rel="noopener">UC Berkeley</a>, studying <a class="hl" href="https://cdss.berkeley.edu/dsus" target="_blank" rel="noopener">Data Science</a> with Applied Math as domain emphasis. Right now I\'m splitting time between an engineering internship at Guang Labs, a data science internship at IDX Exchange, and course staff for CS 61A. My interests are in <span class="hl">Multimodal AI + Reinforcement Learning</span>.',
   about: {
     bio: [
       'I\'m a rising senior at <a class="hl" href="https://www.berkeley.edu" target="_blank" rel="noopener">UC Berkeley</a> studying <a class="hl" href="https://cdss.berkeley.edu/dsus" target="_blank" rel="noopener">Data Science</a>, graduating in December 2027. I transferred in from De Anza College, where I earned an A.S. in Mathematics and Computer Science.',
