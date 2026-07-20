@@ -49,37 +49,41 @@ const siteData = {
   experiences: [
     { featured:true, role:"Engineering Intern", company:"Guang Labs", url:"https://guanglabs.com/", location:"Remote", dates:"May 2026 \u2014 Present",
       home:[
-        "Shipped an async video domain-classification service labeling images, short clips, and long videos across 6 content domains.",
-        "Built the Gemini classifier with Pydantic schemas and a confidence-gated trust layer that resamples low-trust clips up to 10\u00d7.",
-        "Wired it into a FastAPI submit/poll API with a Postgres job store, backed by 38 passing tests."
+        "Built an async video/image domain-classification API on FastAPI with Auth0 auth and a Postgres job store — submit-and-poll REST endpoints that run classification as background jobs and return structured JSON (domain labels, confidence, evidence).",
+        "Implemented the full Python pipeline: resolving media from four source types (local, S3, HTTP), auto-detecting image vs. short/long video with ffprobe/ffmpeg, and classifying via Gemini multimodal calls behind a confidence-gated trust layer.",
+        "Added a trust-gated resample loop for low-trust long videos, split the service into isolated testable modules, and backed it with 86 unit, integration, and acceptance tests."
       ],
       full:[
-        "Shipped an asynchronous video domain-classification service that labels images, short clips, and long videos across 6 content domains, exposed through FastAPI submit/poll endpoints backed by a Postgres job store and background workers.",
-        "Built the Gemini classifier with Pydantic-validated schemas and a confidence-gated trust layer that auto-resamples low-trust long videos up to 10\u00d7, sampling random 10-second clips via ffprobe/ffmpeg and merging them through a weighted-mode rollup.",
-        "Modularized the service into resolver, sampler, trust, and provider layers, with a deterministic fake provider enabling API-key-free testing.",
-        "Validated the workflow with 38 passing unit and API tests covering segment-sampling math, trust boundaries, and end-to-end submit/poll flows."
+        "Built an async video/image domain-classification API on a FastAPI backend with Auth0 authentication and a PostgreSQL job store: clients submit one or more media items, poll for job status and granular per-item progress, and receive structured JSON with domain labels (sports, gaming, talking-head, etc.), confidence scores, evidence strings, and rollup metadata.",
+        "Implemented the full classification pipeline in Python — resolving media from four source types (local path, S3 key, S3 URL, HTTP URL), detecting duration and image vs. short/long video via ffprobe with no client-supplied media type, preparing clips with ffmpeg, and attaching real media to Gemini multimodal calls.",
+        "Designed a confidence-gated trust layer with a resample loop: when Gemini returns a low-trust result on a long video, the service re-samples different windows (excluding prior attempts), retries up to a configurable max, and tracks resample attempts and total model calls.",
+        "Structured the codebase into isolated, testable modules — media resolver, segment sampler, trust evaluator, Gemini classifier provider, a deterministic fake provider for tests, a versioned prompt loader with strict JSON-schema contracts, and Pydantic schemas — behind a central VideoDomainService orchestrator.",
+        "Validated it with 86 unit, integration, and acceptance tests plus a manual staging acceptance script, shipped a database migration with deploy docs, and drove the production path to done through code review after the initial branch wasn't wired end-to-end."
       ]
     },
     { featured:true, role:"Data Science Intern", company:"IDX Exchange", url:"https://idxexchange.com/", location:"Remote", dates:"Jun 2026 \u2014 Present",
       home:[
-        "Build end-to-end ML pipelines on 100K+ California MLS sold-property records for home-price prediction.",
-        "Iterate on XGBoost valuation models, tracking MdAPE, RMSE, MAE, and R\u00b2 across experiments.",
-        "Own ingestion, cleaning, feature engineering, and leakage prevention end to end."
+        "Building a California home sale-price model (automated valuation) on CRMLS MLS data — filtered 143K raw sold records down to ~71K single-family homes and built the preprocessing pipeline.",
+        "Handled cleaning, statistical outlier caps (lot size, sale price), a log-price transform, and a chronological train/test split holding out the most recent month.",
+        "Found and fixed a train/test data-leakage bug in the outlier thresholds, then benchmarked Linear Regression, Decision Tree, and Random Forest — Random Forest best at R² 0.85 and MdAPE 8.8%."
       ],
       full:[
-        "Build end-to-end ML pipelines on 100K+ California MLS sold-property records to predict home prices, owning the full workflow from ingestion and cleaning through feature engineering and leakage prevention.",
-        "Iterate on XGBoost valuation models with cross-validation and feature-importance analysis, evaluating with MdAPE, RMSE, MAE, and R\u00b2 across experiments.",
-        "Document how data quality and design choices map to model performance, translating results into structured analytics for the team."
+        "Contributing to an internal team effort to predict the close (sale) price of California single-family homes from historical CRMLS MLS data, where each intern builds an independent preprocessing pipeline against shared rules (chronological split, no list-price features to avoid leakage, R²/MAPE/MdAPE metrics).",
+        "Combined seven months of sold-property data (143K+ rows), filtered to single-family residences (~71K), ran a missingness audit, and settled on a core set of intrinsic features (living area, beds/baths, lot size, year built, latitude/longitude).",
+        "Built the preprocessing: dropped high-missingness columns and invalid rows, applied statistical outlier caps on lot size and implausible sale prices, log-transformed the target, and split chronologically with the most recent month held out as test.",
+        "Diagnosed a catastrophic baseline R² through a worst-prediction error analysis and traced it to a train/test data-leakage bug — outlier thresholds were computed over the full dataset before the split. Fixed it by recomputing every threshold from training data only and freezing them onto the test set.",
+        "Benchmarked Linear Regression, Decision Tree, and Random Forest on the held-out month, logging each model's metrics side by side; Random Forest performed best at R² 0.85 (dollar-scale) and MdAPE 8.8%. Feature engineering and gradient-boosted models are the next phases of the 12-week plan."
       ]
     },
     { featured:true, role:"Undergraduate Course Staff (UCS1)", company:"CS 61A", url:"https://cs61a.org/", location:"Berkeley, CA", dates:"Jun 2026 \u2014 Present",
       aside:"Failed my midterms in this class the first time around \u2014 now I'm the one grading them.",
       home:[
-        "Run 2 weekly exam-prep sections, office hours, grading, and regrade/extension requests for Berkeley's 250+ student CS 61A."
+        "Run 2 weekly exam-prep sections, office hours, grading, and regrade/extension requests for Berkeley's CS 61A (200+ students), an intro CS course taught in Python and Scheme."
       ],
       full:[
-        "Run 2 weekly exam-prep sections and office hours for CS 61A, Berkeley's 250+ student introductory computer science course.",
-        "Handle grading, Gradescope autograders, regrade requests, and extension requests for the course."
+        "Serve as course staff (UCS1) for CS 61A, Berkeley's 200+ student introductory computer science course taught in Python and Scheme.",
+        "Teach 2 weekly exam-prep sections, hold office hours, and author and deploy assignments on Gradescope.",
+        "Handle grading, autograders, regrade requests, and extensions for the course."
       ]
     },
     { featured:false, role:"Incoming Fellow, Health + Innovation Track", company:"UC Berkeley \u2014 Fung Fellowship", location:"Berkeley, CA", dates:"Fall 2026", bullets:[
@@ -125,10 +129,11 @@ const siteData = {
         "A simple Logistic Regression beat the boosted trees while training ~12\u00d7 faster."
       ],
       full:[
-        "Built a multi-label genre prediction system over 42K+ MovieLens/TMDB films across 20+ genres, parsing nested IMDb metadata with regex and engineering log budget/revenue and temporal release features.",
-        "Generated semantic embeddings of each film's title, tagline, and overview with MiniLM, MPNet, and e5-large-v2, then compared them as inputs to Logistic Regression, XGBoost, and LightGBM.",
-        "Tackled heavy class imbalance with rare-genre cutoffs and per-label threshold tuning, lifting Macro F1 from 0.48 to 0.66 (Micro F1 0.68).",
-        "Found that Logistic Regression on 1024-dim e5 embeddings outperformed the boosted trees while training roughly 12\u00d7 faster \u2014 a deliberate accuracy-vs-cost takeaway."
+        "Built a multi-label genre-prediction system over 42K+ MovieLens/TMDB films spanning 20+ genres, where each film can carry several genre labels at once — parsing nested IMDb metadata with regex and engineering log budget/revenue and temporal release features.",
+        "Generated semantic embeddings of each film's title, tagline, and overview with three sentence-transformer models — MiniLM, MPNet, and e5-large-v2 — and compared them head-to-head as inputs to Logistic Regression, XGBoost, and LightGBM.",
+        "Addressed heavy class imbalance across the long tail of rare genres with a rare-genre cutoff and per-label threshold tuning, optimizing decision thresholds independently for each genre rather than a single global cutoff.",
+        "Lifted Macro F1 from 0.48 to 0.66 (Micro F1 0.68), using Macro F1 as the primary metric so rare genres counted as much as the common ones.",
+        "Found that a simple Logistic Regression on 1024-dim e5 embeddings outperformed the boosted trees while training roughly 12× faster — a deliberate accuracy-vs-compute takeaway."
       ]
     },
     { featured:true, title:"Housing Price & Assessment Bias", stack:"pandas, NumPy, scikit-learn", repo:null,
@@ -183,25 +188,26 @@ const siteData = {
     },
     { featured:false, title:"Ngordnet", stack:"Java", repo:null,
       home:[
-        "Java tool linking a WordNet semantic graph with Google NGrams historical word-frequency data.",
-        "Built a custom directed graph to return hyponyms and surface the k most popular words over time."
+        "Java tool linking a WordNet semantic graph with Google NGrams historical word-frequency data, built on a directed graph (adjacency list) with recursive DFS.",
+        "Resolves hyponyms for single or multi-word queries via set intersection and surfaces the k most historically popular words in a category."
       ],
       full:[
         "Built a Java tool for exploring how word meaning and usage relate over time, combining a WordNet semantic graph with Google NGrams historical word-frequency data.",
-        "Parsed the synset/hyponym dataset and implemented a custom directed graph (no external graph libraries) that returns all hyponyms of a word or set of words.",
-        "Implemented NGramMap/TimeSeries structures that parse the frequency files once and answer historical-trend queries efficiently.",
-        "Combined the two to surface the k most historically popular words within a semantic category, served through a small web interface."
+        "Implemented the graph as an adjacency list (synset ID to child IDs) with a recursive DFS and a visited set to resolve all hyponyms reachable from a word — with unit tests covering cycles, self-loops, diamonds, disconnected components, and deep chains.",
+        "Handled multi-word queries by set intersection and ranked results by historical frequency to return the top-k most popular words in a semantic category, with a k=0 case returning all hyponyms alphabetically.",
+        "Debugged a subtle correctness bug where synset IDs split across multiple lines were being overwritten instead of merged, silently dropping hyponyms — fixed by appending to existing entries."
       ]
     },
     { featured:false, title:"Build Your Own World", stack:"Java", repo:null,
       home:[
-        "Java engine generating explorable 2D tile worlds from a seed, deterministic per seed.",
-        "Interactive WASD movement plus save/load persistence restoring exact world state."
+        "Java dungeon-crawler with deterministic, seed-based procedural world generation — rooms connected by minimum-spanning-tree hallways built with Kruskal's algorithm.",
+        "BFS powers avatar click-to-move pathfinding and enemy chasing, with a precomputed BFS distance map for fast, evenly-spread enemy and item spawning."
       ],
       full:[
-        "Designed and built a Java engine that generates explorable 2D tile worlds from a seed, using a pseudorandom generator so the same seed always reproduces the exact same world.",
-        "Generated distinct rooms and connecting hallways with randomized counts, sizes, and positions drawn onto a tile grid.",
-        "Implemented interactive WASD movement and save/load persistence that restores the world \u2014 including the random-number-generator state \u2014 exactly as it was left.",
+        "Built a Java dungeon-crawler on the StdDraw tile engine: the player explores a procedurally generated world, fights enemies through quiz battles, and collects health kits to survive.",
+        "Generated worlds deterministically from a seed — placing non-overlapping rooms and connecting them with L-shaped hallways along a minimum spanning tree built via Kruskal's algorithm, so every room is reachable with minimal total hallway length.",
+        "Implemented BFS pathfinding for both avatar click-to-move (drawing and animating the shortest path) and enemy chasing, and used a single precomputed BFS distance map for O(1) spawn-distance checks so enemies and items spread evenly across the map.",
+        "Added a full-screen quiz-battle combat system with overlay rendering that preserves world state, plus save/load that stores the seed and move history and replays it to deterministically reconstruct the exact world.",
         "Emphasized large-project architecture, object-oriented design, and deterministic, testable generation."
       ]
     }
@@ -209,7 +215,7 @@ const siteData = {
   skills: [
     { group:"Languages", items:["Python","Java","C++","SQL","Scheme"] },
     { group:"ML & Data Science", items:["pandas","NumPy","scikit-learn","PyTorch","TensorFlow","XGBoost","LightGBM","SentenceTransformers","Matplotlib","seaborn"] },
-    { group:"Backend & Infrastructure", items:["FastAPI","Pydantic","PostgreSQL","AWS S3","Gemini API","REST APIs","pytest","ffmpeg"] },
+    { group:"Backend & Infrastructure", items:["FastAPI","Pydantic","PostgreSQL","Auth0","AWS S3","Gemini API","REST APIs","pytest","ffmpeg","ffprobe"] },
     { group:"Developer Tools", items:["Git","GitHub","VS Code","IntelliJ","Jupyter","Google Colab","MATLAB"] }
   ]
 };
