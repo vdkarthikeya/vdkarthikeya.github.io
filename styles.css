@@ -46,8 +46,11 @@
 
   .rail h1 { font-family:'Vollkorn',serif; font-weight:500; font-size:42px; line-height:1.08; letter-spacing:-.01em; }
   .rail-meta { margin-top:28px; display:grid; gap:13px; font-family:'IBM Plex Mono',monospace; font-size:12px; }
-  .rail-meta a { color:var(--ink); border-bottom:1px solid var(--line); padding-bottom:2px; width:fit-content; transition:border-color .2s,color .2s; }
+  .rail-meta a { display:inline-flex; align-items:center; gap:9px; color:var(--ink); border-bottom:1px solid var(--line); padding-bottom:2px; width:fit-content; transition:border-color .2s,color .2s; }
   .rail-meta a:hover { border-color:var(--accent); color:var(--accent); }
+  .rm-ico { display:inline-flex; color:var(--soft); flex-shrink:0; transition:color .2s; }
+  .rm-ico svg { width:14px; height:14px; display:block; }
+  .rail-meta a:hover .rm-ico { color:var(--accent); }
 
   /* ----- "currently" — simple label + lines ----- */
   .now { margin-top:28px; font-size:13px; color:var(--soft); line-height:1.8; }
@@ -71,8 +74,11 @@
   /* entries — plain, hairline divider, no card chrome */
   .entry { padding:30px 0; border-bottom:1px solid var(--line); }
   .entry:last-child { border-bottom:none; }
-  .entry-head { display:flex; align-items:baseline; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+  .entry-head { display:flex; align-items:center; justify-content:flex-start; gap:14px; flex-wrap:wrap; }
   .entry-head > * { min-width:0; }
+  .ent-logo { width:52px; height:52px; flex-shrink:0; border-radius:10px; border:1px solid var(--line); background:var(--paper); overflow:hidden; display:block; position:relative; }
+  .ent-logo img { width:100%; height:100%; object-fit:cover; display:block; }
+  .ent-logo-fallback { display:none; width:100%; height:100%; align-items:center; justify-content:center; font-family:'Vollkorn',serif; font-weight:600; font-size:18px; color:var(--ink); }
   .entry-title { font-family:'Vollkorn',serif; font-size:24px; font-weight:500; transition:color .2s; }
   .entry-title a { border-bottom:1px solid var(--line); transition:color .2s,border-color .2s; }
   .entry-title a:hover { color:var(--accent); border-color:var(--accent); }

@@ -10,11 +10,40 @@
     return "<ul>" + items.join("") + "</ul>";
   }
 
+  function initials(name){
+    var stop = {of:1,and:1,the:1,at:1,for:1,de:1};
+    var words = name.replace(/[^a-zA-Z0-9\s]/g," ").split(/\s+/).filter(function(w){
+      return w && !stop[w.toLowerCase()];
+    });
+    if (words.length===0) return "?";
+    if (words.length===1) return words[0].slice(0,2).toUpperCase();
+    return (words[0][0]+words[1][0]).toUpperCase();
+  }
+
+  function logoBadge(x){
+    var mark = initials(x.company);
+    if (x.logo){
+      return '<span class="ent-logo">'+
+        '<img src="'+x.logo+'" alt="" loading="lazy" '+
+          'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">'+
+        '<span class="ent-logo-fallback">'+mark+'</span>'+
+      '</span>';
+    }
+    if (x.logoDomain){
+      return '<span class="ent-logo">'+
+        '<img src="https://www.google.com/s2/favicons?sz=64&domain='+x.logoDomain+'" alt="" loading="lazy" '+
+          'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">'+
+        '<span class="ent-logo-fallback">'+mark+'</span>'+
+      '</span>';
+    }
+    return '<span class="ent-logo"><span class="ent-logo-fallback" style="display:flex">'+mark+'</span></span>';
+  }
+
   function expCard(x, full){
     var list = full ? (x.full || x.bullets) : (x.home || x.bullets);
     var companyPart = x.url ? '<a href="'+x.url+'" target="_blank" rel="noopener">'+x.company+'</a>' : x.company;
     var loc = x.location ? " \u00b7 " + x.location : "";
-    return '<article class="entry"><div class="entry-head"><span class="entry-title"><b>'+x.role+'</b>, '+companyPart+'</span></div>'+
+    return '<article class="entry"><div class="entry-head">'+logoBadge(x)+'<span class="entry-title"><b>'+x.role+'</b>, '+companyPart+'</span></div>'+
       '<div class="entry-sub exp-when">'+x.dates+loc+'</div>'+
       liList(list, x.aside) + '</article>';
   }
@@ -43,10 +72,10 @@
         '<h1>'+siteData.name.replace(/ ([^ ]+)$/,"<br>$1")+'</h1>'+
       '</div>'+
       '<div class="rail-meta">'+
-        '<a href="mailto:'+c.email+'">'+c.email+'</a>'+
-        '<a href="'+c.github+'" target="_blank" rel="noopener">'+c.githubLabel+'</a>'+
-        '<a href="'+c.linkedin+'">'+c.linkedinLabel+'</a>'+
-        '<a href="'+siteData.resume+'" target="_blank" rel="noopener">R\u00e9sum\u00e9 \u2197</a>'+
+        '<a href="mailto:'+c.email+'"><span class="rm-ico">'+ICON.email+'</span>'+c.email+'</a>'+
+        '<a href="'+c.github+'" target="_blank" rel="noopener"><span class="rm-ico">'+ICON.github+'</span>'+c.githubLabel+'</a>'+
+        '<a href="'+c.linkedin+'"><span class="rm-ico">'+ICON.linkedin+'</span>'+c.linkedinLabel+'</a>'+
+        '<a href="'+siteData.resume+'" target="_blank" rel="noopener"><span class="rm-ico">'+ICON.resume+'</span>R\u00e9sum\u00e9 \u2197</a>'+
       '</div>'+
       '<p class="now"><b>Currently</b><br>'+now+'</p>';
   }
