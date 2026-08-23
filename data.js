@@ -10,11 +10,11 @@ const siteData = {
     linkedin: "https://www.linkedin.com/in/vdkarthikeya", linkedinLabel: "LinkedIn / vdkarthikeya"
   },
   current: [
-    { role:"Reader", org:"CDSS 198 \u2014 Careers in Data Science & Computing" },
-    { role:"Tutor", org:"CDSS 198 \u2014 Transfer Seminar" }
+    { role:"Undergraduate Course Staff", org:"CDSS 198 \u2014 Careers in Data Science & Computing" },
+    { role:"Undergraduate Course Staff", org:"CDSS 198 \u2014 Transfer Seminar" }
   ],
   greeting: "Hi, I'm Karthik 👋",
-  intro: 'I\'m an undergraduate @ <a class="hl" href="https://www.berkeley.edu" target="_blank" rel="noopener">UC Berkeley</a>, studying <a class="hl" href="https://cdss.berkeley.edu/dsus" target="_blank" rel="noopener">Data Science</a> with Applied Math as domain emphasis. Right now I\'m supporting two CDSS 198 courses \u2014 as a Reader for Careers in Data Science & Computing and a tutor for the Transfer Seminar \u2014 after wrapping up internships at Guang Labs and IDX Exchange over the summer. My interests are in <span class="hl">Multimodal AI + Reinforcement Learning</span>.',
+  intro: 'I\'m an undergraduate @ <a class="hl" href="https://www.berkeley.edu" target="_blank" rel="noopener">UC Berkeley</a>, studying <a class="hl" href="https://cdss.berkeley.edu/dsus" target="_blank" rel="noopener">Data Science</a> with Applied Math as domain emphasis. Right now I\'m supporting two CDSS 198 courses as undergraduate course staff \u2014 one for Careers in Data Science & Computing, one for the Transfer Seminar \u2014 after wrapping up internships at Guang Labs and IDX Exchange over the summer. My interests are in <span class="hl">Multimodal AI + Reinforcement Learning</span>.',
   about: {
     bio: [
       'I\'m a rising senior at <a class="hl" href="https://www.berkeley.edu" target="_blank" rel="noopener">UC Berkeley</a> studying <a class="hl" href="https://cdss.berkeley.edu/dsus" target="_blank" rel="noopener">Data Science</a>, graduating in December 2027. I transferred in from De Anza College, where I earned an A.S. in Mathematics and Computer Science.',
@@ -46,7 +46,7 @@ const siteData = {
     ]
   },
   experiences: [
-    { featured:true, role:"Reader", company:"CDSS 198 \u2014 Careers in Data Science & Computing", logo:"assets/logos/cdss.png", location:"Berkeley, CA", dates:"Aug 2026 \u2014 Present",
+    { featured:true, role:"Undergraduate Course Staff (Reader)", company:"CDSS 198 \u2014 Careers in Data Science & Computing", logo:"assets/logos/cdss.png", location:"Berkeley, CA", dates:"Aug 2026 \u2014 Present",
       home:[
         "Supporting a career-focused seminar for CDSS undergraduates \u2014 facilitating weekly discussions and giving feedback on resumes, cover letters, and development plans.",
         "Researching and distributing job/internship listings, and helping coordinate alumni and industry guest visits."
@@ -57,13 +57,29 @@ const siteData = {
         "Research and distribute job and internship listings via Ed Discussion, and help coordinate alumni and industry guest visits and CDSS Industry Nexus events."
       ]
     },
-    { featured:true, role:"Tutor", company:"CDSS 198 \u2014 Transfer Seminar", logo:"assets/logos/cdss.png", location:"Berkeley, CA", dates:"Sep 2026 \u2014 Present",
+    { featured:true, role:"Undergraduate Course Staff (Tutor)", company:"CDSS 198 \u2014 Transfer Seminar", logo:"assets/logos/cdss.png", location:"Berkeley, CA", dates:"Sep 2026 \u2014 Present",
       home:[
-        "Supporting transfer students in CDSS 198's Transfer Seminar: Community & Scholar Strategies, alongside one other tutor."
+        "Supporting transfer students in CDSS 198's Transfer Seminar, alongside one other tutor."
       ],
       full:[
-        "Serve as tutor for CDSS 198: Transfer Seminar \u2014 Community & Scholar Strategies, taught by Prof. Narges Norouzi.",
-        "Support transfer students during scheduled study time and additional sessions through the semester, working alongside one other transfer tutor."
+        "Support transfer students in CDSS 198's Transfer Seminar during scheduled study time and additional sessions through the semester, working alongside one other transfer tutor."
+      ]
+    },
+    { featured:false, role:"Fung Fellow \u2014 Health + Innovation Track", company:"Fung Fellowship at UC Berkeley", logo:"assets/logos/fung.png", location:"Berkeley, CA", dates:"Aug 2026 \u2014 Present", bullets:[
+      "Selected for Berkeley's Fung Fellowship, Health + Innovation track.",
+      "Will build digital public-health tools with community partners using human-centered design."
+    ]},
+    { featured:false, role:"Undergraduate Course Staff (UCS1)", company:"CS 61A", url:"https://cs61a.org/", logo:"assets/logos/eecs.png", location:"Berkeley, CA", dates:"Jun 2026 \u2014 Aug 2026",
+      aside:"Failed my midterms in this class the first time around \u2014 now I'm the one grading them.",
+      home:[
+        "Served as course staff for CS 61A, Berkeley's introductory computer science course taught in Python, SQL, and Scheme.",
+        "Ran 4 weekly exam-prep sections, held office hours, and built autograders on Gradescope, handling regrade requests and extensions.",
+        "Wrote and reviewed midterm and final exam questions, and helped review two assignments."
+      ],
+      full:[
+        "Served as course staff for CS 61A, Berkeley's introductory computer science course taught in Python, SQL, and Scheme.",
+        "Ran 4 weekly exam-prep sections, held office hours, and built autograders on Gradescope, handling regrade requests and extension approvals throughout the semester.",
+        "Wrote and reviewed midterm and final exam questions, and helped review two assignments."
       ]
     },
     { featured:true, role:"Engineering Intern", company:"Guang Labs", url:"https://guanglabs.com/", logoDomain:"guanglabs.com", location:"Remote", dates:"May 2026 \u2014 Aug 2026",
@@ -79,9 +95,7 @@ const siteData = {
         "Designed a confidence-gated trust layer with a resample loop: when Gemini returns a low-trust result on a long video, the service re-samples different windows (excluding prior attempts), retries up to a configurable max, and tracks resample attempts and total model calls.",
         "Structured the codebase into isolated, testable modules — media resolver, segment sampler, trust evaluator, Gemini classifier provider, a deterministic fake provider for tests, a versioned prompt loader with strict JSON-schema contracts, and Pydantic schemas — behind a central VideoDomainService orchestrator.",
         "Validated it with 86 unit, integration, and acceptance tests plus a manual staging acceptance script, shipped a database migration with deploy docs, and drove the production path to done through code review after the initial branch wasn't wired end-to-end.",
-        "Separately built an end-to-end in-app notification framework spanning two Postgres tables, backend APIs (fetch, mark-read, mark-all-read, admin seed), and a React dashboard notification bell with unread counts, a mark-read popover, deep links, and 30-second polling.",
-        "Wired notification events into the video-ingest workers and the export pipeline as fire-and-forget calls, so a failed notification insert can never break the primary ingest or export path.",
-        "Covered the API, the emit helpers, and the bell component with tests, and opened a pull request for review; the migration still needs to run and the PR still needs review/merge before it's live in production."
+        "Separately built an end-to-end in-app notification framework — two Postgres tables, backend APIs, and a React dashboard bell with unread counts and 30-second polling — wired into the video-ingest and export pipelines as fire-and-forget calls, with test coverage and a pull request out for review."
       ]
     },
     { featured:false, role:"Data Science Intern", company:"IDX Exchange", url:"https://idxexchange.com/", logoDomain:"idxexchange.com", location:"Remote", dates:"Jun 2026 \u2014 Aug 2026",
@@ -98,23 +112,8 @@ const siteData = {
         "Benchmarked Linear Regression, Decision Tree, Random Forest, and XGBoost on the held-out month; the final XGBoost model (400 trees, max depth 8) reached R² 0.88 (dollar-scale) and MdAPE 8.64%, the project's headline metric."
       ]
     },
-    { featured:false, role:"Undergraduate Course Staff (UCS1)", company:"CS 61A", url:"https://cs61a.org/", logo:"assets/logos/eecs.png", location:"Berkeley, CA", dates:"Jun 2026 \u2014 Aug 2026",
-      aside:"Failed my midterms in this class the first time around \u2014 now I'm the one grading them.",
-      home:[
-        "Run 2 weekly exam-prep sections, office hours, grading, and regrade/extension requests for Berkeley's CS 61A (200+ students), an intro CS course taught in Python and Scheme."
-      ],
-      full:[
-        "Serve as course staff (UCS1) for CS 61A, Berkeley's 200+ student introductory computer science course taught in Python and Scheme.",
-        "Teach 2 weekly exam-prep sections, hold office hours, and author and deploy assignments on Gradescope.",
-        "Handle grading, autograders, regrade requests, and extensions for the course."
-      ]
-    },
-    { featured:false, role:"Incoming Fellow, Health + Innovation Track", company:"UC Berkeley \u2014 Fung Fellowship", logo:"assets/logos/fung.png", location:"Berkeley, CA", dates:"Fall 2026", bullets:[
-      "Selected for Berkeley's Fung Fellowship, Health + Innovation track.",
-      "Will build digital public-health tools with community partners using human-centered design."
-    ]},
     { featured:false, role:"Secretary", company:"Boundary.0", logo:"assets/logos/boundary0.png", location:"Cupertino, CA", dates:"Apr 2024 \u2014 Jun 2025", bullets:[
-      "Co-founded Boundary.0 to bridge students with industry after struggling, as a first-year, to find guidance for internships and work opportunities.",
+      "Served as one of Boundary.0's first officers, helping get the club off the ground with a mission to connect students with industry opportunities.",
       "Helped partner with 5+ companies across construction, finance, and computer science to pair students with hands-on experience.",
       "Coordinated board meetings to keep the club running efficiently and aligned with its mission.",
       "Organized launch and outreach events, pitching the club's vision to grow a 120+ member community."

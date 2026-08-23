@@ -42,10 +42,16 @@
   function expCard(x, full){
     var list = full ? (x.full || x.bullets) : (x.home || x.bullets);
     var companyPart = x.url ? '<a href="'+x.url+'" target="_blank" rel="noopener">'+x.company+'</a>' : x.company;
-    var loc = x.location ? " \u00b7 " + x.location : "";
-    return '<article class="entry"><div class="entry-head">'+logoBadge(x)+'<span class="entry-title"><b>'+x.role+'</b>, '+companyPart+'</span></div>'+
-      '<div class="entry-sub exp-when">'+x.dates+loc+'</div>'+
-      liList(list, x.aside) + '</article>';
+    var loc = x.location ? x.location : "";
+    return '<article class="entry entry-card">'+
+      logoBadge(x)+
+      '<div class="entry-body">'+
+        '<div class="entry-top"><span class="entry-org">'+companyPart+'</span><span class="entry-when">'+x.dates+'</span></div>'+
+        '<div class="entry-role">'+x.role+'</div>'+
+        (loc ? '<div class="entry-loc">'+loc+'</div>' : '') +
+        liList(list, x.aside) +
+      '</div>'+
+    '</article>';
   }
 
   function projCard(p, full){
