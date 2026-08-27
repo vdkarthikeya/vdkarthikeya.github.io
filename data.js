@@ -72,7 +72,6 @@ const siteData = {
       "Will build digital public-health tools with community partners using human-centered design."
     ]},
     { featured:false, role:"Undergraduate Course Staff (UCS1)", company:"CS 61A", url:"https://cs61a.org/", logo:"assets/logos/eecs.png", location:"Berkeley, CA", dates:"Jun 2026 \u2014 Aug 2026",
-      aside:"Failed my midterms in this class the first time around \u2014 now I'm the one grading them.",
       home:[
         "Served as course staff for CS 61A, Berkeley's introductory computer science course taught in Python, SQL, and Scheme.",
         "Ran 4 weekly exam-prep sections, held office hours, and built autograders on Gradescope, handling regrade requests and extensions.",
