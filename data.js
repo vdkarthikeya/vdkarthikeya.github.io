@@ -46,6 +46,16 @@ const siteData = {
     ]
   },
   experiences: [
+        { featured:true, role:"Undergraduate Course Staff (Tutor)", company:"CDSS 198 \u2014 Transfer Seminar", logo:"assets/logos/cdss.png", location:"Berkeley, CA", dates:"Aug 2026 \u2014 Present",
+      home:[
+             "Supporting transfer students in CDSS 198's Transfer Seminar \u2014 attending both weekly class sessions to help student study groups, holding office hours, and providing on-demand tutoring."
+      ],
+      full:[
+        "Support transfer students in CDSS 198: Transfer Seminar by attending both weekly class meetings (Tuesdays and Wednesdays) to help student study groups work through course material.",
+        "Hold weekly office hours and provide additional on-demand tutoring sessions as needed.",
+        "Attend weekly staff meetings with the course supervisor to debrief and give feedback on student progress."
+      ]
+    },
     { featured:true, role:"Undergraduate Course Staff (Reader)", company:"CDSS 198 \u2014 Careers in Data Science & Computing", logo:"assets/logos/cdss.png", location:"Berkeley, CA", dates:"Aug 2026 \u2014 Present",
       home:[
         "Supporting a career-focused seminar for CDSS undergraduates \u2014 facilitating weekly discussions and giving feedback on resumes, cover letters, and development plans.",
@@ -55,14 +65,6 @@ const siteData = {
         "Serve as Reader for CDSS 198: Careers in Data Science & Computing, a weekly seminar for CDSS undergraduates, supervised by Camille Roxas.",
         "Facilitate group discussions and activities, and give feedback on students' development plans, resumes, and cover letters.",
         "Research and distribute job and internship listings via Ed Discussion, and help coordinate alumni and industry guest visits and CDSS Industry Nexus events."
-      ]
-    },
-    { featured:true, role:"Undergraduate Course Staff (Tutor)", company:"CDSS 198 \u2014 Transfer Seminar", logo:"assets/logos/cdss.png", location:"Berkeley, CA", dates:"Sep 2026 \u2014 Present",
-      home:[
-        "Supporting transfer students in CDSS 198's Transfer Seminar, alongside one other tutor."
-      ],
-      full:[
-        "Support transfer students in CDSS 198's Transfer Seminar during scheduled study time and additional sessions through the semester, working alongside one other transfer tutor."
       ]
     },
     { featured:false, role:"Fung Fellow \u2014 Health + Innovation Track", company:"Fung Fellowship at UC Berkeley", logo:"assets/logos/fung.png", location:"Berkeley, CA", dates:"Aug 2026 \u2014 Present", bullets:[
