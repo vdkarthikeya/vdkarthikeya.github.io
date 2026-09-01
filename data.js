@@ -17,7 +17,7 @@ const siteData = {
   intro: 'I\'m an undergraduate @ <a class="hl" href="https://www.berkeley.edu" target="_blank" rel="noopener">UC Berkeley</a>, studying <a class="hl" href="https://cdss.berkeley.edu/dsus" target="_blank" rel="noopener">Data Science</a> with Applied Math as domain emphasis. Right now I\'m supporting two CDSS 198 courses as undergraduate course staff \u2014 one for Careers in Data Science & Computing, one for the Transfer Seminar \u2014 after wrapping up internships at Guang Labs and IDX Exchange over the summer. My interests are in <span class="hl">Multimodal AI + Reinforcement Learning</span>.',
   about: {
     bio: [
-      'I\'m a rising senior at <a class="hl" href="https://www.berkeley.edu" target="_blank" rel="noopener">UC Berkeley</a> studying <a class="hl" href="https://cdss.berkeley.edu/dsus" target="_blank" rel="noopener">Data Science</a>, graduating in December 2027. I transferred in from De Anza College, where I earned an A.S. in Mathematics and Computer Science.',
+      'I\'m a senior at <a class="hl" href="https://www.berkeley.edu" target="_blank" rel="noopener">UC Berkeley</a> studying <a class="hl" href="https://cdss.berkeley.edu/dsus" target="_blank" rel="noopener">Data Science</a>, graduating in December 2027. I transferred in from De Anza College, where I earned an A.S. in Mathematics and Computer Science.',
       'I grew up in <span class="hl">Vijayawada, India</span>, where pursuing an undergraduate degree in the U.S. \u2014 let alone aiming for UC Berkeley \u2014 was almost unheard of. I started at community college with no roadmap and no structured guidance, and figured out most of the path on my own. Through all of it the constant was my family, and especially <span class="hl">my father</span>: they believed I could do this long before I believed it myself, and I\'m here because of their love and support.',
       'I\'ve learned most of what I know through classes and coursework, taking the time to actually work through the material. My current focus is building toward <span class="hl">Machine Learning Engineer</span> roles \u2014 down the line, I want to pivot into <span class="hl">Machine Learning Research</span>.'
     ],
@@ -38,10 +38,13 @@ const siteData = {
       { term:"Summer 2026", rows:[
         { code:"CYPLAN 101", title:"Introduction to Urban Data Analytics", grade:"A" }
       ]},
-      { term:"Fall 2026", note:"Planned", rows:[
+      { term:"Fall 2026", rows:[
+        { code:"CS 170",    title:"Efficient Algorithms and Intractable Problems", grade:"IP", muted:true },
         { code:"CS 189",    title:"Introduction to Machine Learning", grade:"IP", muted:true },
+        { code:"CS 194",    title:"Functional Programming & AI-Assisted App Development", grade:"IP", muted:true },
+        { code:"CS 197",    title:"CS 61A Course Staff (Su 2026)", grade:"IP", muted:true },
         { code:"DATA C101", title:"Data Engineering", grade:"IP", muted:true },
-        { code:"EECS 127", title:"Optimization Models in Engineering", grade:"IP", muted:true }
+        { code:"ENGIN 188", title:"Fung Fellowship Seminar: Health + Innovation", grade:"IP", muted:true }
       ]}
     ]
   },
