@@ -11,10 +11,11 @@ const siteData = {
   },
   current: [
     { role:"Undergraduate Course Staff", org:"CDSS 198 \u2014 Careers in Data Science & Computing" },
-    { role:"Undergraduate Course Staff", org:"CDSS 198 \u2014 Transfer Seminar" }
+    { role:"Undergraduate Course Staff", org:"CDSS 198 \u2014 Transfer Seminar" },
+    { role:"Fung Fellow", org:"Health + Innovation \u2014 The After Collective" }
   ],
   greeting: "Hi, I'm Karthik 👋",
-  intro: 'I\'m an undergraduate @ <a class="hl" href="https://www.berkeley.edu" target="_blank" rel="noopener">UC Berkeley</a>, studying <a class="hl" href="https://cdss.berkeley.edu/dsus" target="_blank" rel="noopener">Data Science</a> with Applied Math as domain emphasis. Right now I\'m supporting two CDSS 198 courses as undergraduate course staff \u2014 one for Careers in Data Science & Computing, one for the Transfer Seminar \u2014 after wrapping up internships at Guang Labs and IDX Exchange over the summer. My interests are in <span class="hl">Multimodal AI + Reinforcement Learning</span>.',
+  intro: 'I\'m an undergraduate @ <a class="hl" href="https://www.berkeley.edu" target="_blank" rel="noopener">UC Berkeley</a>, studying <a class="hl" href="https://cdss.berkeley.edu/dsus" target="_blank" rel="noopener">Data Science</a> with Applied Math as domain emphasis. Right now I\'m supporting two CDSS 198 courses as undergraduate course staff \u2014 one for Careers in Data Science & Computing, one for the Transfer Seminar \u2014 and working with The After Collective as a Fung Fellow, after wrapping up internships at Guang Labs and IDX Exchange over the summer. My interests are in <span class="hl">Multimodal AI + Reinforcement Learning</span>.',
   about: {
     bio: [
       'I\'m a senior at <a class="hl" href="https://www.berkeley.edu" target="_blank" rel="noopener">UC Berkeley</a> studying <a class="hl" href="https://cdss.berkeley.edu/dsus" target="_blank" rel="noopener">Data Science</a>, graduating in December 2027. I transferred in from De Anza College, where I earned an A.S. in Mathematics and Computer Science.',
@@ -33,7 +34,9 @@ const siteData = {
       { term:"Spring 2026", rows:[
         { code:"CS 61B",   title:"Data Structures", grade:"A\u2212" },
         { code:"DATA C100", title:"Principles & Techniques of Data Science", grade:"A\u2212" },
-        { code:"DATA C140", title:"Probability for Data Science", grade:"A" }
+        { code:"DATA C140", title:"Probability for Data Science", grade:"A" },
+        { code:"DATA 198",  title:"Introduction to Data Science", grade:"P" },
+        { code:"IEOR 198",  title:"Introduction to Quantitative Finance", grade:"P" }
       ]},
       { term:"Summer 2026", rows:[
         { code:"CYPLAN 101", title:"Introduction to Urban Data Analytics", grade:"A" }
@@ -42,19 +45,24 @@ const siteData = {
         { code:"CS 170",    title:"Efficient Algorithms and Intractable Problems", grade:"IP", muted:true },
         { code:"CS 189",    title:"Introduction to Machine Learning", grade:"IP", muted:true },
         { code:"CS 194",    title:"Functional Programming & AI-Assisted App Development", grade:"IP", muted:true },
-        { code:"CS 197",    title:"CS 61A Course Staff (Su 2026)", grade:"IP", muted:true },
         { code:"DATA C101", title:"Data Engineering", grade:"IP", muted:true },
         { code:"ENGIN 188", title:"Fung Fellowship Seminar: Health + Innovation", grade:"IP", muted:true }
       ]}
     ]
   },
   experiences: [
-        { featured:true, role:"Undergraduate Course Staff (Tutor)", company:"CDSS 198 \u2014 Transfer Seminar", logo:"assets/logos/cdss.png", location:"Berkeley, CA", dates:"Aug 2026 \u2014 Present",
+    { featured:false, role:"Junior Mentor \u2014 CS 88 / DATA C88C", company:"Computer Science Mentors (CSM)", logo:"assets/logos/csm.png", location:"Berkeley, CA", dates:"Sep 2026 \u2014 Present", bullets:[
+      "Teach one weekly Transfer Affinity section for CS 88 / DATA C88C, reviewing the concepts and practice problems from the previous week's course content."
+    ]},
+    { featured:true, role:"Undergraduate Course Staff (Tutor)", company:"CDSS 198 \u2014 Transfer Seminar", logo:"assets/logos/cdss.png", location:"Berkeley, CA", dates:"Aug 2026 \u2014 Present",
       home:[
-             "Supporting transfer students in CDSS 198's Transfer Seminar \u2014 attending both weekly class sessions to help student study groups, holding office hours, and providing on-demand tutoring."
+        "Supporting transfer students in CDSS 198's Transfer Seminar \u2014 attending both weekly class sessions to help student study groups, holding office hours, and providing on-demand tutoring.",
+        "Hold exam review sessions for lower-division CS and DS courses like CS 61A and Data 8, and create worksheets for students to work through during the seminar's study sessions."
       ],
       full:[
         "Support transfer students in CDSS 198: Transfer Seminar by attending both weekly class meetings (Tuesdays and Wednesdays) to help student study groups work through course material.",
+        "Hold review sessions ahead of exams for lower-division CS and data science courses, including CS 61A and Data 8.",
+        "Create worksheets for students to work through during the seminar's study sessions.",
         "Hold weekly office hours and provide additional on-demand tutoring sessions as needed.",
         "Attend weekly staff meetings with the course supervisor to debrief and give feedback on student progress."
       ]
@@ -65,15 +73,23 @@ const siteData = {
         "Researching and distributing job/internship listings, and helping coordinate alumni and industry guest visits."
       ],
       full:[
-        "Serve as Reader for CDSS 198: Careers in Data Science & Computing, a weekly seminar for CDSS undergraduates, supervised by Camille Roxas.",
+        "Serve as Reader for CDSS 198: Careers in Data Science & Computing, a weekly seminar for CDSS undergraduates.",
         "Facilitate group discussions and activities, and give feedback on students' development plans, resumes, and cover letters.",
         "Research and distribute job and internship listings via Ed Discussion, and help coordinate alumni and industry guest visits and CDSS Industry Nexus events."
       ]
     },
-    { featured:false, role:"Fung Fellow \u2014 Health + Innovation Track", company:"Fung Fellowship at UC Berkeley", logo:"assets/logos/fung.png", location:"Berkeley, CA", dates:"Aug 2026 \u2014 Present", bullets:[
-      "Selected for Berkeley's Fung Fellowship, Health + Innovation track.",
-      "Will build digital public-health tools with community partners using human-centered design."
-    ]},
+    { featured:true, role:"Fung Fellow \u2014 Health + Innovation Track", company:"Fung Fellowship at UC Berkeley", logo:"assets/logos/fung.png", location:"Berkeley, CA", dates:"Aug 2026 \u2014 Present",
+      home:[
+        "Selected for Berkeley's Fung Fellowship, Health + Innovation track, and placed on the team for The After Collective, a project applying psychological science and agentic AI to support disaster survivors.",
+        "Working on a free, science-backed, trauma-informed AI recovery coach, developed with researchers at Stanford's Department of Psychiatry and Center for AI for Mental Health."
+      ],
+      full:[
+        "Selected for Berkeley's Fung Fellowship, Health + Innovation track, which builds digital public-health tools with industry and community partners using human-centered design.",
+        "Placed on the team for The After Collective, a project applying psychological science and agentic AI to help disaster survivors through long-term recovery, developed with researchers at Stanford's Department of Psychiatry and Center for AI for Mental Health.",
+        "The platform is a free, science-backed, trauma-informed AI recovery coach that helps survivors complete recovery tasks, such as room-by-room inventories of lost belongings to share with insurance or FEMA.",
+        "Working with the team on product development for the platform, whose key challenges are context-aware recovery support, safe and private AI usage, and agentic AI that can carry out tasks end to end."
+      ]
+    },
     { featured:false, role:"Undergraduate Course Staff (UCS1)", company:"CS 61A", url:"https://cs61a.org/", logo:"assets/logos/eecs.png", location:"Berkeley, CA", dates:"Jun 2026 \u2014 Aug 2026",
       home:[
         "Served as course staff for CS 61A, Berkeley's introductory computer science course taught in Python, SQL, and Scheme.",
@@ -84,22 +100,6 @@ const siteData = {
         "Served as course staff for CS 61A, Berkeley's introductory computer science course taught in Python, SQL, and Scheme.",
         "Ran 4 weekly exam-prep sections, held office hours, and built autograders on Gradescope, handling regrade requests and extension approvals throughout the semester.",
         "Wrote and reviewed midterm and final exam questions, and helped review two assignments."
-      ]
-    },
-    { featured:true, role:"Engineering Intern", company:"Guang Labs", url:"https://guanglabs.com/", logoDomain:"guanglabs.com", location:"Remote", dates:"May 2026 \u2014 Aug 2026",
-      home:[
-        "Built an async video/image domain-classification API on FastAPI with Auth0 auth and a Postgres job store — submit-and-poll REST endpoints that run classification as background jobs and return structured JSON (domain labels, confidence, evidence).",
-        "Implemented the full Python pipeline: resolving media from four source types (local, S3, HTTP), auto-detecting image vs. short/long video with ffprobe/ffmpeg, and classifying via Gemini multimodal calls behind a confidence-gated trust layer.",
-        "Added a trust-gated resample loop for low-trust long videos, split the service into isolated testable modules, and backed it with 86 unit, integration, and acceptance tests.",
-        "Also built an end-to-end in-app notification framework — Postgres-backed tables, backend APIs, and a React dashboard bell with unread counts and 30-second polling — wired into the video-ingest and export pipelines, with tests and a PR out for review."
-      ],
-      full:[
-        "Built an async video/image domain-classification API on a FastAPI backend with Auth0 authentication and a PostgreSQL job store: clients submit one or more media items, poll for job status and granular per-item progress, and receive structured JSON with domain labels (sports, gaming, talking-head, etc.), confidence scores, evidence strings, and rollup metadata.",
-        "Implemented the full classification pipeline in Python — resolving media from four source types (local path, S3 key, S3 URL, HTTP URL), detecting duration and image vs. short/long video via ffprobe with no client-supplied media type, preparing clips with ffmpeg, and attaching real media to Gemini multimodal calls.",
-        "Designed a confidence-gated trust layer with a resample loop: when Gemini returns a low-trust result on a long video, the service re-samples different windows (excluding prior attempts), retries up to a configurable max, and tracks resample attempts and total model calls.",
-        "Structured the codebase into isolated, testable modules — media resolver, segment sampler, trust evaluator, Gemini classifier provider, a deterministic fake provider for tests, a versioned prompt loader with strict JSON-schema contracts, and Pydantic schemas — behind a central VideoDomainService orchestrator.",
-        "Validated it with 86 unit, integration, and acceptance tests plus a manual staging acceptance script, shipped a database migration with deploy docs, and drove the production path to done through code review after the initial branch wasn't wired end-to-end.",
-        "Separately built an end-to-end in-app notification framework — two Postgres tables, backend APIs, and a React dashboard bell with unread counts and 30-second polling — wired into the video-ingest and export pipelines as fire-and-forget calls, with test coverage and a pull request out for review."
       ]
     },
     { featured:false, role:"Data Science Intern", company:"IDX Exchange", url:"https://idxexchange.com/", logoDomain:"idxexchange.com", location:"Remote", dates:"Jun 2026 \u2014 Aug 2026",
@@ -114,6 +114,22 @@ const siteData = {
         "Built the preprocessing: dropped high-missingness columns and invalid rows, applied statistical outlier caps on lot size and implausible sale prices, log-transformed the target, and split chronologically with the most recent month held out as test.",
         "Diagnosed a catastrophic baseline R² through a worst-prediction error analysis and traced it to a train/test data-leakage bug — outlier thresholds were computed over the full dataset before the split. Fixed it by recomputing every threshold from training data only and freezing them onto the test set.",
         "Benchmarked Linear Regression, Decision Tree, Random Forest, and XGBoost on the held-out month; the final XGBoost model (400 trees, max depth 8) reached R² 0.88 (dollar-scale) and MdAPE 8.64%, the project's headline metric."
+      ]
+    },
+    { featured:false, role:"Engineering Intern", company:"Guang Labs", url:"https://guanglabs.com/", logoDomain:"guanglabs.com", location:"Remote", dates:"May 2026 \u2014 Aug 2026",
+      home:[
+        "Built an async video/image domain-classification API on FastAPI with Auth0 auth and a Postgres job store — submit-and-poll REST endpoints that run classification as background jobs and return structured JSON (domain labels, confidence, evidence).",
+        "Implemented the full Python pipeline: resolving media from four source types (local, S3, HTTP), auto-detecting image vs. short/long video with ffprobe/ffmpeg, and classifying via Gemini multimodal calls behind a confidence-gated trust layer.",
+        "Added a trust-gated resample loop for low-trust long videos, split the service into isolated testable modules, and backed it with 86 unit, integration, and acceptance tests.",
+        "Also built an end-to-end in-app notification framework — Postgres-backed tables, backend APIs, and a React dashboard bell with unread counts and 30-second polling — wired into the video-ingest and export pipelines, with tests and a PR out for review."
+      ],
+      full:[
+        "Built an async video/image domain-classification API on a FastAPI backend with Auth0 authentication and a PostgreSQL job store: clients submit one or more media items, poll for job status and granular per-item progress, and receive structured JSON with domain labels (sports, gaming, talking-head, etc.), confidence scores, evidence strings, and rollup metadata.",
+        "Implemented the full classification pipeline in Python — resolving media from four source types (local path, S3 key, S3 URL, HTTP URL), detecting duration and image vs. short/long video via ffprobe with no client-supplied media type, preparing clips with ffmpeg, and attaching real media to Gemini multimodal calls.",
+        "Designed a confidence-gated trust layer with a resample loop: when Gemini returns a low-trust result on a long video, the service re-samples different windows (excluding prior attempts), retries up to a configurable max, and tracks resample attempts and total model calls.",
+        "Structured the codebase into isolated, testable modules — media resolver, segment sampler, trust evaluator, Gemini classifier provider, a deterministic fake provider for tests, a versioned prompt loader with strict JSON-schema contracts, and Pydantic schemas — behind a central VideoDomainService orchestrator.",
+        "Validated it with 86 unit, integration, and acceptance tests plus a manual staging acceptance script, shipped a database migration with deploy docs, and drove the production path to done through code review after the initial branch wasn't wired end-to-end.",
+        "Separately built an end-to-end in-app notification framework — two Postgres tables, backend APIs, and a React dashboard bell with unread counts and 30-second polling — wired into the video-ingest and export pipelines as fire-and-forget calls, with test coverage and a pull request out for review."
       ]
     },
     { featured:false, role:"Secretary", company:"Boundary.0", logo:"assets/logos/boundary0.png", location:"Cupertino, CA", dates:"Apr 2024 \u2014 Jun 2025", bullets:[
@@ -146,6 +162,19 @@ const siteData = {
     ]}
   ],
   projects: [
+    { featured:false, title:"SightLine", stack:"Python, PyTorch, OpenCV, YOLO", repo:null,
+      aside:"Open Projects team project, fall 2026 (in progress).",
+      home:[
+        "ML team member on SightLine, a mobile app that connects to Meta Ray-Ban glasses, captures audio and video through the day, and outputs a 60-second edited recap video.",
+        "The ML pipeline splits footage into clips, ranks them with multimodal models on audio and visual cues, and assembles the top clips into a daily recap."
+      ],
+      full:[
+        "Member of the ML team on SightLine, a mobile app that connects to a user's Meta Ray-Ban glasses, captures audio and video throughout the day, and outputs a 60-second edited recap video at the end of the day.",
+        "The ML pipeline pulls footage from the glasses, breaks it into clips, uses multimodal models to rank clips based on audio and visual cues, and assembles the top clips into a daily recap through automated video rendering.",
+        "The ML team builds and fine-tunes computer vision and audio scoring models to identify the top moments of each day (PyTorch, OpenCV, YOLO).",
+        "Working alongside the iOS team (mobile app and Meta Wearables SDK integration) and the backend team (FastAPI, Supabase, Docker for API services, pipeline orchestration, and final video assembly)."
+      ]
+    },
     { featured:true, title:"Movie Genre Classification", stack:"Python, PyTorch, SentenceTransformers, scikit-learn",
       repo:"https://github.com/vdkarthikeya/movie-genre-classification-nlp",
       aside:"Started as my DSS Decal project, spring 2026.",
