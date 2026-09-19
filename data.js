@@ -162,7 +162,7 @@ const siteData = {
     ]}
   ],
   projects: [
-    { featured:false, title:"SightLine", stack:"Python, PyTorch, OpenCV, YOLO", repo:null,
+    { featured:true, title:"SightLine", stack:"Python, PyTorch, OpenCV, YOLO", repo:"https://github.com/vdkarthikeya/sightline-ml-public",
       aside:"Open Projects team project, fall 2026 (in progress).",
       home:[
         "ML team member on SightLine, a mobile app that connects to Meta Ray-Ban glasses, captures audio and video through the day, and outputs a 60-second edited recap video.",
@@ -173,6 +173,20 @@ const siteData = {
         "The ML pipeline pulls footage from the glasses, breaks it into clips, uses multimodal models to rank clips based on audio and visual cues, and assembles the top clips into a daily recap through automated video rendering.",
         "The ML team builds and fine-tunes computer vision and audio scoring models to identify the top moments of each day (PyTorch, OpenCV, YOLO).",
         "Working alongside the iOS team (mobile app and Meta Wearables SDK integration) and the backend team (FastAPI, Supabase, Docker for API services, pipeline orchestration, and final video assembly)."
+      ]
+    },
+    { featured:false, title:"SB 79 Transit-Oriented Development Analysis", stack:"ArcGIS Online, StoryMaps",
+      repo:"https://github.com/vdkarthikeya/sb79-tod-analysis-public",
+      aside:"Group research project for CYPLAN 101, summer 2026.",
+      home:[
+        "Geospatial eligibility analysis of the City of Los Angeles under California's SB 79, built in ArcGIS Online.",
+        "Identified 6,413 eligible zoning features near qualifying transit stops and overlaid four equity and risk layers. <a class='repo-inline' href='https://storymaps.arcgis.com/stories/44ec37af588b472ba6affe2062274266' target='_blank' rel='noopener'>StoryMap \u2197</a>"
+      ],
+      full:[
+        "Built a GIS eligibility engine in ArcGIS Online that flags zoning features in the City of Los Angeles near qualifying transit stops under SB 79, which allows denser housing near transit.",
+        "The final eligible layer contains 6,413 zoning features, each characterized against four equity and risk layers: TCAC/HCD opportunity areas, displacement-risk tracts, CalEnviroScreen 4.0, and CAL FIRE fire hazard zones.",
+        "Delivered the work as a research paper, a policy brief, and an interactive <a class='repo-inline' href='https://storymaps.arcgis.com/stories/44ec37af588b472ba6affe2062274266' target='_blank' rel='noopener'>StoryMap \u2197</a>, as a two-person group project.",
+        "Wrote the Methods, Results, Discussion (limitations), Abstract, and Appendices sections of the paper."
       ]
     },
     { featured:true, title:"Movie Genre Classification", stack:"Python, PyTorch, SentenceTransformers, scikit-learn",
@@ -191,7 +205,7 @@ const siteData = {
         "Found that a simple Logistic Regression on 1024-dim e5 embeddings outperformed the boosted trees while training roughly 12× faster — a deliberate accuracy-vs-compute takeaway."
       ]
     },
-    { featured:true, title:"Housing Price & Assessment Bias", stack:"pandas, NumPy, scikit-learn", repo:null,
+    { featured:true, title:"Housing Price & Assessment Bias", stack:"pandas, NumPy, scikit-learn", repo:"https://github.com/vdkarthikeya/housing-price-assessment-bias-public",
       home:[
         "Linear-regression pipeline on 200K+ Cook County records with 15+ engineered geographic and interaction features.",
         "Reached test RMSE 0.562 via 4-fold cross-validation.",
@@ -204,7 +218,7 @@ const siteData = {
         "Went beyond accuracy to quantify systematic over- and under-estimation across price bands, connecting modeling choices to documented inequities in property-tax assessment."
       ]
     },
-    { featured:true, title:"Email Spam / Ham Classifier", stack:"scikit-learn, pandas, NumPy", repo:null,
+    { featured:false, title:"Email Spam / Ham Classifier", stack:"scikit-learn, pandas, NumPy", repo:"https://github.com/vdkarthikeya/spam-ham-classifier-public",
       home:[
         "Engineered 50+ features from raw email text into a numeric feature matrix.",
         "L1-regularized Logistic Regression tuned with GridSearchCV and 10-fold cross-validation.",
@@ -229,7 +243,7 @@ const siteData = {
         "Used the comparison to reason about interpretability versus predictive accuracy across an end-to-end workflow."
       ]
     },
-    { featured:false, title:"Scheme Interpreter", stack:"Python", repo:null,
+    { featured:false, title:"Scheme Interpreter", stack:"Python", repo:"https://github.com/vdkarthikeya/scheme-interpreter-public",
       home:[
         "Interpreter for a subset of Scheme built around a scheme_eval / scheme_apply cycle.",
         "Implemented environment frames, special forms, and tail-call optimization."
@@ -241,7 +255,7 @@ const siteData = {
         "Reinforced how a language is parsed, represented, evaluated, and extended \u2014 the mechanics behind features most programmers take for granted."
       ]
     },
-    { featured:false, title:"Ngordnet", stack:"Java", repo:null,
+    { featured:false, title:"Ngordnet", stack:"Java", repo:"https://github.com/vdkarthikeya/ngordnet-public",
       home:[
         "Java tool linking a WordNet semantic graph with Google NGrams historical word-frequency data, built on a directed graph (adjacency list) with recursive DFS.",
         "Resolves hyponyms for single or multi-word queries via set intersection and surfaces the k most historically popular words in a category."
@@ -253,7 +267,7 @@ const siteData = {
         "Debugged a subtle correctness bug where synset IDs split across multiple lines were being overwritten instead of merged, silently dropping hyponyms — fixed by appending to existing entries."
       ]
     },
-    { featured:false, title:"Build Your Own World", stack:"Java", repo:null,
+    { featured:false, title:"Build Your Own World", stack:"Java", repo:"https://github.com/vdkarthikeya/build-your-own-world-public",
       home:[
         "Java dungeon-crawler with deterministic, seed-based procedural world generation — rooms connected by minimum-spanning-tree hallways built with Kruskal's algorithm.",
         "BFS powers avatar click-to-move pathfinding and enemy chasing, with a precomputed BFS distance map for fast, evenly-spread enemy and item spawning."
