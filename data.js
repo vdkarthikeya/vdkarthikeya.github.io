@@ -92,6 +92,11 @@ const siteData = {
       home:[
         "Selected to serve on the Dean's Cabinet for Berkeley's College of Computing, Data Science, and Society (CDSS), a student group that advises CDSS leadership on the student experience.",
         "Represent transfer students, meeting with Associate Dean Narges Norouzi and sharing feedback through meetings, email, and surveys."
+      ],
+      full:[
+        "Selected to serve on the Dean's Cabinet for Berkeley's College of Computing, Data Science, and Society (CDSS), a student group that advises CDSS leadership and offers recommendations on the student experience.",
+        "Serve as the Transfer Representative, bringing the transfer student perspective to CDSS leadership.",
+        "Meet with Associate Dean Narges Norouzi and share additional feedback through email and brief surveys."
       ]
     },
     { featured:false, role:"Junior Mentor \u2014 CS 88 / DATA C88C", company:"Computer Science Mentors (CSM)", logo:"assets/logos/csm.png", location:"Berkeley, CA", dates:"Sep 2026 \u2014 Present", bullets:[
