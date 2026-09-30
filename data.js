@@ -51,31 +51,29 @@ const siteData = {
     ]
   },
   experiences: [
-    { featured:false, role:"Junior Mentor \u2014 CS 88 / DATA C88C", company:"Computer Science Mentors (CSM)", logo:"assets/logos/csm.png", location:"Berkeley, CA", dates:"Sep 2026 \u2014 Present", bullets:[
-      "Teach one weekly Transfer Affinity section for CS 88 / DATA C88C, reviewing the concepts and practice problems from the previous week's course content."
-    ]},
     { featured:true, role:"Undergraduate Course Staff (Tutor)", company:"CDSS 198 \u2014 Transfer Seminar", logo:"assets/logos/cdss.png", location:"Berkeley, CA", dates:"Aug 2026 \u2014 Present",
       home:[
         "Supporting transfer students in CDSS 198's Transfer Seminar \u2014 attending both weekly class sessions to help student study groups, holding office hours, and providing on-demand tutoring.",
-        "Hold exam review sessions for lower-division CS and DS courses like CS 61A and Data 8, and create worksheets for students to work through during the seminar's study sessions."
+        "Create worksheets for classes like CS 61A and Data 8 based on students' requests and go over them in study sessions; also hold midterm Q&A sessions for CS 61A, Data 8, and Data 100."
       ],
       full:[
         "Support transfer students in CDSS 198: Transfer Seminar by attending both weekly class meetings (Tuesdays and Wednesdays) to help student study groups work through course material.",
-        "Hold review sessions ahead of exams for lower-division CS and data science courses, including CS 61A and Data 8.",
-        "Create worksheets for students to work through during the seminar's study sessions.",
-        "Hold weekly office hours and provide additional on-demand tutoring sessions as needed.",
+        "Create worksheets for students from classes like CS 61A and Data 8 based on their requests, and go over them in the seminar's study sessions.",
+        "Provide students with one-on-one guidance and advice, and hold weekly office hours plus additional on-demand tutoring sessions as needed.",
+        "Hold midterm Q&A sessions for lower-division CS and data science courses, including CS 61A, Data 8, and Data 100.",
         "Attend weekly staff meetings with the course supervisor to debrief and give feedback on student progress."
       ]
     },
     { featured:true, role:"Undergraduate Course Staff (Reader)", company:"CDSS 198 \u2014 Careers in Data Science & Computing", logo:"assets/logos/cdss.png", location:"Berkeley, CA", dates:"Aug 2026 \u2014 Present",
       home:[
         "Supporting a career-focused seminar for CDSS undergraduates \u2014 facilitating weekly discussions and giving feedback on resumes, cover letters, and development plans.",
-        "Researching and distributing job/internship listings, and helping coordinate alumni and industry guest visits."
+        "Gave a live demo on using AI to tailor resumes for internships and jobs, and facilitated connections between alumni and the course facilitator."
       ],
       full:[
         "Serve as Reader for CDSS 198: Careers in Data Science & Computing, a weekly seminar for CDSS undergraduates.",
-        "Facilitate group discussions and activities, and give feedback on students' development plans, resumes, and cover letters.",
-        "Research and distribute job and internship listings via Ed Discussion, and help coordinate alumni and industry guest visits and CDSS Industry Nexus events."
+        "Facilitate class discussions and activities, and give feedback on students' development plans, resumes, and cover letters.",
+        "Gave a live demo in class on how to use AI to tailor resumes for internships and jobs.",
+        "Facilitated connections between alumni and the course facilitator, and research and distribute job and internship listings via Ed Discussion."
       ]
     },
     { featured:true, role:"Fung Fellow \u2014 Health + Innovation Track", company:"Fung Fellowship at UC Berkeley", logo:"assets/logos/fung.png", location:"Berkeley, CA", dates:"Aug 2026 \u2014 Present",
@@ -90,6 +88,15 @@ const siteData = {
         "Working with the team on product development for the platform, whose key challenges are context-aware recovery support, safe and private AI usage, and agentic AI that can carry out tasks end to end."
       ]
     },
+    { featured:false, role:"Transfer Representative", company:"CDSS Dean's Cabinet", logo:"assets/logos/cdss.png", location:"Berkeley, CA", dates:"Sep 2026 \u2014 Present",
+      home:[
+        "Selected to serve on the Dean's Cabinet for Berkeley's College of Computing, Data Science, and Society (CDSS), a student group that advises CDSS leadership on the student experience.",
+        "Represent transfer students, meeting with Associate Dean Narges Norouzi and sharing feedback through meetings, email, and surveys."
+      ]
+    },
+    { featured:false, role:"Junior Mentor \u2014 CS 88 / DATA C88C", company:"Computer Science Mentors (CSM)", logo:"assets/logos/csm.png", location:"Berkeley, CA", dates:"Sep 2026 \u2014 Present", bullets:[
+      "Teach a weekly Transfer Affinity section for CS 88 / DATA C88C, going over the problems curated by CSM mentors and reviewing the previous week's course concepts."
+    ]},
     { featured:false, role:"Undergraduate Course Staff (UCS1)", company:"CS 61A", url:"https://cs61a.org/", logo:"assets/logos/eecs.png", location:"Berkeley, CA", dates:"Jun 2026 \u2014 Aug 2026",
       home:[
         "Served as course staff for CS 61A, Berkeley's introductory computer science course taught in Python, SQL, and Scheme.",
@@ -163,7 +170,7 @@ const siteData = {
   ],
   projects: [
     { featured:true, title:"SightLine", stack:"Python, PyTorch, OpenCV, YOLO", repo:"https://github.com/vdkarthikeya/sightline-ml-public",
-      aside:"Open Projects team project, fall 2026 (in progress).",
+      aside:"Open Projects team project, Fall 2026 (In Progress).",
       home:[
         "ML team member on SightLine, a mobile app that connects to Meta Ray-Ban glasses, captures audio and video through the day, and outputs a 60-second edited recap video.",
         "The ML pipeline splits footage into clips, ranks them with multimodal models on audio and visual cues, and assembles the top clips into a daily recap."
@@ -177,7 +184,7 @@ const siteData = {
     },
     { featured:false, title:"SB 79 Transit-Oriented Development Analysis", stack:"ArcGIS Online, StoryMaps",
       repo:"https://github.com/vdkarthikeya/sb79-tod-analysis-public",
-      aside:"Group research project for CYPLAN 101, summer 2026.",
+      aside:"Group research project for CYPLAN 101, Summer 2026.",
       home:[
         "Geospatial eligibility analysis of the City of Los Angeles under California's SB 79, built in ArcGIS Online.",
         "Identified 6,413 eligible zoning features near qualifying transit stops and overlaid four equity and risk layers. <a class='repo-inline' href='https://storymaps.arcgis.com/stories/44ec37af588b472ba6affe2062274266' target='_blank' rel='noopener'>StoryMap \u2197</a>"
@@ -191,7 +198,7 @@ const siteData = {
     },
     { featured:true, title:"Movie Genre Classification", stack:"Python, PyTorch, SentenceTransformers, scikit-learn",
       repo:"https://github.com/vdkarthikeya/movie-genre-classification-nlp",
-      aside:"Started as my DSS Decal project, spring 2026.",
+      aside:"Started as my DSS Decal project, Spring 2026.",
       home:[
         "Multi-label genre prediction on 42K+ films across 20+ genres using MiniLM, MPNet, and e5-large-v2 embeddings.",
         "Rare-genre cutoffs and per-label threshold tuning lifted Macro F1 from 0.48 to 0.66 (Micro F1 0.68).",
