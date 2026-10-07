@@ -175,6 +175,6 @@ a.hl:hover { opacity:.65; }
 }
 @media (prefers-reduced-motion:reduce) { *, .page { animation:none !important; transition:none !important; scroll-behavior:auto; } }
 
-.sect-label { text-transform:uppercase; letter-spacing:.06em; }
-.tab { font-weight:500; font-size:13px; letter-spacing:.08em; text-transform:uppercase; padding:7px 15px; min-height:36px; }
+.sect-label { text-transform:none; letter-spacing:0; }
+.tab { font-weight:500; font-size:15px; letter-spacing:.01em; text-transform:none; padding:7px 15px; min-height:36px; }
 

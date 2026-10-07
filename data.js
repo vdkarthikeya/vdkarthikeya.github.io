@@ -344,7 +344,7 @@ const siteData = {
     ],
     [
       "leadership",
-      "Leadership & involvement",
+      "Leadership & Involvement",
       "Teaching, cabinet and clubs"
     ],
     [
