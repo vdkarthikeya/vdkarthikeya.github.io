@@ -67,7 +67,9 @@ a.hl:hover { opacity:.65; }
 .xp:first-of-type { border-top:1px solid var(--line); }
 .xp-head { display:grid; grid-template-columns:auto minmax(0,1fr) auto auto; grid-template-areas:"logo main side toggle"; align-items:center; column-gap:18px; padding:26px 0; cursor:pointer; }
 .ent-logo { grid-area:logo; width:56px; height:56px; border-radius:12px; border:1px solid var(--line); background:#fff; overflow:hidden; display:block; position:relative; }
-.ent-logo img { width:100%; height:100%; object-fit:contain; display:block; padding:4px; }
+.ent-logo img { width:100%; height:100%; object-fit:cover; display:block; padding:0; }
+.ent-logo img[src*="isa-deanza"] { transform:scale(1.9); }
+.ent-logo img[src*="csm"] { object-fit:contain; transform:scale(2.1); }
 .ent-logo-fallback { display:none; width:100%; height:100%; align-items:center; justify-content:center; font-family:'Vollkorn',serif; font-weight:600; font-size:18px; color:#0A0A0A; }
 .xp-main { grid-area:main; min-width:0; }
 .xp-org { font-family:'Vollkorn',serif; font-size:22px; font-weight:600; line-height:1.25; }
