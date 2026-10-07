@@ -12,25 +12,26 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
 <link rel="stylesheet" href="styles.css">
+<script>var __l=false;try{__l=localStorage.getItem("theme")==="light"}catch(e){}if(!__l)document.documentElement.classList.add("dark");</script>
 </head>
 <body>
+  <button class="theme-corner" id="themeBtn" aria-label="Toggle dark mode"><span id="themeIco">&#9728;</span></button>
 
-  <nav class="pill" aria-label="Pages">
-    <button class="active" data-page="home">HOME</button>
-    <button data-page="about">ABOUT</button>
-    <button data-page="experience">EXPERIENCE</button>
-    <button data-page="projects">PROJECTS</button>
-    <button data-page="courses">COURSES</button>
-  </nav>
-  <button class="theme-corner" id="themeBtn" aria-label="Toggle dark mode"><span id="themeIco">☀</span></button>
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="drawer" aria-hidden="true" aria-label="Sections"></aside>
 
   <div class="wrap">
     <div class="grid">
       <aside class="rail" id="rail"></aside>
       <main class="content">
+        <div class="menu-row">
+          <button class="menu-btn" id="menuBtn" aria-label="Open sections menu" aria-expanded="false" aria-controls="drawer">
+            <span class="bars"><i></i><i></i><i></i></span><span class="menu-label" id="menuLabel">About</span>
+          </button>
+        </div>
         <section class="page active" id="page-home"></section>
-        <section class="page" id="page-about"></section>
         <section class="page" id="page-experience"></section>
+        <section class="page" id="page-leadership"></section>
         <section class="page" id="page-projects"></section>
         <section class="page" id="page-courses"></section>
       </main>

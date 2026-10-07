@@ -1,303 +1,359 @@
-/* === Edit your content here. Everything the site renders lives in this file. === */
-/* ===================== content ===================== */
+/* Edit your content here. Everything the site shows comes from this file. */
 const siteData = {
-  name: "Dhana Karthikeya Ventrapragada",
-  photo: "profile.JPG",
-  resume: "https://vdkarthikeya.github.io/Resume.pdf",
-  contact: {
-    email: "vdkarthikeya@berkeley.edu",
-    github: "https://github.com/vdkarthikeya", githubLabel: "GitHub / vdkarthikeya",
-    linkedin: "https://www.linkedin.com/in/vdkarthikeya", linkedinLabel: "LinkedIn / vdkarthikeya"
+  "name": "Dhana Karthikeya Ventrapragada",
+  "short": "Karthik",
+  "photo": "profile.JPG",
+  "resume": "https://vdkarthikeya.github.io/Resume.pdf",
+  "contact": {
+    "email": "vdkarthikeya@berkeley.edu",
+    "github": "https://github.com/vdkarthikeya",
+    "linkedin": "https://www.linkedin.com/in/vdkarthikeya"
   },
-  current: [
-    { role:"Undergraduate Course Staff", org:"CDSS 198 \u2014 Careers in Data Science & Computing" },
-    { role:"Undergraduate Course Staff", org:"CDSS 198 \u2014 Transfer Seminar" },
-    { role:"Fung Fellow", org:"Health + Innovation \u2014 The After Collective" }
+  "current": [
+    "Transfer Representative, CDSS Dean's Cabinet",
+    "Course Staff, CDSS 198",
+    "Fung Fellow"
   ],
-  greeting: "Hi, I'm Karthik 👋",
-  intro: 'I\'m an undergraduate @ <a class="hl" href="https://www.berkeley.edu" target="_blank" rel="noopener">UC Berkeley</a>, studying <a class="hl" href="https://cdss.berkeley.edu/dsus" target="_blank" rel="noopener">Data Science</a> with Applied Math as domain emphasis. Right now I\'m supporting two CDSS 198 courses as undergraduate course staff \u2014 one for Careers in Data Science & Computing, one for the Transfer Seminar \u2014 and working with The After Collective as a Fung Fellow, after wrapping up internships at Guang Labs and IDX Exchange over the summer. My interests are in <span class="hl">Multimodal AI + Reinforcement Learning</span>.',
-  about: {
-    bio: [
-      'I\'m a senior at <a class="hl" href="https://www.berkeley.edu" target="_blank" rel="noopener">UC Berkeley</a> studying <a class="hl" href="https://cdss.berkeley.edu/dsus" target="_blank" rel="noopener">Data Science</a>, graduating in December 2027. I transferred in from De Anza College, where I earned an A.S. in Mathematics and Computer Science.',
-      'I grew up in <span class="hl">Vijayawada, India</span>, where pursuing an undergraduate degree in the U.S. \u2014 let alone aiming for UC Berkeley \u2014 was almost unheard of. I started at community college with no roadmap and no structured guidance, and figured out most of the path on my own. Through all of it the constant was my family, and especially <span class="hl">my father</span>: they believed I could do this long before I believed it myself, and I\'m here because of their love and support.',
-      'I\'ve learned most of what I know through classes and coursework, taking the time to actually work through the material. My current focus is building toward <span class="hl">Machine Learning Engineer</span> roles \u2014 down the line, I want to pivot into <span class="hl">Machine Learning Research</span>.'
+  "greeting": "Hi, I'm Karthik.",
+  "intro": [
+    "I'm a senior at <a class='hl' href='https://www.berkeley.edu' target='_blank' rel='noopener'>UC Berkeley</a> studying <a class='hl' href='https://cdss.berkeley.edu/dsus' target='_blank' rel='noopener'>data science</a>, and I'm building deep technical expertise in data science and machine learning. This fall I'm on course staff for two CDSS 198 courses, and I'm a Fung Fellow working on an AI recovery coach for disaster survivors.",
+    "I'm a <span class='hl'>proud transfer student</span>. The community has been great and helpful, so I give back in whatever ways I can, mostly by helping other transfers find their footing. Go transfers."
+  ],
+  "about": {
+    "bio": [
+      "I'm a senior at <a class='ul' href='https://www.berkeley.edu' target='_blank' rel='noopener'>UC Berkeley</a> studying <a class='ul' href='https://cdss.berkeley.edu/dsus' target='_blank' rel='noopener'>data science</a>, graduating in December 2027. I transferred in from De Anza College, where I earned an A.S. in Mathematics and Computer Science.",
+      "I grew up in Vijayawada, India, where going to college in the U.S. was almost unheard of. I started at community college with no roadmap and figured out most of the path on my own. My family, especially my father, believed in me long before I did.",
+      "I'm currently building deep technical expertise in data science and machine learning. As a transfer student myself, I help other transfers find their footing."
     ],
-    education: [
-      { school:"University of California, Berkeley", degree:"B.A. in Data Science", gpaValue:"3.85", gpaMax:"4.00", location:"Berkeley, CA", dates:"Aug 2025 \u2014 Dec 2027", courses:true },
-      { school:"De Anza College", degree:"A.S. in Mathematics and Computer Science", gpaValue:"3.92", gpaMax:"4.00", location:"Cupertino, CA", dates:"Sep 2023 \u2014 Jun 2025" }
+    "education": [
+      {
+        "school": "University of California, Berkeley",
+        "degree": "B.A. in Data Science",
+        "gpaValue": "3.85",
+        "gpaMax": "4.00",
+        "location": "Berkeley, CA",
+        "dates": "Aug 2025 to Dec 2027",
+        "courses": true,
+        "logoDomain": "berkeley.edu"
+      },
+      {
+        "school": "De Anza College",
+        "degree": "A.S. in Mathematics and Computer Science",
+        "gpaValue": "3.92",
+        "gpaMax": "4.00",
+        "location": "Cupertino, CA",
+        "dates": "Sep 2023 to Jun 2025",
+        "logoDomain": "deanza.edu"
+      }
     ],
-    terms: [
-      { term:"Fall 2025", rows:[
-        { code:"CS 61A",   title:"Structure & Interpretation of Computer Programs", grade:"A\u2212" },
-        { code:"DATA C8",  title:"Foundations of Data Science", grade:"A" }
-      ]},
-      { term:"Spring 2026", rows:[
-        { code:"CS 61B",   title:"Data Structures", grade:"A\u2212" },
-        { code:"DATA C100", title:"Principles & Techniques of Data Science", grade:"A\u2212" },
-        { code:"DATA C140", title:"Probability for Data Science", grade:"A" },
-        { code:"DATA 198",  title:"Introduction to Data Science", grade:"P" },
-        { code:"IEOR 198",  title:"Introduction to Quantitative Finance", grade:"P" }
-      ]},
-      { term:"Summer 2026", rows:[
-        { code:"CYPLAN 101", title:"Introduction to Urban Data Analytics", grade:"A" }
-      ]},
-      { term:"Fall 2026", rows:[
-        { code:"CS 170",    title:"Efficient Algorithms and Intractable Problems", grade:"IP", muted:true },
-        { code:"CS 189",    title:"Introduction to Machine Learning", grade:"IP", muted:true },
-        { code:"CS 194",    title:"Functional Programming & AI-Assisted App Development", grade:"IP", muted:true },
-        { code:"DATA C101", title:"Data Engineering", grade:"IP", muted:true },
-        { code:"ENGIN 188", title:"Fung Fellowship Seminar: Health + Innovation", grade:"IP", muted:true }
-      ]}
+    "terms": [
+      {
+        "term": "Fall 2025",
+        "rows": [
+          {
+            "code": "CS 61A",
+            "title": "Structure & Interpretation of Computer Programs",
+            "grade": "A−"
+          },
+          {
+            "code": "DATA C8",
+            "title": "Foundations of Data Science",
+            "grade": "A"
+          }
+        ]
+      },
+      {
+        "term": "Spring 2026",
+        "rows": [
+          {
+            "code": "CS 61B",
+            "title": "Data Structures",
+            "grade": "A−"
+          },
+          {
+            "code": "DATA C100",
+            "title": "Principles & Techniques of Data Science",
+            "grade": "A−"
+          },
+          {
+            "code": "DATA C140",
+            "title": "Probability for Data Science",
+            "grade": "A"
+          },
+          {
+            "code": "DATA 198",
+            "title": "Introduction to Data Science",
+            "grade": "P"
+          },
+          {
+            "code": "IEOR 198",
+            "title": "Introduction to Quantitative Finance",
+            "grade": "P"
+          }
+        ]
+      },
+      {
+        "term": "Summer 2026",
+        "rows": [
+          {
+            "code": "CYPLAN 101",
+            "title": "Introduction to Urban Data Analytics",
+            "grade": "A"
+          }
+        ]
+      },
+      {
+        "term": "Fall 2026",
+        "rows": [
+          {
+            "code": "CS 170",
+            "title": "Efficient Algorithms and Intractable Problems",
+            "grade": "IP",
+            "muted": true
+          },
+          {
+            "code": "CS 189",
+            "title": "Introduction to Machine Learning",
+            "grade": "IP",
+            "muted": true
+          },
+          {
+            "code": "CS 194",
+            "title": "Functional Programming & AI-Assisted App Development",
+            "grade": "IP",
+            "muted": true
+          },
+          {
+            "code": "DATA C101",
+            "title": "Data Engineering",
+            "grade": "IP",
+            "muted": true
+          },
+          {
+            "code": "ENGIN 188",
+            "title": "Fung Fellowship Seminar: Health + Innovation",
+            "grade": "IP",
+            "muted": true
+          }
+        ]
+      }
     ]
   },
-  experiences: [
-    { featured:true, role:"Undergraduate Course Staff (Tutor)", company:"CDSS 198 \u2014 Transfer Seminar", logo:"assets/logos/cdss.png", location:"Berkeley, CA", dates:"Aug 2026 \u2014 Present",
-      home:[
-        "Supporting transfer students in CDSS 198's Transfer Seminar \u2014 attending both weekly class sessions to help student study groups, holding office hours, and providing on-demand tutoring.",
-        "Create worksheets for classes like CS 61A and Data 8 based on students' requests and go over them in study sessions; also hold midterm Q&A sessions for CS 61A, Data 8, and Data 100."
+  "leadership": [
+    {
+      "company": "CDSS Dean's Cabinet",
+      "role": "Transfer Representative",
+      "dates": "Fall 2026 to Present",
+      "bullets": [
+        "Bring transfer students' voices to the associate dean and CDSS faculty."
       ],
-      full:[
-        "Support transfer students in CDSS 198: Transfer Seminar by attending both weekly class meetings (Tuesdays and Wednesdays) to help student study groups work through course material.",
-        "Create worksheets for students from classes like CS 61A and Data 8 based on their requests, and go over them in the seminar's study sessions.",
-        "Provide students with one-on-one guidance and advice, and hold weekly office hours plus additional on-demand tutoring sessions as needed.",
-        "Hold midterm Q&A sessions for lower-division CS and data science courses, including CS 61A, Data 8, and Data 100.",
-        "Attend weekly staff meetings with the course supervisor to debrief and give feedback on student progress."
-      ]
+      "logo": "assets/logos/cdss.png"
     },
-    { featured:true, role:"Undergraduate Course Staff (Reader)", company:"CDSS 198 \u2014 Careers in Data Science & Computing", logo:"assets/logos/cdss.png", location:"Berkeley, CA", dates:"Aug 2026 \u2014 Present",
-      home:[
-        "Supporting a career-focused seminar for CDSS undergraduates \u2014 facilitating weekly discussions and giving feedback on resumes, cover letters, and development plans.",
-        "Gave a live demo on using AI to tailor resumes for internships and jobs, and facilitated connections between alumni and the course facilitator."
+    {
+      "company": "CDSS 198 Transfer Seminar",
+      "role": "Course Staff (Tutor)",
+      "dates": "Aug 2026 to Present",
+      "bullets": [
+        "Help transfer students settle in through study groups, office hours and tutoring.",
+        "Run exam reviews for CS 61A and Data 8."
       ],
-      full:[
-        "Serve as Reader for CDSS 198: Careers in Data Science & Computing, a weekly seminar for CDSS undergraduates.",
-        "Facilitate class discussions and activities, and give feedback on students' development plans, resumes, and cover letters.",
-        "Gave a live demo in class on how to use AI to tailor resumes for internships and jobs.",
-        "Facilitated connections between alumni and the course facilitator, and research and distribute job and internship listings via Ed Discussion."
-      ]
+      "logo": "assets/logos/cdss.png"
     },
-    { featured:true, role:"Fung Fellow \u2014 Health + Innovation Track", company:"Fung Fellowship at UC Berkeley", logo:"assets/logos/fung.png", location:"Berkeley, CA", dates:"Aug 2026 \u2014 Present",
-      home:[
-        "Selected for Berkeley's Fung Fellowship, Health + Innovation track, and placed on the team for The After Collective, a project applying psychological science and agentic AI to support disaster survivors.",
-        "Working on a free, science-backed, trauma-informed AI recovery coach, developed with researchers at Stanford's Department of Psychiatry and Center for AI for Mental Health."
+    {
+      "company": "CDSS 198 Careers in Data Science & Computing",
+      "role": "Course Staff (Reader)",
+      "dates": "Aug 2026 to Present",
+      "bullets": [
+        "Give resume and cover letter feedback to students in a careers seminar.",
+        "Help bring alumni and industry guests to campus."
       ],
-      full:[
-        "Selected for Berkeley's Fung Fellowship, Health + Innovation track, which builds digital public-health tools with industry and community partners using human-centered design.",
-        "Placed on the team for The After Collective, a project applying psychological science and agentic AI to help disaster survivors through long-term recovery, developed with researchers at Stanford's Department of Psychiatry and Center for AI for Mental Health.",
-        "The platform is a free, science-backed, trauma-informed AI recovery coach that helps survivors complete recovery tasks, such as room-by-room inventories of lost belongings to share with insurance or FEMA.",
-        "Working with the team on product development for the platform, whose key challenges are context-aware recovery support, safe and private AI usage, and agentic AI that can carry out tasks end to end."
-      ]
+      "logo": "assets/logos/cdss.png"
     },
-    { featured:false, role:"Transfer Representative", company:"CDSS Dean's Cabinet", logo:"assets/logos/cdss.png", location:"Berkeley, CA", dates:"Sep 2026 \u2014 Present",
-      home:[
-        "Selected to serve on the Dean's Cabinet for Berkeley's College of Computing, Data Science, and Society (CDSS), a student group that advises CDSS leadership on the student experience.",
-        "Represent transfer students, meeting with Associate Dean Narges Norouzi and sharing feedback through meetings, email, and surveys."
+    {
+      "company": "CS 61A",
+      "role": "Course Staff (UCS1)",
+      "dates": "Jun 2026 to Aug 2026",
+      "bullets": [
+        "Taught 4 weekly exam-prep sections for Berkeley's intro CS course.",
+        "Wrote exam questions and built automatic graders for student code."
       ],
-      full:[
-        "Selected to serve on the Dean's Cabinet for Berkeley's College of Computing, Data Science, and Society (CDSS), a student group that advises CDSS leadership and offers recommendations on the student experience.",
-        "Serve as the Transfer Representative, bringing the transfer student perspective to CDSS leadership.",
-        "Meet with Associate Dean Narges Norouzi and share additional feedback through email and brief surveys."
-      ]
+      "logo": "assets/logos/eecs.png"
     },
-    { featured:false, role:"Junior Mentor \u2014 CS 88 / DATA C88C", company:"Computer Science Mentors (CSM)", logo:"assets/logos/csm.png", location:"Berkeley, CA", dates:"Sep 2026 \u2014 Present", bullets:[
-      "Teach a weekly Transfer Affinity section for CS 88 / DATA C88C, going over the problems curated by CSM mentors and reviewing the previous week's course concepts."
-    ]},
-    { featured:false, role:"Undergraduate Course Staff (UCS1)", company:"CS 61A", url:"https://cs61a.org/", logo:"assets/logos/eecs.png", location:"Berkeley, CA", dates:"Jun 2026 \u2014 Aug 2026",
-      home:[
-        "Served as course staff for CS 61A, Berkeley's introductory computer science course taught in Python, SQL, and Scheme.",
-        "Ran 4 weekly exam-prep sections, held office hours, and built autograders on Gradescope, handling regrade requests and extensions.",
-        "Wrote and reviewed midterm and final exam questions, and helped review two assignments."
+    {
+      "company": "Computer Science Mentors",
+      "role": "Junior Mentor, CS 88 / DATA C88C",
+      "dates": "Sep 2026 to Present",
+      "bullets": [
+        "Teach a weekly section that helps transfer students keep up in the course."
       ],
-      full:[
-        "Served as course staff for CS 61A, Berkeley's introductory computer science course taught in Python, SQL, and Scheme.",
-        "Ran 4 weekly exam-prep sections, held office hours, and built autograders on Gradescope, handling regrade requests and extension approvals throughout the semester.",
-        "Wrote and reviewed midterm and final exam questions, and helped review two assignments."
-      ]
+      "logo": "assets/logos/csm.png"
     },
-    { featured:false, role:"Data Science Intern", company:"IDX Exchange", url:"https://idxexchange.com/", logoDomain:"idxexchange.com", location:"Remote", dates:"Jun 2026 \u2014 Aug 2026",
-      home:[
-        "Built a California home sale-price model on CRMLS MLS data — filtered 143K raw sold records to ~71K single-family homes and built the preprocessing pipeline.",
-        "Diagnosed and fixed a train/test data-leakage bug in the outlier thresholds before benchmarking models.",
-        "Final XGBoost model reached R² 0.88 (dollar-scale) and MdAPE 8.64%."
+    {
+      "company": "Boundary.0",
+      "role": "Secretary",
+      "dates": "Apr 2024 to Jun 2025",
+      "bullets": [
+        "Helped launch a new student club that connects students with industry.",
+        "Organized events that grew it to 120+ members."
       ],
-      full:[
-        "Contributed to an internal team effort to predict the close (sale) price of California single-family homes from historical CRMLS MLS data, where each intern built an independent preprocessing pipeline against shared rules (chronological split, no list-price features to avoid leakage, R²/MAPE/MdAPE metrics).",
-        "Combined seven months of sold-property data (143K+ rows), filtered to single-family residences (~71K), ran a missingness audit, and settled on a core set of intrinsic features (living area, beds/baths, lot size, year built, latitude/longitude).",
-        "Built the preprocessing: dropped high-missingness columns and invalid rows, applied statistical outlier caps on lot size and implausible sale prices, log-transformed the target, and split chronologically with the most recent month held out as test.",
-        "Diagnosed a catastrophic baseline R² through a worst-prediction error analysis and traced it to a train/test data-leakage bug — outlier thresholds were computed over the full dataset before the split. Fixed it by recomputing every threshold from training data only and freezing them onto the test set.",
-        "Benchmarked Linear Regression, Decision Tree, Random Forest, and XGBoost on the held-out month; the final XGBoost model (400 trees, max depth 8) reached R² 0.88 (dollar-scale) and MdAPE 8.64%, the project's headline metric."
-      ]
+      "logo": "assets/logos/boundary0.png"
     },
-    { featured:false, role:"Engineering Intern", company:"Guang Labs", url:"https://guanglabs.com/", logoDomain:"guanglabs.com", location:"Remote", dates:"May 2026 \u2014 Aug 2026",
-      home:[
-        "Built an async video/image domain-classification API on FastAPI with Auth0 auth and a Postgres job store — submit-and-poll REST endpoints that run classification as background jobs and return structured JSON (domain labels, confidence, evidence).",
-        "Implemented the full Python pipeline: resolving media from four source types (local, S3, HTTP), auto-detecting image vs. short/long video with ffprobe/ffmpeg, and classifying via Gemini multimodal calls behind a confidence-gated trust layer.",
-        "Added a trust-gated resample loop for low-trust long videos, split the service into isolated testable modules, and backed it with 86 unit, integration, and acceptance tests.",
-        "Also built an end-to-end in-app notification framework — Postgres-backed tables, backend APIs, and a React dashboard bell with unread counts and 30-second polling — wired into the video-ingest and export pipelines, with tests and a PR out for review."
+    {
+      "company": "Mentors at De Anza",
+      "role": "Mentor",
+      "dates": "Sep 2024 to Apr 2025",
+      "bullets": [
+        "Guided a first-generation nursing student through course planning, transfer credit and career paths."
       ],
-      full:[
-        "Built an async video/image domain-classification API on a FastAPI backend with Auth0 authentication and a PostgreSQL job store: clients submit one or more media items, poll for job status and granular per-item progress, and receive structured JSON with domain labels (sports, gaming, talking-head, etc.), confidence scores, evidence strings, and rollup metadata.",
-        "Implemented the full classification pipeline in Python — resolving media from four source types (local path, S3 key, S3 URL, HTTP URL), detecting duration and image vs. short/long video via ffprobe with no client-supplied media type, preparing clips with ffmpeg, and attaching real media to Gemini multimodal calls.",
-        "Designed a confidence-gated trust layer with a resample loop: when Gemini returns a low-trust result on a long video, the service re-samples different windows (excluding prior attempts), retries up to a configurable max, and tracks resample attempts and total model calls.",
-        "Structured the codebase into isolated, testable modules — media resolver, segment sampler, trust evaluator, Gemini classifier provider, a deterministic fake provider for tests, a versioned prompt loader with strict JSON-schema contracts, and Pydantic schemas — behind a central VideoDomainService orchestrator.",
-        "Validated it with 86 unit, integration, and acceptance tests plus a manual staging acceptance script, shipped a database migration with deploy docs, and drove the production path to done through code review after the initial branch wasn't wired end-to-end.",
-        "Separately built an end-to-end in-app notification framework — two Postgres tables, backend APIs, and a React dashboard bell with unread counts and 30-second polling — wired into the video-ingest and export pipelines as fire-and-forget calls, with test coverage and a pull request out for review."
-      ]
+      "logo": "assets/logos/mentors-deanza.png"
     },
-    { featured:false, role:"Secretary", company:"Boundary.0", logo:"assets/logos/boundary0.png", location:"Cupertino, CA", dates:"Apr 2024 \u2014 Jun 2025", bullets:[
-      "Served as one of Boundary.0's first officers, helping get the club off the ground with a mission to connect students with industry opportunities.",
-      "Helped partner with 5+ companies across construction, finance, and computer science to pair students with hands-on experience.",
-      "Coordinated board meetings to keep the club running efficiently and aligned with its mission.",
-      "Organized launch and outreach events, pitching the club's vision to grow a 120+ member community."
-    ]},
-    { featured:false, role:"Mentor", company:"Mentors at De Anza", logo:"assets/logos/mentors-deanza.png", location:"Cupertino, CA", dates:"Sep 2024 \u2014 Apr 2025", bullets:[
-      "Mentored a first-generation nursing student over two quarters on course planning, transfer-credit policies, and academic pathways.",
-      "Researched campus nursing programs, clubs, and internships to surface concrete opportunities for her career.",
-      "Provided a steady, judgment-free space for academic and personal guidance, drawing on my own experience navigating college alone."
-    ]},
-    { featured:false, role:"Programs Committee Intern", company:"De Anza Student Government", logo:"assets/logos/dasg.png", location:"Cupertino, CA", dates:"Feb 2024 \u2014 Feb 2025", bullets:[
-      "Planned and executed 5+ major campus events \u2014 Club Day, Spring Carnival, Resource Fair, Homecoming, and de-stress events.",
-      "Negotiated the Spring Carnival photo-booth vendor, the event's highest-turnout activity, with near-universal attendee participation.",
-      "Designed and ran a Club Day game that drove a wave of new DASG sign-ups.",
-      "Collaborated closely with fellow interns on brainstorming, logistics, and on-the-day crowd management."
-    ]},
-    { featured:false, role:"Events Coordinator", company:"Indian Students Association, De Anza", logo:"assets/logos/isa-deanza.png", location:"Cupertino, CA", dates:"Oct 2023 \u2014 Feb 2025", bullets:[
-      "Led planning and execution of ISA's flagship Diwali celebration, the organization's largest event of the year.",
-      "Coordinated 30+ volunteers across timed shifts, assigning tasks and filling gaps to keep the event running smoothly.",
-      "Secured sponsorships and owned budgeting, vendor coordination, and inter-organizer communication.",
-      "Built an inclusive space for Indian and international students to connect and feel at home, drawing 200+ attendees."
-    ]},
-    { featured:false, role:"Lab Technician Assistant", company:"Kirsch Center, De Anza", logoDomain:"deanza.edu", location:"Cupertino, CA", dates:"Dec 2023 \u2014 Mar 2024", bullets:[
-      "Worked within a ~30-person team to restore the Kirsch Center's sustainability spaces to pre-pandemic condition.",
-      "Seeded and maintained native plants and cleared bio-waste, supporting on-campus natural food production for the dining hall.",
-      "Led educational tours for prospective environmental science students and helped plant wildflowers across campus."
-    ]}
-  ],
-  projects: [
-    { featured:true, title:"SightLine", stack:"Python, PyTorch, OpenCV, YOLO", repo:"https://github.com/vdkarthikeya/sightline-ml-public",
-      aside:"Open Projects team project, Fall 2026 (In Progress).",
-      home:[
-        "ML team member on SightLine, a mobile app that connects to Meta Ray-Ban glasses, captures audio and video through the day, and outputs a 60-second edited recap video.",
-        "The ML pipeline splits footage into clips, ranks them with multimodal models on audio and visual cues, and assembles the top clips into a daily recap."
+    {
+      "company": "De Anza Student Government",
+      "role": "Programs Committee Intern",
+      "dates": "Feb 2024 to Feb 2025",
+      "bullets": [
+        "Planned and ran 5+ major campus events, including Club Day and Homecoming."
       ],
-      full:[
-        "Member of the ML team on SightLine, a mobile app that connects to a user's Meta Ray-Ban glasses, captures audio and video throughout the day, and outputs a 60-second edited recap video at the end of the day.",
-        "The ML pipeline pulls footage from the glasses, breaks it into clips, uses multimodal models to rank clips based on audio and visual cues, and assembles the top clips into a daily recap through automated video rendering.",
-        "The ML team builds and fine-tunes computer vision and audio scoring models to identify the top moments of each day (PyTorch, OpenCV, YOLO).",
-        "Working alongside the iOS team (mobile app and Meta Wearables SDK integration) and the backend team (FastAPI, Supabase, Docker for API services, pipeline orchestration, and final video assembly)."
-      ]
+      "logo": "assets/logos/dasg.png"
     },
-    { featured:false, title:"SB 79 Transit-Oriented Development Analysis", stack:"ArcGIS Online, StoryMaps",
-      repo:"https://github.com/vdkarthikeya/sb79-tod-analysis-public",
-      aside:"Group research project for CYPLAN 101, Summer 2026.",
-      home:[
-        "Geospatial eligibility analysis of the City of Los Angeles under California's SB 79, built in ArcGIS Online.",
-        "Identified 6,413 eligible zoning features near qualifying transit stops and overlaid four equity and risk layers. <a class='repo-inline' href='https://storymaps.arcgis.com/stories/44ec37af588b472ba6affe2062274266' target='_blank' rel='noopener'>StoryMap \u2197</a>"
+    {
+      "company": "Indian Students Association, De Anza",
+      "role": "Events Coordinator",
+      "dates": "Oct 2023 to Feb 2025",
+      "bullets": [
+        "Led the club's biggest event of the year, a Diwali celebration with 200+ attendees.",
+        "Coordinated 30+ volunteers and managed sponsorships and budget."
       ],
-      full:[
-        "Built a GIS eligibility engine in ArcGIS Online that flags zoning features in the City of Los Angeles near qualifying transit stops under SB 79, which allows denser housing near transit.",
-        "The final eligible layer contains 6,413 zoning features, each characterized against four equity and risk layers: TCAC/HCD opportunity areas, displacement-risk tracts, CalEnviroScreen 4.0, and CAL FIRE fire hazard zones.",
-        "Delivered the work as a research paper, a policy brief, and an interactive <a class='repo-inline' href='https://storymaps.arcgis.com/stories/44ec37af588b472ba6affe2062274266' target='_blank' rel='noopener'>StoryMap \u2197</a>, as a two-person group project.",
-        "Wrote the Methods, Results, Discussion (limitations), Abstract, and Appendices sections of the paper."
-      ]
-    },
-    { featured:true, title:"Movie Genre Classification", stack:"Python, PyTorch, SentenceTransformers, scikit-learn",
-      repo:"https://github.com/vdkarthikeya/movie-genre-classification-nlp",
-      aside:"Started as my DSS Decal project, Spring 2026.",
-      home:[
-        "Multi-label genre prediction on 42K+ films across 20+ genres using MiniLM, MPNet, and e5-large-v2 embeddings.",
-        "Rare-genre cutoffs and per-label threshold tuning lifted Macro F1 from 0.48 to 0.66 (Micro F1 0.68).",
-        "A simple Logistic Regression beat the boosted trees while training ~12\u00d7 faster."
-      ],
-      full:[
-        "Built a multi-label genre-prediction system over 42K+ MovieLens/TMDB films spanning 20+ genres, where each film can carry several genre labels at once — parsing nested IMDb metadata with regex and engineering log budget/revenue and temporal release features.",
-        "Generated semantic embeddings of each film's title, tagline, and overview with three sentence-transformer models — MiniLM, MPNet, and e5-large-v2 — and compared them head-to-head as inputs to Logistic Regression, XGBoost, and LightGBM.",
-        "Addressed heavy class imbalance across the long tail of rare genres with a rare-genre cutoff and per-label threshold tuning, optimizing decision thresholds independently for each genre rather than a single global cutoff.",
-        "Lifted Macro F1 from 0.48 to 0.66 (Micro F1 0.68), using Macro F1 as the primary metric so rare genres counted as much as the common ones.",
-        "Found that a simple Logistic Regression on 1024-dim e5 embeddings outperformed the boosted trees while training roughly 12× faster — a deliberate accuracy-vs-compute takeaway."
-      ]
-    },
-    { featured:true, title:"Housing Price & Assessment Bias", stack:"pandas, NumPy, scikit-learn", repo:"https://github.com/vdkarthikeya/housing-price-assessment-bias-public",
-      home:[
-        "Linear-regression pipeline on 200K+ Cook County records with 15+ engineered geographic and interaction features.",
-        "Reached test RMSE 0.562 via 4-fold cross-validation.",
-        "Quantified systematic over- and under-estimation across price bands."
-      ],
-      full:[
-        "Built a linear-regression pipeline on 200K+ Cook County Assessor records, engineering 15+ features: log-transformed square footage, polynomial age and geographic terms, latitude\u00d7longitude interactions, and one-hot road/garage features.",
-        "Filtered non-arm's-length $1 sales so the training distribution mirrored real assessment practice.",
-        "Reached test RMSE of 0.562 under 4-fold cross-validation.",
-        "Went beyond accuracy to quantify systematic over- and under-estimation across price bands, connecting modeling choices to documented inequities in property-tax assessment."
-      ]
-    },
-    { featured:false, title:"Email Spam / Ham Classifier", stack:"scikit-learn, pandas, NumPy", repo:"https://github.com/vdkarthikeya/spam-ham-classifier-public",
-      home:[
-        "Engineered 50+ features from raw email text into a numeric feature matrix.",
-        "L1-regularized Logistic Regression tuned with GridSearchCV and 10-fold cross-validation.",
-        "92.1% test accuracy on a held-out leaderboard set."
-      ],
-      full:[
-        "Turned raw email text into a numeric feature matrix, engineering 50+ features: regex counts for links, punctuation, and dollar signs, HTML and subject-line indicators, log-scaled length, and a curated spam/ham bag-of-words.",
-        "Trained an L1-regularized Logistic Regression, using L1 sparsity to keep only the most informative features.",
-        "Tuned the regularization strength with GridSearchCV and validated with 10-fold cross-validation.",
-        "Reached 92.1% accuracy on a held-out leaderboard set, weighing precision against recall given the higher cost of false positives."
-      ]
-    },
-    { featured:false, title:"California Housing Regression", stack:"Python, scikit-learn",
-      repo:"https://github.com/vdkarthikeya/california-housing-regression",
-      home:[
-        "Predicted median home values across 20K+ California block groups from demographic, geographic, and economic features.",
-        "Compared Linear Regression against k-Nearest-Neighbors on interpretability and accuracy."
-      ],
-      full:[
-        "Built regression models on the 20K+-row California Housing dataset, predicting median home values from demographic, geographic, and economic features.",
-        "Compared Linear Regression against k-Nearest-Neighbors, examining how feature scaling and the bias\u2013variance tradeoff affect each approach.",
-        "Used the comparison to reason about interpretability versus predictive accuracy across an end-to-end workflow."
-      ]
-    },
-    { featured:false, title:"Scheme Interpreter", stack:"Python", repo:"https://github.com/vdkarthikeya/scheme-interpreter-public",
-      home:[
-        "Interpreter for a subset of Scheme built around a scheme_eval / scheme_apply cycle.",
-        "Implemented environment frames, special forms, and tail-call optimization."
-      ],
-      full:[
-        "Implemented an interpreter for a subset of Scheme in Python, built around a core scheme_eval / scheme_apply evaluation cycle.",
-        "Implemented lexically-scoped environment frames, special forms (define, lambda, if, cond, let, quote, and/or), and both user-defined and built-in procedures.",
-        "Added tail-call optimization so deeply recursive Scheme programs run in constant stack space.",
-        "Reinforced how a language is parsed, represented, evaluated, and extended \u2014 the mechanics behind features most programmers take for granted."
-      ]
-    },
-    { featured:false, title:"Ngordnet", stack:"Java", repo:"https://github.com/vdkarthikeya/ngordnet-public",
-      home:[
-        "Java tool linking a WordNet semantic graph with Google NGrams historical word-frequency data, built on a directed graph (adjacency list) with recursive DFS.",
-        "Resolves hyponyms for single or multi-word queries via set intersection and surfaces the k most historically popular words in a category."
-      ],
-      full:[
-        "Built a Java tool for exploring how word meaning and usage relate over time, combining a WordNet semantic graph with Google NGrams historical word-frequency data.",
-        "Implemented the graph as an adjacency list (synset ID to child IDs) with a recursive DFS and a visited set to resolve all hyponyms reachable from a word — with unit tests covering cycles, self-loops, diamonds, disconnected components, and deep chains.",
-        "Handled multi-word queries by set intersection and ranked results by historical frequency to return the top-k most popular words in a semantic category, with a k=0 case returning all hyponyms alphabetically.",
-        "Debugged a subtle correctness bug where synset IDs split across multiple lines were being overwritten instead of merged, silently dropping hyponyms — fixed by appending to existing entries."
-      ]
-    },
-    { featured:false, title:"Build Your Own World", stack:"Java", repo:"https://github.com/vdkarthikeya/build-your-own-world-public",
-      home:[
-        "Java dungeon-crawler with deterministic, seed-based procedural world generation — rooms connected by minimum-spanning-tree hallways built with Kruskal's algorithm.",
-        "BFS powers avatar click-to-move pathfinding and enemy chasing, with a precomputed BFS distance map for fast, evenly-spread enemy and item spawning."
-      ],
-      full:[
-        "Built a Java dungeon-crawler on the StdDraw tile engine: the player explores a procedurally generated world, fights enemies through quiz battles, and collects health kits to survive.",
-        "Generated worlds deterministically from a seed — placing non-overlapping rooms and connecting them with L-shaped hallways along a minimum spanning tree built via Kruskal's algorithm, so every room is reachable with minimal total hallway length.",
-        "Implemented BFS pathfinding for both avatar click-to-move (drawing and animating the shortest path) and enemy chasing, and used a single precomputed BFS distance map for O(1) spawn-distance checks so enemies and items spread evenly across the map.",
-        "Added a full-screen quiz-battle combat system with overlay rendering that preserves world state, plus save/load that stores the seed and move history and replays it to deterministically reconstruct the exact world.",
-        "Emphasized large-project architecture, object-oriented design, and deterministic, testable generation."
-      ]
+      "logo": "assets/logos/isa-deanza.png"
     }
   ],
-  skills: [
-    { group:"Languages", items:["Python","Java","C++","SQL","Scheme"] },
-    { group:"ML & Data Science", items:["pandas","NumPy","scikit-learn","PyTorch","TensorFlow","XGBoost","LightGBM","SentenceTransformers","Matplotlib","seaborn"] },
-    { group:"Backend & Infrastructure", items:["FastAPI","Pydantic","PostgreSQL","Auth0","AWS S3","Gemini API","REST APIs","pytest","ffmpeg","ffprobe"] },
-    { group:"Developer Tools", items:["Git","GitHub","VS Code","IntelliJ","Jupyter","Google Colab","MATLAB"] }
+  "experience": [
+    {
+      "company": "Guang Labs",
+      "role": "Engineering Intern",
+      "dates": "May 2026 to Aug 2026",
+      "bullets": [
+        "Built a service that automatically labels videos and images, using Google's Gemini.",
+        "Added a check that retries when the AI is unsure of its answer.",
+        "Built the in-app bell that tells users when their video is ready."
+      ],
+      "logoDomain": "guanglabs.com",
+      "url": "https://guanglabs.com/"
+    },
+    {
+      "company": "IDX Exchange",
+      "role": "Data Science Intern",
+      "dates": "Jun 2026 to Aug 2026",
+      "bullets": [
+        "Built a model that predicts California home prices, typically within 8.6% of the real price.",
+        "Cleaned 143K raw records into 71K usable home sales.",
+        "Found and fixed a bug that was leaking test data, so the results can be trusted."
+      ],
+      "logoDomain": "idxexchange.com"
+    },
+    {
+      "company": "Fung Fellowship at UC Berkeley",
+      "role": "Fung Fellow, Health + Innovation Track",
+      "dates": "Aug 2026 to Present",
+      "bullets": [
+        "Part of a team building a free AI recovery coach for disaster survivors.",
+        "Interviewed wildfire survivors to learn what they went through and what they need."
+      ],
+      "logo": "assets/logos/fung.png"
+    },
+    {
+      "company": "Kirsch Center, De Anza",
+      "role": "Lab Technician Assistant",
+      "dates": "Dec 2023 to Mar 2024",
+      "bullets": [
+        "Helped a team of about 30 restore the Kirsch Center's sustainability spaces."
+      ],
+      "logoDomain": "deanza.edu"
+    }
+  ],
+  "projects": [
+    {
+      "title": "SightLine",
+      "line": "An app that turns a day of smart-glasses footage into a 60-second recap. I'm on the ML team.",
+      "when": "Fall 2026",
+      "repo": "https://github.com/vdkarthikeya/sightline-ml-public",
+      "status": "In progress"
+    },
+    {
+      "title": "Movie Genre Classification",
+      "line": "A model that predicts a movie's genres from its plot summary.",
+      "when": "Spring 2026",
+      "repo": "https://github.com/vdkarthikeya/movie-genre-classification-nlp"
+    },
+    {
+      "title": "Housing Price & Assessment Bias",
+      "line": "A model that estimates home values from 200K+ Chicago-area records and checks which homes get over- or under-valued.",
+      "when": "",
+      "repo": "https://github.com/vdkarthikeya/housing-price-assessment-bias-public"
+    },
+    {
+      "title": "SB 79 Transit Housing Analysis",
+      "line": "A map of where Los Angeles can build denser housing near transit under a new California law.",
+      "when": "Summer 2026",
+      "repo": "https://github.com/vdkarthikeya/sb79-tod-analysis-public"
+    },
+    {
+      "title": "Email Spam Classifier",
+      "line": "A spam filter that correctly sorts 92.1% of emails it had never seen.",
+      "when": "",
+      "repo": "https://github.com/vdkarthikeya/spam-ham-classifier-public"
+    },
+    {
+      "title": "California Housing Regression",
+      "line": "A model that predicts home values across 20K+ California neighborhoods.",
+      "when": "",
+      "repo": "https://github.com/vdkarthikeya/california-housing-regression"
+    },
+    {
+      "title": "Scheme Interpreter",
+      "line": "A program, built from scratch in Python, that runs code written in Scheme.",
+      "when": "",
+      "repo": "https://github.com/vdkarthikeya/scheme-interpreter-public"
+    },
+    {
+      "title": "Ngordnet",
+      "line": "A word tool that finds more specific words under a word like \"food\" and ranks them by how often they appeared in books.",
+      "when": "",
+      "repo": "https://github.com/vdkarthikeya/ngordnet-public"
+    },
+    {
+      "title": "Build Your Own World",
+      "line": "A 2D dungeon game whose random worlds can be rebuilt exactly from a seed.",
+      "when": "",
+      "repo": "https://github.com/vdkarthikeya/build-your-own-world-public"
+    }
+  ],
+  "sections": [
+    [
+      "home",
+      "About",
+      "Education and timeline"
+    ],
+    [
+      "experience",
+      "Experience",
+      "Internships and fellowships"
+    ],
+    [
+      "leadership",
+      "Leadership and involvement",
+      "Teaching, cabinet and clubs"
+    ],
+    [
+      "projects",
+      "Projects",
+      "Things I've built"
+    ],
+    [
+      "courses",
+      "Courses",
+      "Classes, grades and GPA"
+    ]
   ]
 };
 

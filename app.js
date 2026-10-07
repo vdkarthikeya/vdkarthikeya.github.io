@@ -1,159 +1,170 @@
-/* ===================== render ===================== */
 (function () {
   "use strict";
-  var PAGES = ["home","about","experience","projects","courses"], LIMIT = 3;
+  var D = siteData;
+  var PAGES = D.sections.map(function (s) { return s[0]; });
   function el(id){ return document.getElementById(id); }
-
-  function liList(bullets, asideText){
-    var items = bullets.map(function(b){ return "<li>"+b+"</li>"; });
-    if (asideText) items.push('<li class="human"><span class="aside-pill">'+asideText+'</span></li>');
-    return "<ul>" + items.join("") + "</ul>";
-  }
 
   function initials(name){
     var stop = {of:1,and:1,the:1,at:1,for:1,de:1};
-    var words = name.replace(/[^a-zA-Z0-9\s]/g," ").split(/\s+/).filter(function(w){
-      return w && !stop[w.toLowerCase()];
-    });
-    if (words.length===0) return "?";
-    if (words.length===1) return words[0].slice(0,2).toUpperCase();
+    var words = name.replace(/[^a-zA-Z0-9\s]/g," ").split(/\s+/).filter(function(w){ return w && !stop[w.toLowerCase()]; });
+    if (words.length === 0) return "?";
+    if (words.length === 1) return words[0].slice(0,2).toUpperCase();
     return (words[0][0]+words[1][0]).toUpperCase();
   }
-
-  function logoBadge(x){
-    var mark = initials(x.company);
-    if (x.logo){
-      return '<span class="ent-logo">'+
-        '<img src="'+x.logo+'" alt="" loading="lazy" '+
-          'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">'+
-        '<span class="ent-logo-fallback">'+mark+'</span>'+
-      '</span>';
-    }
-    if (x.logoDomain){
-      return '<span class="ent-logo">'+
-        '<img src="https://www.google.com/s2/favicons?sz=64&domain='+x.logoDomain+'" alt="" loading="lazy" '+
-          'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">'+
-        '<span class="ent-logo-fallback">'+mark+'</span>'+
-      '</span>';
-    }
-    return '<span class="ent-logo"><span class="ent-logo-fallback" style="display:flex">'+mark+'</span></span>';
+  function logoBadge(x, name){
+    var mark = initials(name);
+    var src = x.logo || (x.logoDomain ? "https://www.google.com/s2/favicons?sz=128&domain="+x.logoDomain : "");
+    if (!src) return '<span class="ent-logo"><span class="ent-logo-fallback" style="display:flex">'+mark+'</span></span>';
+    return '<span class="ent-logo"><img src="'+src+'" alt="" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">'+
+      '<span class="ent-logo-fallback">'+mark+'</span></span>';
+  }
+  function isCurrent(dates){ return /Present$/.test(dates); }
+  function whenBlock(dates){
+    return '<div class="xp-side"><span class="xp-when">'+dates+'</span>'+(isCurrent(dates)?'<span class="tag live">Current</span>':'')+'</div>';
   }
 
-  function expCard(x, full){
-    var list = full ? (x.full || x.bullets) : (x.home || x.bullets);
-    var companyPart = x.url ? '<a href="'+x.url+'" target="_blank" rel="noopener">'+x.company+'</a>' : x.company;
-    var loc = x.location ? x.location : "";
-    return '<article class="entry entry-card">'+
-      logoBadge(x)+
-      '<div class="entry-body">'+
-        '<div class="entry-top"><span class="entry-org">'+companyPart+'</span><span class="entry-when">'+x.dates+'</span></div>'+
-        '<div class="entry-role">'+x.role+'</div>'+
-        (loc ? '<div class="entry-loc">'+loc+'</div>' : '') +
-        liList(list, x.aside) +
+  function xpRow(x){
+    var org = x.url ? '<a href="'+x.url+'" target="_blank" rel="noopener" onclick="event.stopPropagation()">'+x.company+'</a>' : x.company;
+    return '<article class="xp">'+
+      '<div class="xp-head" role="button" tabindex="0" aria-expanded="false">'+
+        logoBadge(x, x.company)+
+        '<div class="xp-main"><div class="xp-org">'+org+'</div><div class="xp-role">'+x.role+'</div></div>'+
+        whenBlock(x.dates)+
+        '<button class="xp-toggle" tabindex="-1" aria-label="Show or hide details for '+x.company+'"></button>'+
       '</div>'+
+      '<div class="xp-more"><div><ul>'+x.bullets.map(function(b){ return '<li>'+b+'</li>'; }).join("")+'</ul></div></div>'+
     '</article>';
   }
-
-  function projCard(p, full){
-    var list = full ? p.full : p.home;
-    var repo = p.repo ? ' \u2014 <a class="repo-inline" href="'+p.repo+'" target="_blank" rel="noopener">repo \u2197</a>' : '';
-    return '<article class="entry"><div class="entry-head"><span class="entry-title"><b>'+p.title+'</b>'+repo+'</span></div>'+
-      liList(list, p.aside) + '</article>';
+  function pjRow(p){
+    return '<article class="pj"><div><div class="pj-title">'+p.title+(p.status?'<span class="tag wip">'+p.status+'</span>':'')+'</div>'+
+      '<div class="pj-line">'+p.line+'</div></div>'+
+      '<div class="pj-side">'+(p.when?'<span>'+p.when+'</span>':'')+(p.repo?'<a class="repo-inline" href="'+p.repo+'" target="_blank" rel="noopener">View code</a>':'')+'</div></article>';
+  }
+  function courseRows(rows){
+    return rows.map(function(r){
+      var cls = r.muted ? (r.grade==="IP" ? " ip" : " muted") : "";
+      return '<div class="course-row"><span class="code">'+r.code+'</span><span class="ctitle">'+r.title+'</span><span class="grade'+cls+'">'+r.grade+'</span></div>';
+    }).join("");
   }
 
-  function viewAll(href, label){ return '<a class="view-all" href="'+href+'">'+label+' <span class="arr">\u2192</span></a>'; }
-
   function renderRail(){
-    var c = siteData.contact;
-    var now = siteData.current.map(function(x){
-      return x.role + " @ " + x.org;
-    }).join("<br>");
+    var c = D.contact;
     el("rail").innerHTML =
-      '<div class="rail-head">'+
-        '<a href="https://vdkarthikeya.github.io/" class="avatar-link" aria-label="Visit vdkarthikeya.github.io">'+
-          '<div class="avatar">'+
-            '<img class="photo" src="'+siteData.photo+'" alt="'+siteData.name+'" loading="eager" decoding="async" onerror="this.style.display=\'none\';this.closest(\'.avatar\').classList.add(\'logo-on\')">'+
-            '<div class="logo"><span class="dv">DV</span></div>'+
-          '</div></a>'+
-        '<h1>'+siteData.name.replace(/ ([^ ]+)$/,"<br>$1")+'</h1>'+
-      '</div>'+
+      '<div class="avatar"><img src="'+D.photo+'" alt="'+D.name+'" decoding="async"></div>'+
+      '<h1>'+D.name.replace(/ ([^ ]+)$/,"<br>$1")+'</h1>'+
       '<div class="rail-meta">'+
         '<a href="mailto:'+c.email+'"><span class="rm-ico">'+ICON.email+'</span>'+c.email+'</a>'+
-        '<a href="'+c.github+'" target="_blank" rel="noopener"><span class="rm-ico">'+ICON.github+'</span>'+c.githubLabel+'</a>'+
-        '<a href="'+c.linkedin+'"><span class="rm-ico">'+ICON.linkedin+'</span>'+c.linkedinLabel+'</a>'+
-        '<a href="'+siteData.resume+'" target="_blank" rel="noopener"><span class="rm-ico">'+ICON.resume+'</span>R\u00e9sum\u00e9 \u2197</a>'+
-      '</div>'+
-      '<p class="now"><b>Currently</b><br>'+now+'</p>';
+        '<a href="'+c.github+'" target="_blank" rel="noopener"><span class="rm-ico">'+ICON.github+'</span>GitHub / vdkarthikeya</a>'+
+        '<a href="'+c.linkedin+'" target="_blank" rel="noopener"><span class="rm-ico">'+ICON.linkedin+'</span>LinkedIn / vdkarthikeya</a>'+
+        '<a href="'+D.resume+'" target="_blank" rel="noopener"><span class="rm-ico">'+ICON.resume+'</span>Résumé ↗</a>'+
+      '</div>';
+  }
+
+  function renderDrawer(){
+    el("drawer").innerHTML =
+      '<div class="drawer-head"><span>Sections</span><button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button></div>'+
+      D.sections.map(function(s){ return '<button class="drawer-item" data-page="'+s[0]+'"><span class="t">'+s[1]+'</span><span class="s">'+s[2]+'</span></button>'; }).join("");
+  }
+
+  function contactBlock(){
+    var c = D.contact;
+    return '<div class="contact"><h2>Contact me at</h2>'+
+      '<a class="email" href="mailto:'+c.email+'">'+c.email+'</a>'+
+      '<div class="socials">'+
+        '<a href="'+c.github+'" target="_blank" rel="noopener">'+ICON.github+'GitHub</a>'+
+        '<a href="'+c.linkedin+'" target="_blank" rel="noopener">'+ICON.linkedin+'LinkedIn</a>'+
+        '<a href="'+D.resume+'" target="_blank" rel="noopener">'+ICON.resume+'Résumé</a>'+
+      '</div></div>';
   }
 
   function renderHome(){
-    var c = siteData.contact;
-    var fe = siteData.experiences.filter(function(x){return x.featured;}).slice(0,LIMIT);
-    var fp = siteData.projects.filter(function(p){return p.featured;}).slice(0,LIMIT);
-    var skills = siteData.skills.map(function(s){
-      return '<div class="skill-row"><span class="k">'+s.group+'</span><span class="v">'+s.items.join(", ")+'</span></div>';
+    var edu = D.about.education.map(function(e, i){
+      var now = i === 0;
+      return '<div class="tl-item'+(now?' now':'')+'"><span class="tl-dot"></span>'+
+        '<div class="edu-top"><span class="edu-when">'+e.dates+'</span>'+(now?'<span class="tag live">Current</span>':'')+'</div>'+
+        '<div class="tl-row">'+logoBadge(e, e.school)+
+          '<div class="tl-body"><div class="tl-head"><span class="edu-school">'+e.school+'</span>'+
+          '<span class="stat">'+e.gpaValue+'<span class="max"> / '+e.gpaMax+' GPA</span></span></div>'+
+          '<div class="edu-degree">'+e.degree+'</div><div class="edu-loc">'+e.location+'</div></div></div>'+
+        (e.courses ? '<button class="go-pill" data-go="courses">See my courses and grades</button>' : '')+
+      '</div>';
     }).join("");
-    var socials = '<div class="socials">'+
-      '<a href="'+c.github+'" target="_blank" rel="noopener" aria-label="GitHub">'+ICON.github+'</a>'+
-      '<a href="'+c.linkedin+'" target="_blank" rel="noopener" aria-label="LinkedIn">'+ICON.linkedin+'</a>'+
-      '<a href="mailto:'+c.email+'" aria-label="Email">'+ICON.email+'</a></div>';
     el("page-home").innerHTML =
-      '<p class="greet">'+siteData.greeting+'</p>'+
-      '<p class="intro">'+siteData.intro+'</p>'+
-      '<p class="sect-label">Experience</p>'+ fe.map(function(x){return expCard(x,false);}).join("") + viewAll("#experience","View all experience") +
-      '<p class="sect-label gap">Projects</p>'+ fp.map(function(p){return projCard(p,false);}).join("") + viewAll("#projects","View all projects") +
-      '<p class="sect-label gap">Skills</p>'+ skills + socials;
+      '<p class="greet">'+D.greeting+'</p>'+
+      D.intro.map(function(p){ return '<p class="intro">'+p+'</p>'; }).join("")+
+      '<p class="sect-label gap">Education</p><div class="tl">'+edu+'</div>'+
+      contactBlock();
   }
-
-  function renderAbout(){
-    var a = siteData.about;
-    var bio = '<div class="about-bio">'+a.bio.map(function(p){return "<p>"+p+"</p>";}).join("")+'</div>';
-
-    var edu = '<div class="tl">' + a.education.map(function(e){
-      var stat = (e.gpaValue) ? '<div class="stat">'+e.gpaValue+'<span class="max"> / '+e.gpaMax+'</span></div>' : '';
-      return '<div class="tl-item"><span class="tl-dot"></span>'+
-        '<div class="edu-when">'+e.dates+'</div>'+
-        '<div class="tl-head"><span class="edu-school">'+e.school+'</span>'+stat+'</div>'+
-        '<div class="edu-degree">'+e.degree+'</div>'+
-        '<div class="edu-loc">'+e.location+'</div>'+
-        (e.courses ? viewAll("#courses","View all courses") : "")+
-        '</div>';
-    }).join("") + '</div>';
-
-    el("page-about").innerHTML = '<p class="sect-label">About</p>'+bio+'<p class="sect-label gap">Education</p>'+edu;
+  function tools(title, intro){
+    return '<div class="page-tools"><p class="sect-label">'+title+'</p><button class="toggle-all" aria-pressed="false" data-all>Show all details</button></div>'+
+      '<p class="page-intro">'+intro+'</p>';
   }
-
+  function renderExperience(){
+    el("page-experience").innerHTML = tools("Experience","Internships and fellowships. Tap the plus on any row to see what I did.")+D.experience.map(xpRow).join("");
+  }
+  function renderLeadership(){
+    el("page-leadership").innerHTML = tools("Leadership and involvement","Teaching, the Dean's Cabinet and student clubs. Tap the plus on any row for details.")+D.leadership.map(xpRow).join("");
+  }
+  function renderProjects(){
+    el("page-projects").innerHTML = '<p class="sect-label">Projects</p><p class="page-intro">Things I have built, with the code on GitHub.</p>'+D.projects.map(pjRow).join("");
+  }
   function renderCourses(){
-    var terms = siteData.about.terms.map(function(t){
-      var rows = t.rows.map(function(r){
-        return '<div class="course-row"><span class="code">'+r.code+'</span><span class="ctitle">'+r.title+'</span>'+
-          '<span class="grade'+(r.muted?' muted':'')+'">'+r.grade+'</span></div>';
+    var e = D.about.education;
+    el("page-courses").innerHTML = '<p class="sect-label">Courses and grades</p>'+
+      '<div class="gpa-row">'+e.map(function(x){ return '<div class="stat-block"><b>'+x.gpaValue+'</b>'+x.school.replace("University of California, ","UC ")+' GPA</div>'; }).join("")+'</div>'+
+      D.about.terms.slice().reverse().map(function(t, i){
+        var cur = t.rows.some(function(r){ return r.grade === "IP"; });
+        return '<div class="term"><div class="thead">'+t.term+(cur?'<span class="tag wip">In progress</span>':'')+'</div><div class="term-rows">'+courseRows(t.rows)+'</div></div>';
       }).join("");
-      var note = t.note ? '<div class="tnote">'+t.note+'</div>' : "";
-      return '<div class="term"><div class="term-head"><div class="thead">'+t.term+'</div>'+note+'</div><div class="term-rows">'+rows+'</div></div>';
-    }).join("");
-    el("page-courses").innerHTML = '<p class="sect-label">Coursework &amp; Grades</p>'+terms;
   }
 
-  function renderExperience(){ el("page-experience").innerHTML = '<p class="sect-label">Experience</p>'+ siteData.experiences.map(function(x){return expCard(x,true);}).join(""); }
-  function renderProjects(){ el("page-projects").innerHTML = '<p class="sect-label">Projects</p>'+ siteData.projects.map(function(p){return projCard(p,true);}).join(""); }
+  var drawer, scrim, menuBtn, current = "home";
+  function openMenu(){ drawer.classList.add("open"); scrim.classList.add("open"); drawer.setAttribute("aria-hidden","false"); menuBtn.setAttribute("aria-expanded","true"); }
+  function closeMenu(){ drawer.classList.remove("open"); scrim.classList.remove("open"); drawer.setAttribute("aria-hidden","true"); menuBtn.setAttribute("aria-expanded","false"); }
 
   function show(page){
-    if (PAGES.indexOf(page)===-1) page="home";
-    PAGES.forEach(function(p){ var n=el("page-"+p); if(n) n.classList.toggle("active", p===page); });
-    document.querySelectorAll('.pill button[data-page]').forEach(function(b){ b.classList.toggle("active", b.dataset.page===page); });
-    window.scrollTo({top:0, behavior:"auto"});
+    if (page === "about") page = "home";
+    if (PAGES.indexOf(page) === -1) page = "home";
+    current = page;
+    PAGES.forEach(function(p){ el("page-"+p).classList.toggle("active", p===page); });
+    document.querySelectorAll(".drawer-item").forEach(function(b){ b.classList.toggle("active", b.dataset.page===page); });
+    el("menuLabel").textContent = D.sections.filter(function(s){ return s[0]===page; })[0][1];
+    window.scrollTo(0,0);
   }
-  function route(){ show((location.hash||"#home").replace("#","")); }
+  function go(page){ show(page); closeMenu(); try { history.replaceState(null,"","#"+page); } catch(e) {} }
 
-  document.addEventListener("DOMContentLoaded", function(){
-    renderRail(); renderHome(); renderAbout(); renderCourses(); renderExperience(); renderProjects();
-    document.querySelectorAll('.pill button[data-page]').forEach(function(b){
-      b.addEventListener("click", function(){ location.hash = "#"+b.dataset.page; });
+  function init(){
+    drawer = el("drawer"); scrim = el("scrim"); menuBtn = el("menuBtn");
+    renderRail(); renderDrawer(); renderHome(); renderExperience(); renderLeadership(); renderProjects(); renderCourses();
+
+    menuBtn.addEventListener("click", openMenu);
+    scrim.addEventListener("click", closeMenu);
+    document.addEventListener("keydown", function(e){
+      if (e.key === "Escape") { closeMenu(); return; }
+      if ((e.key==="Enter"||e.key===" ") && e.target.classList && e.target.classList.contains("xp-head")) { e.preventDefault(); e.target.click(); }
     });
-    window.addEventListener("hashchange", route);
-    var tb=el("themeBtn"), ico=el("themeIco");
-    tb.addEventListener("click", function(){ var dark=document.body.classList.toggle("dark"); ico.textContent = dark ? "\u263e" : "\u2600"; });
-    route();
-  });
+    document.addEventListener("click", function(e){
+      if (e.target.closest("#drawerClose")) { closeMenu(); return; }
+      var di = e.target.closest(".drawer-item");
+      if (di) { go(di.dataset.page); return; }
+      var g = e.target.closest("[data-go]");
+      if (g) { go(g.getAttribute("data-go")); return; }
+      var h = e.target.closest(".xp-head");
+      if (h) { var row = h.parentNode, o = row.classList.toggle("open"); h.setAttribute("aria-expanded", o); return; }
+      var all = e.target.closest("[data-all]");
+      if (all) { var sec = all.closest(".page"), on = sec.classList.toggle("all-open"); all.setAttribute("aria-pressed", on); all.textContent = on ? "Hide all details" : "Show all details"; }
+    });
+    window.addEventListener("hashchange", function(){ show((location.hash||"#home").slice(1)); });
+
+    var root = document.documentElement, ico = el("themeIco");
+    function sync(){ ico.innerHTML = root.classList.contains("dark") ? "&#9790;" : "&#9728;"; }
+    sync();
+    el("themeBtn").addEventListener("click", function(){
+      var dark = root.classList.toggle("dark");
+      try { localStorage.setItem("theme", dark ? "dark" : "light"); } catch (err) {}
+      sync();
+    });
+    show((location.hash||"#home").slice(1));
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
 })();
