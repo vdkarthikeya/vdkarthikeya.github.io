@@ -10,10 +10,9 @@ const siteData = {
     "linkedin": "https://www.linkedin.com/in/vdkarthikeya"
   },
   "current": [
+    "Course Staff (Tutor/Reader), CDSS 198",
     "Transfer Representative, CDSS Dean's Cabinet",
-    "Course Staff, CDSS 198",
-    "Junior Mentor, Computer Science Mentors",
-    "Fung Fellow"
+    "Fung Fellow, Health Track"
   ],
   "greeting": "Hi, I'm Karthik.",
   "intro": [
@@ -184,8 +183,8 @@ const siteData = {
       "role": "Course Staff (UCS1)",
       "dates": "Jun 2026 - Aug 2026",
       "bullets": [
-        "Delivered 4 weekly exam-preparation sections for Berkeley's introductory CS course.",
-        "Authored exam questions and developed automated graders for student code."
+        "Taught 4 weekly exam-prep sections for Berkeley's intro CS course.",
+        "Wrote exam questions and built automatic graders for student code."
       ],
       "logo": "assets/logos/eecs.png"
     },
