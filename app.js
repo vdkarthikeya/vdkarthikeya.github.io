@@ -96,17 +96,17 @@
     return '<div class="page-tools"><p class="sect-label">'+title+'</p></div>';
   }
   function renderExperience(){
-    el("page-experience").innerHTML = tools("Experience")+D.experience.map(xpRow).join("");
+    el("page-experience").innerHTML = D.experience.map(xpRow).join("");
   }
   function renderLeadership(){
-    el("page-leadership").innerHTML = tools("Leadership & involvement")+D.leadership.map(xpRow).join("");
+    el("page-leadership").innerHTML = D.leadership.map(xpRow).join("");
   }
   function renderProjects(){
-    el("page-projects").innerHTML = '<p class="sect-label">Projects</p>'+D.projects.map(pjRow).join("");
+    el("page-projects").innerHTML = D.projects.map(pjRow).join("");
   }
   function renderCourses(){
     var e = D.about.education;
-    el("page-courses").innerHTML = '<p class="sect-label">Courses</p>'+
+    el("page-courses").innerHTML = 
       D.about.terms.slice().reverse().map(function(t, i){
         var cur = t.rows.some(function(r){ return r.grade === "IP"; });
         return '<div class="term"><div class="thead">'+t.term+(cur?'<span class="tag wip">In progress</span>':'')+'</div><div class="term-rows">'+courseRows(t.rows)+'</div></div>';
