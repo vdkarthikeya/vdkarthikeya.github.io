@@ -36,7 +36,7 @@
     '</article>';
   }
   function pjRow(p){
-    return '<article class="pj"><div><div class="pj-title">'+p.title+(p.status?'<span class="tag wip">'+p.status+'</span>':'')+'</div>'+
+    return '<article class="pj"><div><div class="pj-title">'+p.title+'</div>'+
       '<div class="pj-line">'+p.line+'</div></div>'+
       '<div class="pj-side">'+(p.repo?'<a class="repo-inline" href="'+p.repo+'" target="_blank" rel="noopener">View code</a>':'')+'</div></article>';
   }
@@ -105,7 +105,7 @@
     el("page-courses").innerHTML = 
       D.about.terms.slice().reverse().map(function(t, i){
         var cur = t.rows.some(function(r){ return r.grade === "IP"; });
-        return '<div class="term"><div class="thead">'+t.term+(cur?'<span class="tag wip">In progress</span>':'')+'</div><div class="term-rows">'+courseRows(t.rows)+'</div></div>';
+        return '<div class="term"><div class="thead">'+t.term+'</div><div class="term-rows">'+courseRows(t.rows)+'</div></div>';
       }).join("");
   }
 
