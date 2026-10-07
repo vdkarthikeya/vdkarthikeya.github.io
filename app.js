@@ -20,7 +20,7 @@
   }
   function isCurrent(dates){ return /Present$/.test(dates); }
   function whenBlock(dates){
-    return '<div class="xp-side"><span class="xp-when">'+dates+'</span>'+(isCurrent(dates)?'<span class="tag live">Current</span>':'')+'</div>';
+    return '<div class="xp-side"><span class="xp-when">'+dates+'</span>'+'</div>';
   }
 
   function xpRow(x){
@@ -38,7 +38,7 @@
   function pjRow(p){
     return '<article class="pj"><div><div class="pj-title">'+p.title+(p.status?'<span class="tag wip">'+p.status+'</span>':'')+'</div>'+
       '<div class="pj-line">'+p.line+'</div></div>'+
-      '<div class="pj-side">'+(p.when?'<span>'+p.when+'</span>':'')+(p.repo?'<a class="repo-inline" href="'+p.repo+'" target="_blank" rel="noopener">View code</a>':'')+'</div></article>';
+      '<div class="pj-side">'+(p.repo?'<a class="repo-inline" href="'+p.repo+'" target="_blank" rel="noopener">View code</a>':'')+'</div></article>';
   }
   function courseRows(rows){
     return rows.map(function(r){
@@ -84,7 +84,6 @@
           '<div class="tl-body"><div class="tl-head"><span class="edu-school">'+e.school+'</span>'+
           '<span class="stat">'+e.gpaValue+'<span class="max"> / '+e.gpaMax+' GPA</span></span></div>'+
           '<div class="edu-degree">'+e.degree+'</div><div class="edu-loc">'+e.location+'</div></div></div>'+
-        (e.courses ? '<button class="go-pill" data-go="courses">See my courses and grades</button>' : '')+
       '</div>';
     }).join("");
     el("page-home").innerHTML =
@@ -100,14 +99,14 @@
     el("page-experience").innerHTML = tools("Experience")+D.experience.map(xpRow).join("");
   }
   function renderLeadership(){
-    el("page-leadership").innerHTML = tools("Leadership and involvement")+D.leadership.map(xpRow).join("");
+    el("page-leadership").innerHTML = tools("Leadership & involvement")+D.leadership.map(xpRow).join("");
   }
   function renderProjects(){
     el("page-projects").innerHTML = '<p class="sect-label">Projects</p>'+D.projects.map(pjRow).join("");
   }
   function renderCourses(){
     var e = D.about.education;
-    el("page-courses").innerHTML = '<p class="sect-label">Courses and grades</p>'+
+    el("page-courses").innerHTML = '<p class="sect-label">Courses</p>'+
       '<div class="gpa-row">'+e.map(function(x){ return '<div class="stat-block"><b>'+x.gpaValue+'</b>'+x.school.replace("University of California, ","UC ")+' GPA</div>'; }).join("")+'</div>'+
       D.about.terms.slice().reverse().map(function(t, i){
         var cur = t.rows.some(function(r){ return r.grade === "IP"; });

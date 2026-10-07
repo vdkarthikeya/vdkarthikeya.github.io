@@ -150,6 +150,15 @@ const siteData = {
       "logo": "assets/logos/cdss.png"
     },
     {
+      "company": "Computer Science Mentors",
+      "role": "Junior Mentor, CS 88 / DATA C88C",
+      "dates": "Sep 2026 to Present",
+      "bullets": [
+        "Teach a weekly section that helps transfer students keep up in the course."
+      ],
+      "logo": "assets/logos/csm.png"
+    },
+    {
       "company": "CDSS 198 Transfer Seminar",
       "role": "Course Staff (Tutor)",
       "dates": "Aug 2026 to Present",
@@ -180,13 +189,13 @@ const siteData = {
       "logo": "assets/logos/eecs.png"
     },
     {
-      "company": "Computer Science Mentors",
-      "role": "Junior Mentor, CS 88 / DATA C88C",
-      "dates": "Sep 2026 to Present",
+      "company": "Mentors at De Anza",
+      "role": "Mentor",
+      "dates": "Sep 2024 to Apr 2025",
       "bullets": [
-        "Teach a weekly section that helps transfer students keep up in the course."
+        "Guided a first-generation nursing student through course planning, transfer credit and career paths."
       ],
-      "logo": "assets/logos/csm.png"
+      "logo": "assets/logos/mentors-deanza.png"
     },
     {
       "company": "Boundary.0",
@@ -197,15 +206,6 @@ const siteData = {
         "Organized events that grew it to 120+ members."
       ],
       "logo": "assets/logos/boundary0.png"
-    },
-    {
-      "company": "Mentors at De Anza",
-      "role": "Mentor",
-      "dates": "Sep 2024 to Apr 2025",
-      "bullets": [
-        "Guided a first-generation nursing student through course planning, transfer credit and career paths."
-      ],
-      "logo": "assets/logos/mentors-deanza.png"
     },
     {
       "company": "De Anza Student Government",
@@ -229,16 +229,14 @@ const siteData = {
   ],
   "experience": [
     {
-      "company": "Guang Labs",
-      "role": "Engineering Intern",
-      "dates": "May 2026 to Aug 2026",
+      "company": "Fung Fellowship at UC Berkeley",
+      "role": "Fung Fellow, Health + Innovation Track",
+      "dates": "Aug 2026 to Present",
       "bullets": [
-        "Built a service that automatically labels videos and images, using Google's Gemini.",
-        "Added a check that retries when the AI is unsure of its answer.",
-        "Built the in-app bell that tells users when their video is ready."
+        "Part of a team building a free AI recovery coach for disaster survivors.",
+        "Interviewed wildfire survivors to learn what they went through and what they need."
       ],
-      "logoDomain": "guanglabs.com",
-      "url": "https://guanglabs.com/"
+      "logo": "assets/logos/fung.png"
     },
     {
       "company": "IDX Exchange",
@@ -252,14 +250,16 @@ const siteData = {
       "logoDomain": "idxexchange.com"
     },
     {
-      "company": "Fung Fellowship at UC Berkeley",
-      "role": "Fung Fellow, Health + Innovation Track",
-      "dates": "Aug 2026 to Present",
+      "company": "Guang Labs",
+      "role": "Engineering Intern",
+      "dates": "May 2026 to Aug 2026",
       "bullets": [
-        "Part of a team building a free AI recovery coach for disaster survivors.",
-        "Interviewed wildfire survivors to learn what they went through and what they need."
+        "Built a service that automatically labels videos and images, using Google's Gemini.",
+        "Added a check that retries when the AI is unsure of its answer.",
+        "Built the in-app bell that tells users when their video is ready."
       ],
-      "logo": "assets/logos/fung.png"
+      "logoDomain": "guanglabs.com",
+      "url": "https://guanglabs.com/"
     },
     {
       "company": "Kirsch Center, De Anza",
@@ -275,14 +275,14 @@ const siteData = {
     {
       "title": "SightLine",
       "line": "An app that turns a day of smart-glasses footage into a 60-second recap. I'm on the ML team.",
-      "when": "Fall 2026",
+      "when": "",
       "repo": "https://github.com/vdkarthikeya/sightline-ml-public",
       "status": "In progress"
     },
     {
       "title": "Movie Genre Classification",
       "line": "A model that predicts a movie's genres from its plot summary.",
-      "when": "Spring 2026",
+      "when": "",
       "repo": "https://github.com/vdkarthikeya/movie-genre-classification-nlp"
     },
     {
@@ -294,7 +294,7 @@ const siteData = {
     {
       "title": "SB 79 Transit Housing Analysis",
       "line": "A map of where Los Angeles can build denser housing near transit under a new California law.",
-      "when": "Summer 2026",
+      "when": "",
       "repo": "https://github.com/vdkarthikeya/sb79-tod-analysis-public"
     },
     {
@@ -341,7 +341,7 @@ const siteData = {
     ],
     [
       "leadership",
-      "Leadership and involvement",
+      "Leadership & involvement",
       "Teaching, cabinet and clubs"
     ],
     [
