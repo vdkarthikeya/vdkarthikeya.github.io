@@ -32,7 +32,7 @@ const siteData = {
         "gpaValue": "3.85",
         "gpaMax": "4.00",
         "location": "Berkeley, CA",
-        "dates": "Aug 2025 to Dec 2027",
+        "dates": "Aug 2025 - Dec 2027",
         "courses": true,
         "logoDomain": "berkeley.edu"
       },
@@ -42,7 +42,7 @@ const siteData = {
         "gpaValue": "3.92",
         "gpaMax": "4.00",
         "location": "Cupertino, CA",
-        "dates": "Sep 2023 to Jun 2025",
+        "dates": "Sep 2023 - Jun 2025",
         "logoDomain": "deanza.edu"
       }
     ],
@@ -143,7 +143,7 @@ const siteData = {
     {
       "company": "CDSS Dean's Cabinet",
       "role": "Transfer Representative",
-      "dates": "Fall 2026 to Present",
+      "dates": "Sep 2026 - Present",
       "bullets": [
         "Bring transfer students' voices to the associate dean and CDSS faculty."
       ],
@@ -152,7 +152,7 @@ const siteData = {
     {
       "company": "Computer Science Mentors",
       "role": "Junior Mentor, CS 88 / DATA C88C",
-      "dates": "Sep 2026 to Present",
+      "dates": "Sep 2026 - Present",
       "bullets": [
         "Teach a weekly section that helps transfer students keep up in the course."
       ],
@@ -161,7 +161,7 @@ const siteData = {
     {
       "company": "CDSS 198 Transfer Seminar",
       "role": "Course Staff (Tutor)",
-      "dates": "Aug 2026 to Present",
+      "dates": "Aug 2026 - Present",
       "bullets": [
         "Help transfer students settle in through study groups, office hours and tutoring.",
         "Run exam reviews for CS 61A and Data 8."
@@ -171,7 +171,7 @@ const siteData = {
     {
       "company": "CDSS 198 Careers in Data Science & Computing",
       "role": "Course Staff (Reader)",
-      "dates": "Aug 2026 to Present",
+      "dates": "Aug 2026 - Present",
       "bullets": [
         "Give resume and cover letter feedback to students in a careers seminar.",
         "Help bring alumni and industry guests to campus."
@@ -181,7 +181,7 @@ const siteData = {
     {
       "company": "CS 61A",
       "role": "Course Staff (UCS1)",
-      "dates": "Jun 2026 to Aug 2026",
+      "dates": "Jun 2026 - Aug 2026",
       "bullets": [
         "Taught 4 weekly exam-prep sections for Berkeley's intro CS course.",
         "Wrote exam questions and built automatic graders for student code."
@@ -191,7 +191,7 @@ const siteData = {
     {
       "company": "Mentors at De Anza",
       "role": "Mentor",
-      "dates": "Sep 2024 to Apr 2025",
+      "dates": "Sep 2024 - Apr 2025",
       "bullets": [
         "Guided a first-generation nursing student through course planning, transfer credit and career paths."
       ],
@@ -200,7 +200,7 @@ const siteData = {
     {
       "company": "Boundary.0",
       "role": "Secretary",
-      "dates": "Apr 2024 to Jun 2025",
+      "dates": "Apr 2024 - Jun 2025",
       "bullets": [
         "Helped launch a new student club that connects students with industry.",
         "Organized events that grew it to 120+ members."
@@ -210,7 +210,7 @@ const siteData = {
     {
       "company": "De Anza Student Government",
       "role": "Programs Committee Intern",
-      "dates": "Feb 2024 to Feb 2025",
+      "dates": "Feb 2024 - Feb 2025",
       "bullets": [
         "Planned and ran 5+ major campus events, including Club Day and Homecoming."
       ],
@@ -219,7 +219,7 @@ const siteData = {
     {
       "company": "Indian Students Association, De Anza",
       "role": "Events Coordinator",
-      "dates": "Oct 2023 to Feb 2025",
+      "dates": "Oct 2023 - Feb 2025",
       "bullets": [
         "Led the club's biggest event of the year, a Diwali celebration with 200+ attendees.",
         "Coordinated 30+ volunteers and managed sponsorships and budget."
@@ -231,7 +231,7 @@ const siteData = {
     {
       "company": "Fung Fellowship at UC Berkeley",
       "role": "Fung Fellow, Health + Innovation Track",
-      "dates": "Aug 2026 to Present",
+      "dates": "Aug 2026 - Present",
       "bullets": [
         "Part of a team building a free AI recovery coach for disaster survivors.",
         "Interviewed wildfire survivors to learn what they went through and what they need."
@@ -241,7 +241,7 @@ const siteData = {
     {
       "company": "IDX Exchange",
       "role": "Data Science Intern",
-      "dates": "Jun 2026 to Aug 2026",
+      "dates": "Jun 2026 - Aug 2026",
       "bullets": [
         "Built a model that predicts California home prices, typically within 8.6% of the real price.",
         "Cleaned 143K raw records into 71K usable home sales.",
@@ -252,7 +252,7 @@ const siteData = {
     {
       "company": "Guang Labs",
       "role": "Engineering Intern",
-      "dates": "May 2026 to Aug 2026",
+      "dates": "May 2026 - Aug 2026",
       "bullets": [
         "Built a service that automatically labels videos and images, using Google's Gemini.",
         "Added a check that retries when the AI is unsure of its answer.",
@@ -264,7 +264,7 @@ const siteData = {
     {
       "company": "Kirsch Center, De Anza",
       "role": "Lab Technician Assistant",
-      "dates": "Dec 2023 to Mar 2024",
+      "dates": "Dec 2023 - Mar 2024",
       "bullets": [
         "Helped a team of about 30 restore the Kirsch Center's sustainability spaces."
       ],
