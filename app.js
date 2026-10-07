@@ -68,11 +68,7 @@
     var c = D.contact;
     return '<div class="contact"><h2>Contact me at</h2>'+
       '<a class="email" href="mailto:'+c.email+'">'+c.email+'</a>'+
-      '<div class="socials">'+
-        '<a href="'+c.github+'" target="_blank" rel="noopener">'+ICON.github+'GitHub</a>'+
-        '<a href="'+c.linkedin+'" target="_blank" rel="noopener">'+ICON.linkedin+'LinkedIn</a>'+
-        '<a href="'+D.resume+'" target="_blank" rel="noopener">'+ICON.resume+'Résumé</a>'+
-      '</div></div>';
+      '</div>';
   }
 
   function renderHome(){
