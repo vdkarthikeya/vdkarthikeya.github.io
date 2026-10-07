@@ -58,7 +58,7 @@
         '<a href="'+c.linkedin+'" target="_blank" rel="noopener"><span class="rm-ico">'+ICON.linkedin+'</span>LinkedIn / vdkarthikeya</a>'+
         '<a href="'+D.resume+'" target="_blank" rel="noopener"><span class="rm-ico">'+ICON.resume+'</span>Résumé ↗</a>'+
       '</div>'+
-      '<p class="now"><b>Currently</b><br>'+D.current.join("<br>")+'</p>';
+      '<div class="now"><b>Currently</b><ul>'+D.current.map(function(x){ return '<li>'+x+'</li>'; }).join("")+'</ul></div>';
   }
 
   function renderTabs(){

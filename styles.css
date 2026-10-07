@@ -181,3 +181,6 @@ a.hl:hover { opacity:.65; }
 
 .now { margin-top:28px; font-size:15px; color:var(--soft); line-height:1.8; }
 .now b { color:var(--ink); font-weight:600; }
+.now ul { list-style:disc; margin:6px 0 0; padding-left:18px; }
+.now li { padding-left:2px; margin-bottom:2px; }
+.now li::marker { color:var(--soft); }
