@@ -17,18 +17,11 @@
 <body>
   <button class="theme-corner" id="themeBtn" aria-label="Toggle dark mode"><span id="themeIco">&#9728;</span></button>
 
-  <div class="scrim" id="scrim"></div>
-  <aside class="drawer" id="drawer" aria-hidden="true" aria-label="Sections"></aside>
-
   <div class="wrap">
     <div class="grid">
       <aside class="rail" id="rail"></aside>
       <main class="content">
-        <div class="menu-row">
-          <button class="menu-btn" id="menuBtn" aria-label="Open sections menu" aria-expanded="false" aria-controls="drawer">
-            <span class="bars"><i></i><i></i><i></i></span><span class="menu-label" id="menuLabel">About</span>
-          </button>
-        </div>
+        <nav class="tabs" id="tabs" aria-label="Sections"></nav>
         <section class="page active" id="page-home"></section>
         <section class="page" id="page-experience"></section>
         <section class="page" id="page-leadership"></section>

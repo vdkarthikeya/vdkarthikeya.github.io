@@ -60,10 +60,8 @@
       '</div>';
   }
 
-  function renderDrawer(){
-    el("drawer").innerHTML =
-      '<div class="drawer-head"><span>Sections</span><button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button></div>'+
-      D.sections.map(function(s){ return '<button class="drawer-item" data-page="'+s[0]+'"><span class="t">'+s[1]+'</span><span class="s">'+s[2]+'</span></button>'; }).join("");
+  function renderTabs(){
+    el("tabs").innerHTML = D.sections.map(function(s){ return '<button class="tab" data-page="'+s[0]+'">'+s[1]+'</button>'; }).join("");
   }
 
   function contactBlock(){
@@ -80,8 +78,8 @@
   function renderHome(){
     var edu = D.about.education.map(function(e, i){
       var now = i === 0;
-      return '<div class="tl-item'+(now?' now':'')+'"><span class="tl-dot"></span>'+
-        '<div class="edu-top"><span class="edu-when">'+e.dates+'</span>'+(now?'<span class="tag live">Current</span>':'')+'</div>'+
+      return '<div class="tl-item"><span class="tl-dot"></span>'+
+        '<div class="edu-top"><span class="edu-when">'+e.dates+'</span>'+'</div>'+
         '<div class="tl-row">'+logoBadge(e, e.school)+
           '<div class="tl-body"><div class="tl-head"><span class="edu-school">'+e.school+'</span>'+
           '<span class="stat">'+e.gpaValue+'<span class="max"> / '+e.gpaMax+' GPA</span></span></div>'+
@@ -95,18 +93,17 @@
       '<p class="sect-label gap">Education</p><div class="tl">'+edu+'</div>'+
       contactBlock();
   }
-  function tools(title, intro){
-    return '<div class="page-tools"><p class="sect-label">'+title+'</p><button class="toggle-all" aria-pressed="false" data-all>Show all details</button></div>'+
-      '<p class="page-intro">'+intro+'</p>';
+  function tools(title){
+    return '<div class="page-tools"><p class="sect-label">'+title+'</p><button class="toggle-all" aria-pressed="false" data-all>Show all details</button></div>';
   }
   function renderExperience(){
-    el("page-experience").innerHTML = tools("Experience","Internships and fellowships. Tap the plus on any row to see what I did.")+D.experience.map(xpRow).join("");
+    el("page-experience").innerHTML = tools("Experience")+D.experience.map(xpRow).join("");
   }
   function renderLeadership(){
-    el("page-leadership").innerHTML = tools("Leadership and involvement","Teaching, the Dean's Cabinet and student clubs. Tap the plus on any row for details.")+D.leadership.map(xpRow).join("");
+    el("page-leadership").innerHTML = tools("Leadership and involvement")+D.leadership.map(xpRow).join("");
   }
   function renderProjects(){
-    el("page-projects").innerHTML = '<p class="sect-label">Projects</p><p class="page-intro">Things I have built, with the code on GitHub.</p>'+D.projects.map(pjRow).join("");
+    el("page-projects").innerHTML = '<p class="sect-label">Projects</p>'+D.projects.map(pjRow).join("");
   }
   function renderCourses(){
     var e = D.about.education;
@@ -118,35 +115,27 @@
       }).join("");
   }
 
-  var drawer, scrim, menuBtn, current = "home";
-  function openMenu(){ drawer.classList.add("open"); scrim.classList.add("open"); drawer.setAttribute("aria-hidden","false"); menuBtn.setAttribute("aria-expanded","true"); }
-  function closeMenu(){ drawer.classList.remove("open"); scrim.classList.remove("open"); drawer.setAttribute("aria-hidden","true"); menuBtn.setAttribute("aria-expanded","false"); }
+  var current = "home";
 
   function show(page){
     if (page === "about") page = "home";
     if (PAGES.indexOf(page) === -1) page = "home";
     current = page;
     PAGES.forEach(function(p){ el("page-"+p).classList.toggle("active", p===page); });
-    document.querySelectorAll(".drawer-item").forEach(function(b){ b.classList.toggle("active", b.dataset.page===page); });
-    el("menuLabel").textContent = D.sections.filter(function(s){ return s[0]===page; })[0][1];
+    document.querySelectorAll(".tab").forEach(function(b){ b.classList.toggle("active", b.dataset.page===page); });
     window.scrollTo(0,0);
   }
-  function go(page){ show(page); closeMenu(); try { history.replaceState(null,"","#"+page); } catch(e) {} }
+  function go(page){ show(page); try { history.replaceState(null,"","#"+page); } catch(e) {} }
 
   function init(){
-    drawer = el("drawer"); scrim = el("scrim"); menuBtn = el("menuBtn");
-    renderRail(); renderDrawer(); renderHome(); renderExperience(); renderLeadership(); renderProjects(); renderCourses();
+    renderRail(); renderTabs(); renderHome(); renderExperience(); renderLeadership(); renderProjects(); renderCourses();
 
-    menuBtn.addEventListener("click", openMenu);
-    scrim.addEventListener("click", closeMenu);
     document.addEventListener("keydown", function(e){
-      if (e.key === "Escape") { closeMenu(); return; }
       if ((e.key==="Enter"||e.key===" ") && e.target.classList && e.target.classList.contains("xp-head")) { e.preventDefault(); e.target.click(); }
     });
     document.addEventListener("click", function(e){
-      if (e.target.closest("#drawerClose")) { closeMenu(); return; }
-      var di = e.target.closest(".drawer-item");
-      if (di) { go(di.dataset.page); return; }
+      var tb = e.target.closest(".tab");
+      if (tb) { go(tb.dataset.page); return; }
       var g = e.target.closest("[data-go]");
       if (g) { go(g.getAttribute("data-go")); return; }
       var h = e.target.closest(".xp-head");
