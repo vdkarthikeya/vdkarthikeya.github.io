@@ -12,6 +12,7 @@ const siteData = {
   "current": [
     "Transfer Representative, CDSS Dean's Cabinet",
     "Course Staff, CDSS 198",
+    "Junior Mentor, Computer Science Mentors",
     "Fung Fellow"
   ],
   "greeting": "Hi, I'm Karthik.",
