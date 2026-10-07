@@ -234,8 +234,9 @@ const siteData = {
       "role": "Fung Fellow, Health + Innovation Track",
       "dates": "Aug 2026 - Present",
       "bullets": [
-        "Develop a free AI recovery coach for disaster survivors as part of a student team.",
-        "Conducted interviews with wildfire survivors to identify their needs and shape the product."
+        "Develop a free AI recovery coach for disaster survivors with The After Collective, as part of the Fung Fellowship's Health + Innovation track.",
+        "Conducted interviews with wildfire survivors to understand their experiences, the tools they use and where they find information, shaping what the coach needs to do.",
+        "Organize the team's documentation, including the main project doc, weekly updates and test plans."
       ],
       "logo": "assets/logos/fung.png"
     },
@@ -245,9 +246,10 @@ const siteData = {
       "role": "Data Science Intern",
       "dates": "Jun 2026 - Aug 2026",
       "bullets": [
-        "Developed a model that predicts California home prices, typically within 8.6% of the actual price.",
-        "Processed 143K raw records into 71K validated home sales.",
-        "Identified and resolved a data leakage bug, ensuring reliable model results."
+        "Developed a model that predicts California home sale prices, trained on 71K sales cleaned from 143K raw records, with typical predictions within 8.6% of the actual price.",
+        "Evaluated four model types and selected XGBoost, finding that letting it learn finer patterns improved accuracy more than training it longer.",
+        "Identified and fixed a data leakage bug in which test data was contaminating training and inflating early results, so the final model was judged fairly.",
+        "Reduced a simpler model's error from 29% to 15% by adding each home's school district as a feature."
       ],
       "logoDomain": "idxexchange.com"
     },
@@ -256,8 +258,9 @@ const siteData = {
       "role": "Engineering Intern",
       "dates": "May 2026 - Aug 2026",
       "bullets": [
-        "Engineered a service that automatically labels videos and images using Google's Gemini.",
-        "Implemented a confidence check that retries when the model is uncertain.",
+        "Engineered a service for an AI video startup that analyzes a user's image or video and labels its content type (sports, gaming, talking, music) using Google's Gemini.",
+        "Implemented a safeguard that detects uncertain or broken model responses and retries with different clips from the video, up to 10 attempts, to produce dependable labels.",
+        "Validated the service end to end with real video clips after code review and expanded the automated test suite from 38 to 86 tests.",
         "Designed an in-app notification bell that alerts users when their video is ready."
       ],
       "logoDomain": "guanglabs.com",
