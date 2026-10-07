@@ -57,7 +57,8 @@
         '<a href="'+c.github+'" target="_blank" rel="noopener"><span class="rm-ico">'+ICON.github+'</span>GitHub / vdkarthikeya</a>'+
         '<a href="'+c.linkedin+'" target="_blank" rel="noopener"><span class="rm-ico">'+ICON.linkedin+'</span>LinkedIn / vdkarthikeya</a>'+
         '<a href="'+D.resume+'" target="_blank" rel="noopener"><span class="rm-ico">'+ICON.resume+'</span>Résumé ↗</a>'+
-      '</div>';
+      '</div>'+
+      '<p class="now"><b>Currently</b><br>'+D.current.join("<br>")+'</p>';
   }
 
   function renderTabs(){
