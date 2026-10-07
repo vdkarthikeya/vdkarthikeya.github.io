@@ -16,7 +16,7 @@ const siteData = {
   ],
   "greeting": "Hi, I'm Karthik.",
   "intro": [
-    "I'm a senior at <a class='hl' href='https://www.berkeley.edu' target='_blank' rel='noopener'>UC Berkeley</a> studying <a class='hl' href='https://cdss.berkeley.edu/dsus' target='_blank' rel='noopener'>data science</a>, and I'm building deep technical expertise in data science and machine learning. This fall I'm on course staff for two CDSS 198 courses, and I'm a Fung Fellow working on an AI recovery coach for disaster survivors.",
+    "I'm a senior at <a class='hl' href='https://www.berkeley.edu' target='_blank' rel='noopener'>UC Berkeley</a> studying <a class='hl' href='https://cdss.berkeley.edu/dsus' target='_blank' rel='noopener'>Data Science</a>. I'm currently on course staff for two CDSS 198 courses, and I'm a Fung Fellow working on an AI recovery coach for disaster survivors. On the side, I'm building deep technical expertise in Data Science and machine learning.",
     "I'm a <span class='hl'>proud transfer student</span>. The community has been great and helpful, so I give back in whatever ways I can, mostly by helping other transfers find their footing. Go transfers!"
   ],
   "about": {
@@ -230,6 +230,7 @@ const siteData = {
   "experience": [
     {
       "company": "Fung Fellowship at UC Berkeley",
+      "url": "https://funginstitute.berkeley.edu/",
       "role": "Fung Fellow, Health + Innovation Track",
       "dates": "Aug 2026 - Present",
       "bullets": [
@@ -240,6 +241,7 @@ const siteData = {
     },
     {
       "company": "IDX Exchange",
+      "url": "https://www.idxexchange.com/",
       "role": "Data Science Intern",
       "dates": "Jun 2026 - Aug 2026",
       "bullets": [
@@ -263,6 +265,7 @@ const siteData = {
     },
     {
       "company": "Kirsch Center, De Anza",
+      "url": "https://www.deanza.edu/kirsch/",
       "role": "Lab Technician Assistant",
       "dates": "Dec 2023 - Mar 2024",
       "bullets": [
