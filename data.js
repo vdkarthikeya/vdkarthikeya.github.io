@@ -145,7 +145,7 @@ const siteData = {
       "role": "Transfer Representative",
       "dates": "Sep 2026 - Present",
       "bullets": [
-        "Bring transfer students' voices to the associate dean and CDSS faculty."
+        "Represent transfer students to the associate dean and CDSS faculty, advocating for their needs in the data science major."
       ],
       "logo": "assets/logos/cdss.png"
     },
@@ -154,7 +154,7 @@ const siteData = {
       "role": "Junior Mentor, CS 88 / DATA C88C",
       "dates": "Sep 2026 - Present",
       "bullets": [
-        "Teach a weekly section that helps transfer students keep up in the course."
+        "Teach a weekly section that reinforces core concepts and strengthens transfer students' performance in the course."
       ],
       "logo": "assets/logos/csm.png"
     },
@@ -163,8 +163,8 @@ const siteData = {
       "role": "Course Staff (Tutor)",
       "dates": "Aug 2026 - Present",
       "bullets": [
-        "Help transfer students settle in through study groups, office hours and tutoring.",
-        "Run exam reviews for CS 61A and Data 8."
+        "Support transfer students' academic transition through study groups, office hours and tutoring.",
+        "Lead exam reviews for CS and DS classes."
       ],
       "logo": "assets/logos/cdss.png"
     },
@@ -173,8 +173,8 @@ const siteData = {
       "role": "Course Staff (Reader)",
       "dates": "Aug 2026 - Present",
       "bullets": [
-        "Give resume and cover letter feedback to students in a careers seminar.",
-        "Help bring alumni and industry guests to campus."
+        "Review and critique resumes and cover letters to strengthen students' internship and job applications.",
+        "Coordinate alumni and industry speakers for the careers seminar."
       ],
       "logo": "assets/logos/cdss.png"
     },
@@ -183,8 +183,8 @@ const siteData = {
       "role": "Course Staff (UCS1)",
       "dates": "Jun 2026 - Aug 2026",
       "bullets": [
-        "Taught 4 weekly exam-prep sections for Berkeley's intro CS course.",
-        "Wrote exam questions and built automatic graders for student code."
+        "Delivered 4 weekly exam-preparation sections for Berkeley's introductory CS course.",
+        "Authored exam questions and developed automated graders for student code."
       ],
       "logo": "assets/logos/eecs.png"
     },
@@ -193,7 +193,7 @@ const siteData = {
       "role": "Mentor",
       "dates": "Sep 2024 - Apr 2025",
       "bullets": [
-        "Guided a first-generation nursing student through course planning, transfer credit and career paths."
+        "Advised a first-generation nursing student on course planning, transfer credit and career pathways."
       ],
       "logo": "assets/logos/mentors-deanza.png"
     },
@@ -202,8 +202,8 @@ const siteData = {
       "role": "Secretary",
       "dates": "Apr 2024 - Jun 2025",
       "bullets": [
-        "Helped launch a new student club that connects students with industry.",
-        "Organized events that grew it to 120+ members."
+        "Co-founded a student club connecting students with industry professionals.",
+        "Organized events that grew membership to 120+."
       ],
       "logo": "assets/logos/boundary0.png"
     },
@@ -212,7 +212,7 @@ const siteData = {
       "role": "Programs Committee Intern",
       "dates": "Feb 2024 - Feb 2025",
       "bullets": [
-        "Planned and ran 5+ major campus events, including Club Day and Homecoming."
+        "Planned and executed 5+ major campus events, including Club Day and Homecoming."
       ],
       "logo": "assets/logos/dasg.png"
     },
@@ -221,8 +221,8 @@ const siteData = {
       "role": "Events Coordinator",
       "dates": "Oct 2023 - Feb 2025",
       "bullets": [
-        "Led the club's biggest event of the year, a Diwali celebration with 200+ attendees.",
-        "Coordinated 30+ volunteers and managed sponsorships and budget."
+        "Directed the club's flagship event, a Diwali celebration with 200+ attendees.",
+        "Coordinated 30+ volunteers and managed sponsorships and the event budget."
       ],
       "logo": "assets/logos/isa-deanza.png"
     }
@@ -234,8 +234,8 @@ const siteData = {
       "role": "Fung Fellow, Health + Innovation Track",
       "dates": "Aug 2026 - Present",
       "bullets": [
-        "Part of a team building a free AI recovery coach for disaster survivors.",
-        "Interviewed wildfire survivors to learn what they went through and what they need."
+        "Develop a free AI recovery coach for disaster survivors as part of a student team.",
+        "Conducted interviews with wildfire survivors to identify their needs and shape the product."
       ],
       "logo": "assets/logos/fung.png"
     },
@@ -245,9 +245,9 @@ const siteData = {
       "role": "Data Science Intern",
       "dates": "Jun 2026 - Aug 2026",
       "bullets": [
-        "Built a model that predicts California home prices, typically within 8.6% of the real price.",
-        "Cleaned 143K raw records into 71K usable home sales.",
-        "Found and fixed a bug that was leaking test data, so the results can be trusted."
+        "Developed a model that predicts California home prices, typically within 8.6% of the actual price.",
+        "Processed 143K raw records into 71K validated home sales.",
+        "Identified and resolved a data leakage bug, ensuring reliable model results."
       ],
       "logoDomain": "idxexchange.com"
     },
@@ -256,9 +256,9 @@ const siteData = {
       "role": "Engineering Intern",
       "dates": "May 2026 - Aug 2026",
       "bullets": [
-        "Built a service that automatically labels videos and images, using Google's Gemini.",
-        "Added a check that retries when the AI is unsure of its answer.",
-        "Built the in-app bell that tells users when their video is ready."
+        "Engineered a service that automatically labels videos and images using Google's Gemini.",
+        "Implemented a confidence check that retries when the model is uncertain.",
+        "Designed an in-app notification bell that alerts users when their video is ready."
       ],
       "logoDomain": "guanglabs.com",
       "url": "https://guanglabs.com/"
@@ -269,7 +269,7 @@ const siteData = {
       "role": "Lab Technician Assistant",
       "dates": "Dec 2023 - Mar 2024",
       "bullets": [
-        "Helped a team of about 30 restore the Kirsch Center's sustainability spaces."
+        "Contributed to a team of about 30 restoring the Kirsch Center's sustainability spaces."
       ],
       "logoDomain": "deanza.edu"
     }
