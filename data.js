@@ -145,7 +145,7 @@ const siteData = {
       "role": "Transfer Representative",
       "dates": "Sep 2026 - Present",
       "bullets": [
-        "Represent transfer students to the associate dean and CDSS faculty, advocating for their needs in the data science major."
+        "Represent transfer students to the associate dean and CDSS faculty, advocating for their needs across CDSS majors."
       ],
       "logo": "assets/logos/cdss.png"
     },
@@ -202,7 +202,7 @@ const siteData = {
       "role": "Secretary",
       "dates": "Apr 2024 - Jun 2025",
       "bullets": [
-        "Co-founded a student club connecting students with industry professionals.",
+        "Helped launch a student club connecting students with industry professionals.",
         "Organized events that grew membership to 120+."
       ],
       "logo": "assets/logos/boundary0.png"
