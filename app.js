@@ -93,7 +93,7 @@
       contactBlock();
   }
   function tools(title){
-    return '<div class="page-tools"><p class="sect-label">'+title+'</p><button class="toggle-all" aria-pressed="false" data-all>Show all details</button></div>';
+    return '<div class="page-tools"><p class="sect-label">'+title+'</p></div>';
   }
   function renderExperience(){
     el("page-experience").innerHTML = tools("Experience")+D.experience.map(xpRow).join("");
@@ -107,7 +107,6 @@
   function renderCourses(){
     var e = D.about.education;
     el("page-courses").innerHTML = '<p class="sect-label">Courses</p>'+
-      '<div class="gpa-row">'+e.map(function(x){ return '<div class="stat-block"><b>'+x.gpaValue+'</b>'+x.school.replace("University of California, ","UC ")+' GPA</div>'; }).join("")+'</div>'+
       D.about.terms.slice().reverse().map(function(t, i){
         var cur = t.rows.some(function(r){ return r.grade === "IP"; });
         return '<div class="term"><div class="thead">'+t.term+(cur?'<span class="tag wip">In progress</span>':'')+'</div><div class="term-rows">'+courseRows(t.rows)+'</div></div>';
