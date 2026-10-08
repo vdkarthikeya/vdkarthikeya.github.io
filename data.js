@@ -329,7 +329,7 @@ const siteData = {
     },
     {
       "title": "Build Your Own World",
-      "line": "A 2D dungeon game whose random worlds can be rebuilt exactly from a seed.",
+      "line": "A dungeon game in Java where enemies chase you along the shortest path and speed up once you are in range. Touch one and a quiz battle on CS 61B concepts starts: you keep losing health until you answer correctly, and health packs let you recover.",
       "when": "",
       "repo": "https://github.com/vdkarthikeya/build-your-own-world-public"
     }
