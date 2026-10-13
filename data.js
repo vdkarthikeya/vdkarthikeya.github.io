@@ -183,8 +183,7 @@ const siteData = {
       "role": "Course Staff (UCS1)",
       "dates": "Jun 2026 - Aug 2026",
       "bullets": [
-        "Taught 4 weekly exam-prep sections for Berkeley's intro CS course.",
-        "Wrote exam questions and built automatic graders for student code."
+        "Taught 4 weekly exam-prep sections, held office hours, helped write midterm and final questions, and led final review sessions."
       ],
       "logo": "assets/logos/eecs.png"
     },
