@@ -279,7 +279,7 @@ const siteData = {
   "projects": [
     {
       "title": "Hindsight",
-      "line": "A transfer planner for California community college students, built at Cal Hacks. It shows which classes count toward a major and what to catch each week, and every answer links to an official source. I helped shape the idea, features and design.",
+      "line": "A transfer planner for California community college students, built at Cal Hacks. Code, not an AI model, decides which classes count toward a major using official ASSIST agreements, while Claude reads transcripts and answers with sources. Apify scrapes campus pages and a Factory Droid agent repairs broken scrapers under strict permissions. I helped shape the idea, features and design.",
       "when": "",
       "repo": "https://github.com/Cal-Hacks-2026/Hindsight"
     },
