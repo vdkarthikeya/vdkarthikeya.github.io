@@ -292,7 +292,7 @@ const siteData = {
     },
     {
       "title": "Movie Genre Classification",
-      "line": "A model that predicts a movie's genres from its plot summary.",
+      "line": "A model that predicts a movie's genres from its plot, using MiniLM, MPNet and e5-large-v2 embeddings and comparing Logistic Regression, XGBoost and LightGBM.",
       "when": "",
       "repo": "https://github.com/vdkarthikeya/movie-genre-classification-nlp"
     },
