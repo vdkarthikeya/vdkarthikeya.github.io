@@ -130,11 +130,11 @@
 
 \resumeSubheading
 {University of California, Berkeley}{Expected Dec 2027}
-{B.A. in Data Science and Applied Mathematics \;|\; GPA: 3.85/4.00}{Berkeley, CA}
+{Bachelor of Arts in Data Science and Applied Mathematics \;$|$\; GPA: 3.85/4.00}{Berkeley, CA}
 
 \vspace{-6pt}
 \resumeItemListStart
-\resumeItem{\textbf{Relevant Coursework:} Principles \& Techniques of Data Science $\cdot$ Probability for Data Science $\cdot$ Data Structures $\cdot$ \textit{In progress:} Introduction to Machine Learning $\cdot$ Efficient Algorithms \& Intractable Problems $\cdot$ Data Engineering}
+\resumeItem{\textbf{Relevant Coursework:} Principles \& Techniques of Data Science, Probability for Data Science, Data Structures; \textit{In progress:} Introduction to Machine Learning, Efficient Algorithms \& Intractable Problems, Data Engineering}
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -145,7 +145,7 @@
  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=3pt]
     \small{\item{
      \textbf{Languages}{: Python, SQL, Java} \\[2pt]
-     \textbf{ML}{: PyTorch, TensorFlow, scikit-learn, XGBoost, LightGBM, SentenceTransformers, Embeddings, Cross-Validation} \\[2pt]
+     \textbf{Machine Learning}{: PyTorch, scikit-learn, XGBoost, LightGBM, SentenceTransformers, Embeddings, Cross-Validation} \\[2pt]
      \textbf{Data}{: pandas, NumPy, GeoPandas, Matplotlib, PostgreSQL, Jupyter} \\[2pt]
      \textbf{Engineering}{: FastAPI, Gemini API, Pydantic, AWS S3, ffmpeg, pytest, Git}
     }}
@@ -157,27 +157,22 @@
   \resumeSubHeadingListStart
 
     \resumeCompactHeading
-        {IDX Exchange}{Data Science Intern}{Remote}{Jun 2026 -- Aug 2026}
+        {IDX Exchange}{Data Science Intern}{Remote}{Jun 2026 - Aug 2026}
         \resumeItemListStart
-            \resumeItem{Developed a model that predicts California home sale prices, typically within \textbf{8.6\%} of the actual price, using \textbf{71K} single-family sales cleaned from \textbf{143K} raw records.}
+            \resumeItem{Developed a machine learning model that predicts California home sale prices, typically within \textbf{8.6\%} of the actual price, using \textbf{71K} single-family sales cleaned from \textbf{143K} raw records.}
             \resumeItem{Benchmarked four model types and selected a tuned XGBoost (R\textsuperscript{2} of \textbf{0.88}), finding that deeper trees improved accuracy more than a lower learning rate.}
             \resumeItem{Resolved a data leakage bug that had invalidated early results, and nearly halved a simpler model's error (from \textbf{29\%} to \textbf{15\%}) by engineering a school district feature.}
+            \resumeItem{Analyzed errors by price band to find weak spots: luxury homes (\textbf{13\%} error vs. \textbf{6.5\%} mid-priced) and low-sales towns.}
+            \resumeItem{Retrained the final model from scratch and matched results exactly to confirm reproducibility.}
         \resumeItemListEnd
 
     \resumeCompactHeading
-        {Guang Labs}{Engineering Intern}{Remote}{May 2026 -- Aug 2026}
+        {Guang Labs}{Engineering Intern}{Remote}{May 2026 - Aug 2026}
         \resumeItemListStart
              \resumeItem{Engineered a service for an AI video startup that classifies a user's image or video by content type (sports, gaming, talking, music) using Google's Gemini, retrying uncertain or malformed responses on different clips, up to \textbf{10} attempts.}
              \resumeItem{Validated the service end to end with real video clips after code review and expanded the automated test suite from 38 to \textbf{86} tests.}
              \resumeItem{Developed an in-app notification bell that alerts users when their video finishes processing or fails.}
-        \resumeItemListEnd
-
-    \resumeCompactHeading
-        {The After Collective}{Fung Fellow, Health + Innovation}{Berkeley, CA}{Aug 2026 -- Present}
-        \resumeItemListStart
-            \resumeItem{Helped run \textbf{7} interviews with wildfire survivors and leaders (led \textbf{2}), finding insurance a shared struggle.}
-            \resumeItem{Turned that into \textbf{3} AI-assisted concepts with teammates, took on a checklist tool for survivors, and gathered reactions.}
-            \resumeItem{Took on testing the partner's recovery coach for gaps, and organize the team's documentation.}
+             \resumeItem{Built the service on Pydantic schemas and a deterministic fake provider, so it can be tested without live services.}
         \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -187,7 +182,6 @@
 \section{Projects}
     \vspace{0pt}
     \resumeSubHeadingListStart
-
         \resumeProjectHeading
             {\textbf{Hindsight (Cal Hacks 13.0)} $|$ \emph{Claude, FastAPI, React, Apify, Factory Droid} \hfill \href{https://github.com/Cal-Hacks-2026/Hindsight}{\uline{GitHub}}}
         \resumeItemListStart
@@ -205,10 +199,10 @@
         \vspace{2pt}
 
         \resumeProjectHeading
-            {\textbf{Movie Genre Classification} $|$ \emph{Python, scikit-learn, SentenceTransformers} \hfill \href{https://github.com/vdkarthikeya/movie-genre-classification-nlp}{\uline{GitHub}}}
+            {\textbf{Movie Genre Classification} $|$ \emph{Python, PyTorch, scikit-learn, XGBoost, LightGBM} \hfill \href{https://github.com/vdkarthikeya/movie-genre-classification-nlp}{\uline{GitHub}}}
         \resumeItemListStart
-            \resumeItem{Built a model that reads a movie's title and plot summary and predicts all its genres, trained on \textbf{42K+} films across 20+ genres.}
-            \resumeItem{Raised the overall score (Macro F1) from 0.48 to \textbf{0.66} by giving each genre its own cutoff, and found a simple model beat complex ones, training \textbf{12$\times$} faster.}
+            \resumeItem{Built a multi-label NLP model that predicts a movie's genres from its title and plot summary, trained on \textbf{42K+} films.}
+            \resumeItem{Raised the overall score (Macro F1) from 0.48 to \textbf{0.66} by giving each genre its own cutoff, and found a simple model beat complex ones while training \textbf{12$\times$} faster.}
         \resumeItemListEnd
 
     \resumeSubHeadingListEnd
@@ -219,15 +213,15 @@
     \resumeSubHeadingListStart
 
         \resumeLeadHeading
-            {UC Berkeley CDSS}{Reader/Tutor, CDSS 198}{Berkeley, CA}{Aug 2026 -- Present}
+            {UC Berkeley CDSS}{Undergraduate Course Staff, CDSS 198}{Berkeley, CA}{Aug 2026 - Present}
         \resumeItemListStart
-            \resumeItem{Run exam reviews for intro CS and data science classes for transfer students, and give resume feedback.}
+            \resumeItem{Run exam reviews and write practice worksheets for CS and data science classes for transfer students, and give resume feedback.}
         \resumeItemListEnd
 
         \resumeLeadHeading
-            {UC Berkeley EECS}{Course Staff (UCS1), CS 61A}{Berkeley, CA}{Jun 2026 -- Aug 2026}
+            {UC Berkeley}{Undergraduate Course Staff, CS 61A}{Berkeley, CA}{Jun 2026 - Aug 2026}
         \resumeItemListStart
-            \resumeItem{Taught \textbf{4} weekly exam-prep sections, held office hours, helped write midterm and final questions, and led final review sessions.}
+            \resumeItem{Taught \textbf{4} weekly exam-prep sections in Python, Scheme, and SQL, reinforcing data structures like linked lists, trees, lists, and dictionaries, held office hours, and helped write midterm and final questions.}
         \resumeItemListEnd
 
     \resumeSubHeadingListEnd

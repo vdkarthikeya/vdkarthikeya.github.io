@@ -130,11 +130,11 @@
 
 \resumeSubheading
 {University of California, Berkeley}{Expected Dec 2027}
-{B.A. in Data Science and Applied Mathematics \;|\; GPA: 3.85/4.00}{Berkeley, CA}
+{Bachelor of Arts in Data Science and Applied Mathematics \;$|$\; GPA: 3.85/4.00}{Berkeley, CA}
 
 \vspace{-6pt}
 \resumeItemListStart
-\resumeItem{\textbf{Relevant Coursework:} Principles \& Techniques of Data Science $\cdot$ Probability for Data Science $\cdot$ Introduction to Urban Data Analytics $\cdot$ \textit{In progress:} Introduction to Machine Learning $\cdot$ Efficient Algorithms \& Intractable Problems}
+\resumeItem{\textbf{Relevant Coursework:} Principles \& Techniques of Data Science, Probability for Data Science, Introduction to Urban Data Analytics; \textit{In progress:} Introduction to Machine Learning, Efficient Algorithms \& Intractable Problems}
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -157,28 +157,21 @@
   \resumeSubHeadingListStart
 
     \resumeCompactHeading
-        {IDX Exchange}{Data Science Intern}{Remote}{Jun 2026 -- Aug 2026}
+        {IDX Exchange}{Data Science Intern}{Remote}{Jun 2026 - Aug 2026}
         \resumeItemListStart
-            \resumeItem{Developed a model that predicts California home sale prices, typically within \textbf{8.6\%} of the actual price, using \textbf{71K} single-family sales cleaned from \textbf{143K} raw records.}
+            \resumeItem{Developed a machine learning model that predicts California home sale prices, typically within \textbf{8.6\%} of the actual price, using \textbf{71K} single-family sales cleaned from \textbf{143K} raw records.}
             \resumeItem{Benchmarked four model types and selected a tuned XGBoost (R\textsuperscript{2} of \textbf{0.88}), finding that deeper trees improved accuracy more than a lower learning rate.}
             \resumeItem{Resolved a data leakage bug that had invalidated early results, and nearly halved a simpler model's error (from \textbf{29\%} to \textbf{15\%}) by engineering a school district feature.}
             \resumeItem{Analyzed errors by price band to find weak spots: luxury homes (\textbf{13\%} error vs. \textbf{6.5\%} mid-priced) and low-sales towns.}
         \resumeItemListEnd
 
     \resumeCompactHeading
-        {Guang Labs}{Engineering Intern}{Remote}{May 2026 -- Aug 2026}
+        {Guang Labs}{Engineering Intern}{Remote}{May 2026 - Aug 2026}
         \resumeItemListStart
              \resumeItem{Engineered a service for an AI video startup that classifies videos and images by type (sports, gaming, talking) using Gemini, retrying uncertain or malformed responses on different clips, up to \textbf{10} attempts.}
              \resumeItem{Persisted each label with the model's confidence and reasoning so the team can audit it, backed by \textbf{86} tests.}
              \resumeItem{Developed an in-app notification bell that alerts users when their video finishes processing or fails.}
-        \resumeItemListEnd
-
-    \resumeCompactHeading
-        {The After Collective}{Fung Fellow, Health + Innovation}{Berkeley, CA}{Aug 2026 -- Present}
-        \resumeItemListStart
-            \resumeItem{Helped run \textbf{7} interviews with wildfire survivors and leaders (led \textbf{2}), finding insurance a shared struggle.}
-            \resumeItem{Turned that into \textbf{3} AI-assisted concepts with teammates, took on a checklist tool for survivors, and gathered reactions.}
-            \resumeItem{Took on testing the partner's recovery coach for gaps, and organize the team's documentation.}
+             \resumeItem{Built the service on Pydantic schemas and a deterministic fake provider, so it can be tested without live services.}
         \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -188,7 +181,6 @@
 \section{Projects}
     \vspace{0pt}
     \resumeSubHeadingListStart
-
         \resumeProjectHeading
             {\textbf{Hindsight (Cal Hacks 13.0)} $|$ \emph{Claude, FastAPI, React, Apify, Factory Droid} \hfill \href{https://github.com/Cal-Hacks-2026/Hindsight}{\uline{GitHub}}}
         \resumeItemListStart
@@ -201,15 +193,16 @@
         \resumeProjectHeading
             {\textbf{Housing Price \& Assessment Bias} $|$ \emph{Python, pandas, scikit-learn} \hfill \href{https://github.com/vdkarthikeya/housing-price-assessment-bias-public}{\uline{GitHub}}}
         \resumeItemListStart
-            \resumeItem{Built a model that estimates home values from \textbf{200K+} Cook County (Chicago) property records.}
-            \resumeItem{Audited its errors across price ranges and found cheaper homes are assessed too high, so their owners are taxed unfairly.}
+            \resumeItem{Built a model that estimates home values from \textbf{200K+} Cook County (Chicago) property records, and audited its fairness across price ranges to show which homes get over- or under-valued and taxed unfairly.}
+            \resumeItem{Engineered \textbf{15+} features (log square footage, polynomial age and location terms) and validated with 4-fold cross-validation (test RMSE \textbf{0.562}).}
         \resumeItemListEnd
         \vspace{2pt}
 
         \resumeProjectHeading
             {\textbf{SB 79 Transit Housing Analysis (Los Angeles)} $|$ \emph{ArcGIS Online, StoryMaps} \hfill \href{https://github.com/vdkarthikeya/sb79-tod-analysis-public}{\uline{GitHub}}}
         \resumeItemListStart
-            \resumeItem{Mapped the parts of Los Angeles that qualify for denser housing near transit under a new California law (\textbf{6,413} eligible zoning areas) with displacement, pollution, and fire hazard data, finding about \textbf{63\%} of it is in low-resource areas.}
+            \resumeItem{Mapped the parts of Los Angeles that qualify for denser housing near transit under a new California law (\textbf{6,413} eligible zoning areas), layering in displacement risk, pollution, and fire hazard data in an interactive StoryMap.}
+            \resumeItem{Wrote the Methods, Results, and Discussion of the research paper and policy brief that accompany the StoryMap (two-person project).}
         \resumeItemListEnd
 
     \resumeSubHeadingListEnd
@@ -220,15 +213,15 @@
     \resumeSubHeadingListStart
 
         \resumeLeadHeading
-            {UC Berkeley CDSS}{Reader/Tutor, CDSS 198}{Berkeley, CA}{Aug 2026 -- Present}
+            {UC Berkeley CDSS}{Undergraduate Course Staff, CDSS 198}{Berkeley, CA}{Aug 2026 - Present}
         \resumeItemListStart
-            \resumeItem{Give resume feedback in a data science careers seminar, and run exam reviews, practice worksheets, and office hours for transfer students.}
+            \resumeItem{Run exam reviews and write practice worksheets for CS and data science classes for transfer students, and give resume feedback.}
         \resumeItemListEnd
 
         \resumeLeadHeading
-            {UC Berkeley EECS}{Course Staff (UCS1), CS 61A}{Berkeley, CA}{Jun 2026 -- Aug 2026}
+            {UC Berkeley}{Undergraduate Course Staff, CS 61A}{Berkeley, CA}{Jun 2026 - Aug 2026}
         \resumeItemListStart
-            \resumeItem{Taught \textbf{4} weekly exam-prep sections, held office hours, helped write midterm and final questions, and led final review sessions.}
+            \resumeItem{Taught \textbf{4} weekly exam-prep sections in Python, Scheme, and SQL, reinforcing data structures like linked lists, trees, lists, and dictionaries, held office hours, and helped write midterm and final questions.}
         \resumeItemListEnd
 
     \resumeSubHeadingListEnd
