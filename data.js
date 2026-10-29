@@ -278,6 +278,12 @@ const siteData = {
   ],
   "projects": [
     {
+      "title": "Hindsight",
+      "line": "A transfer planner for California community college students, built at Cal Hacks. It shows which classes count toward a major and what to catch each week, and every answer links to an official source. I helped shape the idea, features and design.",
+      "when": "",
+      "repo": "https://github.com/Cal-Hacks-2026/Hindsight"
+    },
+    {
       "title": "SightLine",
       "line": "An app that turns a day of smart-glasses footage into a 60-second recap. I'm on the ML team.",
       "when": "",
