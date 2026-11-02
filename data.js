@@ -279,7 +279,7 @@ const siteData = {
   "projects": [
     {
       "title": "Hindsight",
-      "line": "A transfer planner for California community college students, built with a team at Cal Hacks. It shows which classes count toward a major using official ASSIST agreements, and every answer cites its source.",
+      "line": "A transfer planner for California community college students, built with a team at Cal Hacks. It shows which classes count toward a major, and 10 transfer students who tried it said it would have helped them.",
       "when": "",
       "repo": "https://github.com/Cal-Hacks-2026/Hindsight"
     },
