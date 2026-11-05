@@ -106,12 +106,6 @@ const siteData = {
         "term": "Fall 2026",
         "rows": [
           {
-            "code": "CS 170",
-            "title": "Efficient Algorithms and Intractable Problems",
-            "grade": "IP",
-            "muted": true
-          },
-          {
             "code": "CS 189",
             "title": "Introduction to Machine Learning",
             "grade": "IP",
