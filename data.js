@@ -274,20 +274,20 @@ const siteData = {
   "projects": [
     {
       "title": "Next Step",
-      "line": "A free website that helps California wildfire survivors write one clear letter to their insurer, with answers tied to cited sources. Built through the Fung Fellowship with mentorship from The After Collective.",
+      "line": "A free guide that helps wildfire survivors write one clear letter to their insurer, with every answer tied to a source. Live now, built with mentorship from The After Collective.",
       "when": "",
       "site": "https://next-step-2fg.pages.dev",
       "repo": "https://github.com/nextstep-wildfire/next-step"
     },
     {
       "title": "Hindsight",
-      "line": "A transfer planner for California community college students, built with a team at Cal Hacks. It shows which classes count toward a major, and 10 transfer students who tried it said it would have helped them.",
+      "line": "A transfer planner that shows California community college students exactly which classes count toward their major. Built in 3 days at Cal Hacks; 10 transfer students said it would have helped them.",
       "when": "",
       "repo": "https://github.com/Cal-Hacks-2026/Hindsight"
     },
     {
       "title": "SightLine",
-      "line": "An app that turns a day of smart-glasses footage into a 60-second recap. I'm on the ML team.",
+      "line": "Turns a day of smart-glasses footage into a 60-second recap. On the ML team, I'm building the CLIP clip embeddings and a scoring pipeline that picks the best moments.",
       "when": "",
       "repo": "https://github.com/vdkarthikeya/sightline-ml-public",
       "status": "In progress"
