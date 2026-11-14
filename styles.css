@@ -184,3 +184,5 @@ a.hl:hover { opacity:.65; }
 .now ul { list-style:disc; margin:6px 0 0; padding-left:18px; }
 .now li { padding-left:2px; margin-bottom:2px; }
 .now li::marker { color:var(--soft); }
+.xp-more a.ul { border-bottom:1px solid var(--ink); color:var(--ink); padding-bottom:1px; cursor:pointer; }
+.xp-more a.ul:hover { opacity:.6; }

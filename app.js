@@ -38,7 +38,7 @@
   function pjRow(p){
     return '<article class="pj"><div><div class="pj-title">'+p.title+'</div>'+
       '<div class="pj-line">'+p.line+'</div></div>'+
-      '<div class="pj-side">'+(p.repo?'<a class="repo-inline" href="'+p.repo+'" target="_blank" rel="noopener">View code</a>':'')+'</div></article>';
+      '<div class="pj-side">'+(p.site?'<a class="repo-inline" href="'+p.site+'" target="_blank" rel="noopener">View site</a>':'')+(p.repo?'<a class="repo-inline" href="'+p.repo+'" target="_blank" rel="noopener">View code</a>':'')+'</div></article>';
   }
   function courseRows(rows){
     return rows.map(function(r){
@@ -99,7 +99,7 @@
     el("page-leadership").innerHTML = D.leadership.map(xpRow).join("");
   }
   function renderProjects(){
-    el("page-projects").innerHTML = D.projects.map(pjRow).join("");
+    el("page-projects").innerHTML = D.projects.filter(function(p){ return !p.hidden; }).map(pjRow).join("");
   }
   function renderCourses(){
     var e = D.about.education;

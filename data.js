@@ -227,9 +227,10 @@ const siteData = {
       "role": "Fung Fellow, Health + Innovation Track",
       "dates": "Aug 2026 - Present",
       "bullets": [
-        "Develop a free AI recovery coach for disaster survivors with The After Collective, as part of the Fung Fellowship's Health + Innovation track.",
-        "Conducted interviews with wildfire survivors to understand their experiences, the tools they use and where they find information, shaping what the coach needs to do.",
-        "Organize the team's documentation, including the main project doc, weekly updates and test plans."
+        "Work on a three-person team with mentorship from The After Collective, a nonprofit building a free AI recovery coach for disaster survivors, as part of the Fung Fellowship's Health + Innovation track.",
+        "Led and ran interviews and prototype sessions with wildfire survivors, recovery group leaders and insurance professionals, and helped narrow the team's focus to the person who runs a household's insurance claim.",
+        "Built <a class='ul' href='#projects' data-go='projects'>Next Step</a>, a hosted website that helps survivors write a letter to their insurer with one clear ask, and rebuilt its start screen around the letter after users did not find the reply helper on their own.",
+        "Serve as DRI of the week and keep the team's documentation current, including the main project doc, running notes, weekly status updates and shipped log."
       ],
       "logo": "assets/logos/fung.png"
     },
@@ -272,6 +273,13 @@ const siteData = {
   ],
   "projects": [
     {
+      "title": "Next Step",
+      "line": "A free website that helps California wildfire survivors write one clear letter to their insurer, with answers tied to cited sources. Built through the Fung Fellowship with mentorship from The After Collective.",
+      "when": "",
+      "site": "https://next-step-2fg.pages.dev",
+      "repo": "https://github.com/nextstep-wildfire/next-step"
+    },
+    {
       "title": "Hindsight",
       "line": "A transfer planner for California community college students, built with a team at Cal Hacks. It shows which classes count toward a major, and 10 transfer students who tried it said it would have helped them.",
       "when": "",
@@ -292,6 +300,7 @@ const siteData = {
     },
     {
       "title": "Housing Price & Assessment Bias",
+      "hidden": true,
       "line": "A model that estimates home values from 200K+ Chicago-area records and checks which homes get over- or under-valued.",
       "when": "",
       "repo": "https://github.com/vdkarthikeya/housing-price-assessment-bias-public"
@@ -304,12 +313,14 @@ const siteData = {
     },
     {
       "title": "Email Spam Classifier",
+      "hidden": true,
       "line": "A spam filter that correctly sorts 92.1% of emails it had never seen.",
       "when": "",
       "repo": "https://github.com/vdkarthikeya/spam-ham-classifier-public"
     },
     {
       "title": "California Housing Regression",
+      "hidden": true,
       "line": "A model that predicts home values across 20K+ California neighborhoods.",
       "when": "",
       "repo": "https://github.com/vdkarthikeya/california-housing-regression"
@@ -322,6 +333,7 @@ const siteData = {
     },
     {
       "title": "Ngordnet",
+      "hidden": true,
       "line": "A word tool that finds more specific words under a word like \"food\" and ranks them by how often they appeared in books.",
       "when": "",
       "repo": "https://github.com/vdkarthikeya/ngordnet-public"
