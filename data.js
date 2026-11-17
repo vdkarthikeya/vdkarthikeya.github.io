@@ -274,7 +274,7 @@ const siteData = {
   "projects": [
     {
       "title": "Next Step",
-      "line": "Next Step is a free website that helps California wildfire survivors write one clear letter to their insurer. A hosted Llama model grounded in 15 numbered source notes answers their questions and cites every source. I built it with mentorship from The After Collective.",
+      "line": "Next Step is a free website that helps California wildfire survivors deal with the aftermath of a disaster. It is built with plain JavaScript on Cloudflare Pages, with a hosted Llama model on Cloudflare Workers AI grounded in 15 numbered source notes.",
       "when": "",
       "site": "https://next-step-2fg.pages.dev",
       "repo": "https://github.com/nextstep-wildfire/next-step"
