@@ -274,7 +274,7 @@ const siteData = {
   "projects": [
     {
       "title": "Next Step",
-      "line": "Next Step is a free website that helps California wildfire survivors deal with the aftermath of a disaster. It is built with plain JavaScript on Cloudflare Pages, with a hosted Llama model on Cloudflare Workers AI grounded in 15 numbered source notes.",
+      "line": "Next Step is a free website that helps California wildfire survivors deal with the aftermath of a disaster. It is built with plain JavaScript on Cloudflare Pages, with a hosted Llama model on Cloudflare Workers AI grounded in 15 numbered source notes, and its chat replies stream as they are written.",
       "when": "",
       "site": "https://next-step-2fg.pages.dev",
       "repo": "https://github.com/nextstep-wildfire/next-step"
