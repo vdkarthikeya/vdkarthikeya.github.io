@@ -41,7 +41,7 @@
     var touch = window.matchMedia && window.matchMedia("(hover: none)").matches;
     var note = h.caption + (reduce.matches ? "" : " " + (touch ? h.hintTouch : h.hint));
     el("heroCopy").innerHTML =
-      '<h1 class="hero-name">' + h.name + '</h1>' +
+      '<h1 class="hero-name">' + D.name + '</h1>' +
       '<p class="hero-line">' + h.line + '</p>' +
       '<div class="hero-acts">' +
         ext(D.resume, "btn btn-solid", "Resume" + ARROW) +

@@ -15,7 +15,6 @@ const siteData = {
     "Fung Fellow, Health Track"
   ],
   "hero": {
-    "name": "Karthik",
     "line": "Senior at UC Berkeley studying Data Science and Applied Mathematics. I'm into AI/ML, I teach on course staff, and I build things with data.",
     "caption": "The background is noisy gradient descent on a drifting loss surface.",
     "hint": "Move your cursor to add a minimum.",
