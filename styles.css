@@ -283,11 +283,11 @@ a.hl:hover { color: var(--accent-ink); }
 .c-grade.ip { color: var(--soft); }
 
 /* Contact: a compact card that fits its content. Email, then a LinkedIn line under it, no divider. */
-.ct-card { display: inline-grid; gap: 6px; max-width: 100%; border: 1px solid var(--line-2); border-radius: 12px; padding: 18px 22px; }
 .ct-note { font-size: 17px; line-height: 1.3; color: var(--soft); }
-.ct-mail { display: inline-flex; align-items: center; justify-self: start; font-size: 19px; line-height: 1.3; color: var(--accent-ink); text-decoration: none; overflow-wrap: anywhere; }
-.ct-mail:hover { text-decoration: underline; text-decoration-color: var(--hot); text-underline-offset: 4px; }
-.ct-social { display: flex; gap: 10px; margin-top: 14px; }
+.ct-mail { display: inline-block; max-width: 100%; margin-top: 10px; font-size: min(48px, calc((100vw - 2 * var(--pad)) / 13.9)); line-height: 1.12; color: var(--accent-ink); text-decoration: none; overflow-wrap: anywhere; }
+.ct-mail:hover { text-decoration: underline; text-decoration-color: var(--hot); text-decoration-thickness: 2px; text-underline-offset: .16em; }
+.ct-mail .arr { width: .42em; height: .42em; margin-left: .25em; vertical-align: .08em; }
+.ct-social { display: flex; gap: 10px; margin-top: 24px; }
 .credit { max-width: var(--max); margin: clamp(40px, 5vw, 64px) auto 0; padding: 22px var(--pad) 32px; }
 .credit p { border-top: 1px solid var(--line); padding-top: 22px; font-size: 12.5px; color: var(--soft); text-align: center; }
 
@@ -355,7 +355,6 @@ a.hl:hover { color: var(--accent-ink); }
   .xp-more ul { padding: 0 0 22px 0; }
   .xp-more li { font-size: 17px; }
 
-  .ct-mail { font-size: 17px; }
 
 }
 @media (max-width: 400px) {

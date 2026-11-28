@@ -228,7 +228,7 @@
   function renderContact() {
     var c = D.contact;
     el("contact").innerHTML = '<header class="sect-head rv"><h2 id="h-contact">Contact</h2></header>' +
-      '<div class="ct-card rv">' +
+      '<div class="ct-block rv">' +
         '<p class="ct-note">Reach out to me at</p>' +
         '<a class="ct-mail" href="mailto:' + c.email + '">' + c.email + ARROW + '</a>' +
       '</div>' +
