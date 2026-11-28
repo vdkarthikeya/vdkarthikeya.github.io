@@ -231,7 +231,10 @@
       '<div class="ct-card rv">' +
         '<p class="ct-note">Reach out to me at</p>' +
         '<a class="ct-mail" href="mailto:' + c.email + '">' + c.email + ARROW + '</a>' +
-        ext(c.linkedin, "ct-li", ICO_LI + 'or DM me on LinkedIn') +
+      '</div>' +
+      '<div class="ct-social rv">' +
+        ext(c.linkedin, "btn btn-ico", ICO_LI, "LinkedIn") +
+        ext(c.github, "btn btn-ico", ICO_GH, "GitHub") +
       '</div>';
     el("credit").innerHTML = '<p>&copy; ' + new Date().getFullYear() + ' ' + D.name + '</p>';
   }

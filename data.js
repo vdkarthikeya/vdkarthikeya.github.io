@@ -446,7 +446,7 @@ const siteData = {
         "src": "assets/projects/build-your-own-world/demo.mp4",
         "poster": "assets/projects/build-your-own-world/poster.webp",
         "fallback": "assets/projects/build-your-own-world/card.webp",
-        "alt": "Top-down view of a generated dungeon with rooms, hallways, enemies, health kits and a shortest path from the player"
+        "alt": "Build Your Own World: the avatar walks a generated dungeon along shortest paths, touches an enemy, and answers a CS 61B quiz battle question correctly"
       }
     }
   ],
