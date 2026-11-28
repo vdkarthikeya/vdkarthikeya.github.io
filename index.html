@@ -4,22 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dhana Karthikeya Ventrapragada</title>
-<meta name="description" content="Karthik Ventrapragada, a senior at UC Berkeley studying Data Science and Applied Mathematics. Experience, projects, teaching and courses.">
+<meta name="description" content="Karthik Ventrapragada, a senior at UC Berkeley studying Data Science, with a concentration in Applied Mathematics. Experience, projects, teaching and courses.">
 <meta property="og:title" content="Dhana Karthikeya Ventrapragada">
-<meta property="og:description" content="Senior at UC Berkeley studying Data Science and Applied Mathematics.">
+<meta property="og:description" content="Senior at UC Berkeley studying Data Science, with a concentration in Applied Mathematics. I'm into AI/ML and building with data.">
 <meta property="og:image" content="https://vdkarthikeya.github.io/og.jpg">
 <meta property="og:url" content="https://vdkarthikeya.github.io/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#0b0c0a" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#f3f4f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a120e" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#eef2f1" media="(prefers-color-scheme: light)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Fragment+Mono&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Pixel&family=Geist:wght@400..700&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
 <link rel="icon" href="favicon.ico?v=2" sizes="any">
 <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="sightline.css">
 <script>var __l=false;try{__l=localStorage.getItem("theme")==="light"}catch(e){}if(!__l)document.documentElement.classList.add("dark");</script>
 </head>
 <body>
@@ -27,33 +28,41 @@
 
   <header class="bar" id="bar">
     <div class="bar-in">
-      <a class="mark" href="#top" id="mark" aria-label="Back to top"></a>
       <nav class="tabs" id="tabs" aria-label="Sections"></nav>
       <div class="bar-tools">
-        <a class="bar-resume" id="barResume" target="_blank" rel="noopener">Resume</a>
         <button class="theme" id="themeBtn" aria-label="Switch between dark and light mode"><span id="themeIco"></span></button>
       </div>
     </div>
   </header>
 
   <section class="hero" id="top" aria-label="Introduction">
-    <canvas class="hero-field" id="heroField" aria-hidden="true"></canvas>
-    <canvas class="hero-dots" id="heroDots" aria-hidden="true"></canvas>
-    <div class="hero-copy" id="heroCopy"></div>
+    <div class="stage" id="stage">
+      <canvas id="heroField" role="img" aria-label="A small neural network learning, live, a decision boundary that separates two spirals of points"></canvas>
+      <canvas id="heroDots" aria-hidden="true"></canvas>
+      <div class="hero-band">
+        <div class="hero-copy" id="heroCopy"></div>
+        <div class="hero-fig">
+          <div class="spot" id="spot" aria-hidden="true"></div>
+          <div class="lab" id="lab"></div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <main class="content" id="content">
     <section class="sect" id="home" aria-labelledby="h-home"></section>
     <section class="sect" id="experience" aria-labelledby="h-experience"></section>
     <section class="sect" id="projects" aria-labelledby="h-projects"></section>
-    <section class="sect" id="leadership" aria-labelledby="h-leadership"></section>
     <section class="sect" id="courses" aria-labelledby="h-courses"></section>
+    <section class="sect" id="contact" aria-labelledby="h-contact"></section>
   </main>
 
-  <footer class="foot" id="contact"></footer>
+  <footer class="credit" id="credit"></footer>
 
 <script src="data.js"></script>
+<script src="net.js"></script>
 <script src="hero.js"></script>
+<script src="sightline.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

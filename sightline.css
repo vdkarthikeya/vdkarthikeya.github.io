@@ -1,0 +1,21 @@
+/* SightLine card demo: the looping pipeline schematic inside a project card. */
+.sl-media { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 4% 4% 3%; background: var(--panel); }
+.sl-svg { display: block; width: 100%; height: auto; max-height: 100%; overflow: visible; }
+.sl-t { font-family: var(--f-mono); font-size: 13px; fill: var(--soft); }
+
+.sl-w { fill: var(--ink); transition: fill .45s ease; }
+.sl-w.pk { fill: var(--hot); }
+.sl-seg0 { fill: var(--ink); fill-opacity: .82; }
+.sl-seg1 { fill: var(--ink); fill-opacity: .5; }
+.sl-seg2 { fill: var(--ink); fill-opacity: .24; }
+.sl-seg { transition: fill .45s ease; }
+.sl-seg.pk { fill: var(--hot); }
+.sl-seg2.pk { fill-opacity: .4; }
+.sl-ell { fill: none; stroke: var(--soft); stroke-width: 1; stroke-dasharray: 2 4; }
+.sl-base { stroke: var(--line-2); stroke-width: 1; }
+.sl-slot { fill: none; stroke: var(--line-2); stroke-width: 1; }
+.sl-ends {
+  display: flex; justify-content: space-between; padding: 2px 3.1% 0;
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .01em; color: var(--soft);
+  opacity: var(--ends, 1); transition: opacity .3s;
+}

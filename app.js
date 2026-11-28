@@ -4,9 +4,15 @@
   var IDS = D.sections.map(function (s) { return s[0]; });
   var reduce = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : { matches: false };
   function el(id) { return document.getElementById(id); }
-  function ext(href, cls, inner) { return '<a class="' + cls + '" href="' + href + '" target="_blank" rel="noopener">' + inner + '</a>'; }
+  function ext(href, cls, inner, label) {
+    return '<a class="' + cls + '" href="' + href + '" target="_blank" rel="noopener"' + (label ? ' aria-label="' + label + '"' : '') + '>' + inner + '</a>';
+  }
   var ARROW = '<svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4 3h5v5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>';
   var SUN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>';
+  var ICO_GH = '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.48 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0 1 12 6.8c.85 0 1.71.12 2.51.35 1.91-1.32 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .26.18.58.69.48A10.04 10.04 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"/></svg>';
+  var ICO_LI = '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.94 8.5H3.75V20h3.19V8.5zM5.34 7.1c1.02 0 1.85-.83 1.85-1.85S6.36 3.4 5.34 3.4 3.5 4.23 3.5 5.25 4.32 7.1 5.34 7.1zM20.25 20h-3.18v-5.6c0-1.34-.02-3.06-1.86-3.06-1.87 0-2.15 1.46-2.15 2.96V20H9.88V8.5h3.05v1.57h.04c.43-.8 1.47-1.65 3.02-1.65 3.23 0 3.83 2.13 3.83 4.9V20z"/></svg>';
+  var ICO_MAIL = '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4 6.5h16v11H4z"/><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="m4.5 7.2 7.5 6.1 7.5-6.1"/></svg>';
+  var ICO_SHUFFLE = '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M20 11a8 8 0 0 0-14.5-4.6L4 8M4 4v4h4M4 13a8 8 0 0 0 14.5 4.6L20 16M20 20v-4h-4"/></svg>';
   var MOON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>';
 
   function initials(name) {
@@ -30,49 +36,53 @@
 
   /* Bar and hero */
   function renderBar() {
-    el("mark").innerHTML = '<span class="mark-k">' + D.short + '</span><span class="mark-v">' + D.name.split(" ").pop() + '</span>';
     el("tabs").innerHTML = D.sections.map(function (s) {
       return '<a class="tab" href="#' + s[0] + '" data-go="' + s[0] + '"><span class="tab-full">' + s[1] + '</span><span class="tab-short" aria-hidden="true">' + s[2] + '</span></a>';
     }).join("");
-    var r = el("barResume"); r.href = D.resume; r.innerHTML = 'Resume' + ARROW;
   }
   function renderHero() {
     var h = D.hero, c = D.contact;
-    var touch = window.matchMedia && window.matchMedia("(hover: none)").matches;
-    var note = h.caption + (reduce.matches ? "" : " " + (touch ? h.hintTouch : h.hint));
     el("heroCopy").innerHTML =
       '<h1 class="hero-name">' + D.name + '</h1>' +
       '<p class="hero-line">' + h.line + '</p>' +
       '<div class="hero-acts">' +
         ext(D.resume, "btn btn-solid", "Resume" + ARROW) +
-        '<a class="btn" href="mailto:' + c.email + '">Email</a>' +
-        ext(c.github, "btn", "GitHub" + ARROW) +
-        ext(c.linkedin, "btn", "LinkedIn" + ARROW) +
+        '<a class="btn btn-ico" href="mailto:' + c.email + '" aria-label="Email">' + ICO_MAIL + '</a>' +
+        ext(c.github, "btn btn-ico", ICO_GH, "GitHub") +
+        ext(c.linkedin, "btn btn-ico", ICO_LI, "LinkedIn") +
       '</div>' +
-      '<p class="hero-note">' + note + '</p>';
+      '<div class="now"><p class="now-h">Currently</p><ul class="now-list">' + D.current.map(function (x) { return '<li>' + x + '</li>'; }).join("") + '</ul></div>';
+    /* Only the controls sit under the field: the class of the next point you add, and a reshuffle */
+    el("lab").innerHTML =
+      '<div class="lab-ctl">' +
+        '<span class="chips" role="group" aria-label="Class of the next point you add to the field">' +
+          '<button class="chip" id="clsA" type="button" aria-pressed="true"><i class="sw sw-a"></i>Class A</button>' +
+          '<button class="chip" id="clsB" type="button" aria-pressed="false"><i class="sw sw-b"></i>Class B</button>' +
+        '</span>' +
+        '<button class="shuffle" id="reshuffle" type="button" aria-label="Reshuffle the spirals" title="Reshuffle (R)" aria-keyshortcuts="R">' + ICO_SHUFFLE + '</button>' +
+      '</div>';
   }
 
   /* About */
   function renderHome() {
     var edu = D.about.education.map(function (e) {
       return '<article class="edu rv">' + logoBadge(e, e.school) +
-        '<div class="edu-body"><p class="meta">' + e.dates + ' · ' + e.location + '</p>' +
-        '<h3 class="edu-school">' + e.school + '</h3>' +
-        '<p class="edu-degree">' + e.degree + '</p></div>' +
-        '<p class="edu-gpa"><span class="gpa-n">' + e.gpaValue + '</span><span class="meta">GPA / ' + e.gpaMax + '</span></p></article>';
+        '<div class="edu-main"><h4 class="edu-school">' + e.school + '</h4>' +
+        '<p class="edu-degree">' + e.degree + '</p>' +
+        '<p class="edu-gpa">GPA: <b>' + e.gpaValue + '</b> <span>/ ' + e.gpaMax + '</span></p></div>' +
+        '<p class="edu-when"><span>' + e.dates + '</span><span>' + e.location + '</span></p></article>';
     }).join("");
     el("home").innerHTML = head("home") +
       '<div class="about">' +
         '<figure class="portrait rv"><img src="' + D.photo + '" alt="' + D.name + '" decoding="async" loading="lazy"></figure>' +
         '<div class="about-copy rv"><p class="greet">' + D.greeting + '</p>' +
           D.intro.map(function (p) { return '<p class="intro">' + p + '</p>'; }).join("") +
-          '<div class="now"><p class="label">Currently</p><ul>' + D.current.map(function (x) { return '<li>' + x + '</li>'; }).join("") + '</ul></div>' +
         '</div>' +
       '</div>' +
-      '<p class="label sub rv">Education</p><div class="edus">' + edu + '</div>';
+      '<header class="subhead rv"><h3>Education</h3></header><div class="edus">' + edu + '</div>';
   }
 
-  /* Experience and Leadership */
+  /* Experience: one section, grouped by real category */
   var xpCount = 0;
   function xpRow(x) {
     var id = "xp" + (xpCount++);
@@ -80,51 +90,129 @@
     return '<article class="xp rv">' +
       '<div class="xp-head" role="button" tabindex="0" aria-expanded="false" aria-controls="' + id + '">' +
         logoBadge(x, x.company) +
-        '<div class="xp-main"><h3 class="xp-org">' + org + '</h3><p class="xp-role">' + x.role + '</p></div>' +
+        '<div class="xp-main"><h4 class="xp-org">' + org + '</h4><p class="xp-role">' + x.role + '</p></div>' +
         '<p class="xp-when meta">' + x.dates + '</p>' +
         '<span class="xp-toggle" aria-hidden="true"></span>' +
       '</div>' +
       '<div class="xp-more" id="' + id + '"><div><ul>' + x.bullets.map(function (b) { return '<li>' + b + '</li>'; }).join("") + '</ul></div></div>' +
     '</article>';
   }
-  function renderExperience() { el("experience").innerHTML = head("experience") + '<div class="xps">' + D.experience.map(xpRow).join("") + '</div>'; }
-  function renderLeadership() { el("leadership").innerHTML = head("leadership") + '<div class="xps compact">' + D.leadership.map(xpRow).join("") + '</div>'; }
-
-  /* Projects: featured set piece plus an index */
-  function renderFeature(p) {
-    var f = p.featured;
-    return '<div class="feat" id="feat" data-step="0">' +
-      '<div class="feat-stage">' +
-        '<div class="feat-copy">' +
-          '<h3 class="feat-title">' + p.title + '</h3>' +
-          '<p class="feat-sum">' + f.summary + '</p>' +
-          '<ol class="feat-steps">' + f.steps.map(function (s, i) {
-            return '<li class="feat-step" data-i="' + i + '"><span class="fs-no meta">' + String(i + 1).padStart(2, "0") + '</span>' +
-              '<div><h4>' + s.title + '</h4><p>' + s.text + '</p></div></li>';
-          }).join("") + '</ol>' +
-          '<div class="feat-links">' + (p.site ? ext(p.site, "btn btn-solid", "View site" + ARROW) : "") + (p.repo ? ext(p.repo, "btn", "View code" + ARROW) : "") + '</div>' +
-          '<p class="feat-note meta">' + f.note + '</p>' +
-        '</div>' +
-        '<div class="feat-viz" aria-hidden="true">' +
-          '<div class="dev-browser"><div class="dev-chrome"><i></i><i></i><i></i><span class="dev-url">' + (p.site || "").replace(/^https?:\/\//, "") + '</span></div>' +
-            '<div class="dev-screen">' + f.desk.map(function (d, i) { return '<img class="shot shot-' + i + '" src="' + d.src + '" alt="' + d.alt + '" loading="lazy" decoding="async">'; }).join("") + '</div></div>' +
-          '<div class="dev-phone"><div class="dev-notch"></div><div class="dev-phone-screen"><img class="strip" src="' + f.phone.src + '" alt="' + f.phone.alt + '" loading="lazy" decoding="async"></div></div>' +
-          '<div class="feat-meter"><span></span></div>' +
-        '</div>' +
-      '</div>' +
-    '</div>';
+  /* Experience: a category toggle; one group shows at a time, rows still expand for bullets */
+  function renderExperience() {
+    var short = { "Work Experience": "Work" };
+    el("experience").innerHTML = head("experience") +
+      '<div class="xtabs rv" role="tablist" aria-label="Experience categories">' + D.experience.map(function (g, i) {
+        return '<button class="xtab" type="button" role="tab" id="xt' + i + '" aria-controls="xp-' + i + '" aria-selected="' + (i === 0) + '" tabindex="' + (i ? -1 : 0) + '">' +
+          '<span class="tab-full">' + g.group + '</span><span class="tab-short" aria-hidden="true">' + (short[g.group] || g.group) + '</span></button>';
+      }).join("") + '</div>' +
+      D.experience.map(function (g, i) {
+        return '<div class="xpanel" role="tabpanel" id="xp-' + i + '" aria-labelledby="xt' + i + '"' + (i ? " hidden" : "") + '><div class="xps">' + g.items.map(xpRow).join("") + '</div></div>';
+      }).join("");
   }
-  function pjRow(p, i) {
-    return '<li class="pj rv">' +
-      '<div class="pj-main"><h3 class="pj-title">' + p.title + '</h3><p class="pj-line">' + p.line + '</p></div>' +
-      '<div class="pj-links">' + (p.site ? ext(p.site, "lnk", "Site" + ARROW) : "") + (p.repo ? ext(p.repo, "lnk", "Code" + ARROW) : "") + '</div></li>';
+  function setupExperienceTabs() {
+    var tabs = [].slice.call(document.querySelectorAll(".xtab"));
+    function pick(i, focus) {
+      tabs.forEach(function (t, k) {
+        var on = k === i;
+        t.setAttribute("aria-selected", on); t.tabIndex = on ? 0 : -1;
+        var p = el(t.getAttribute("aria-controls"));
+        p.hidden = !on;
+        if (on) { p.querySelectorAll(".rv").forEach(function (n) { n.classList.add("in"); }); p.classList.remove("xin"); void p.offsetWidth; p.classList.add("xin"); }
+      });
+      if (focus) tabs[i].focus();
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener("click", function () { pick(i); });
+      t.addEventListener("keydown", function (e) {
+        var n = e.key === "ArrowRight" ? i + 1 : e.key === "ArrowLeft" ? i - 1 : e.key === "Home" ? 0 : e.key === "End" ? tabs.length - 1 : null;
+        if (n === null) return;
+        e.preventDefault(); pick((n + tabs.length) % tabs.length, true);
+      });
+    });
+  }
+
+  /* Projects: one grid. Cards with a real demo play it only while in view. */
+  function esc(t) { return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+  function pjMedia(p) {
+    var m = p.media; if (!m) return "";
+    var alt = m.alt || "", inner = "";
+    if (m.type === "video") {
+      inner = '<video class="pj-vid" muted loop playsinline preload="none" poster="' + (m.poster || m.fallback) + '" aria-label="' + alt + '" data-src="' + m.src + '" data-fallback="' + (m.fallback || "") + '"></video>';
+    } else if (m.type === "fade") {
+      inner = m.frames.map(function (f, i) { return '<img class="pj-frame' + (i ? "" : " on") + '" src="' + f + '" alt="' + (i ? "" : alt) + '" loading="lazy" decoding="async">'; }).join("");
+    } else if (m.type === "terminal") {
+      inner = '<div class="term-demo" role="img" aria-label="' + alt + '"><div class="term-bar"><i></i><i></i><i></i></div><pre class="term-body" aria-hidden="true">' +
+        m.lines.map(function (l) {
+          var pre = l[0] === "$" ? '<span class="tp">$ </span>' : l[0] === ">" ? '<span class="tk">scm&gt; </span>' : "";
+          return '<span class="tl' + (l[0] === "=" ? " to" : "") + '" data-k="' + (l[0] === "=" ? "out" : "in") + '">' + pre + '<span class="tx" data-t="' + esc(l[1]) + '">' + esc(l[1]) + '</span></span>';
+        }).join("") + '<span class="tl"><span class="tk">scm&gt; </span><span class="tcur"></span></span></pre></div>';
+    } else if (m.type === "schematic" && window.SightLine) {
+      inner = '<div role="img" aria-label="' + alt + '">' + window.SightLine.media() + '</div>';
+    } else if (m.src) {
+      inner = '<img src="' + m.src + '" alt="' + alt + '" loading="lazy" decoding="async">';
+    }
+    return '<figure class="pj-media" data-type="' + m.type + '">' + inner + '</figure>';
+  }
+  function pjCard(p, i) {
+    return '<li class="pj rv' + (i === 0 ? " pj-lead" : "") + '">' + pjMedia(p) +
+      '<div class="pj-body"><h3 class="pj-title">' + p.title + '</h3><p class="pj-line">' + p.line + '</p>' +
+      (p.note ? '<p class="pj-note meta">' + p.note + '</p>' : "") +
+      '<div class="pj-links">' + (p.site ? ext(p.site, "lnk", "Site" + ARROW) : "") + (p.repo ? ext(p.repo, "lnk", "Code" + ARROW) : "") + '</div></div></li>';
   }
   function renderProjects() {
     var vis = D.projects.filter(function (p) { return !p.hidden; });
-    var feat = vis.filter(function (p) { return p.featured; })[0];
-    var rest = vis.filter(function (p) { return p !== feat; });
-    el("projects").innerHTML = head("projects") + (feat ? renderFeature(feat) : "") +
-      '<ol class="pjs">' + rest.map(pjRow).join("") + '</ol>';
+    el("projects").innerHTML = head("projects") + '<ul class="pjs">' + vis.map(pjCard).join("") + '</ul>';
+  }
+
+  /* Demo playback: start when a card is in view, stop when it leaves or the tab hides. */
+  function setupDemos() {
+    var figs = document.querySelectorAll(".pj-media");
+    figs.forEach(function (f) {
+      var type = f.dataset.type;
+      if (type === "video") {
+        var v = f.querySelector("video");
+        v.addEventListener("error", function () { if (v.dataset.fallback) f.innerHTML = '<img src="' + v.dataset.fallback + '" alt="' + v.getAttribute("aria-label") + '">'; }, true);
+        f._play = function (on) {
+          if (on && !v.src) { v.src = v.dataset.src; }
+          if (on) { var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } else if (v.src) v.pause();
+        };
+      } else if (type === "fade") {
+        var imgs = f.querySelectorAll(".pj-frame"), k = 0, tm = 0;
+        f._play = function (on) {
+          clearInterval(tm);
+          if (on && imgs.length > 1) tm = setInterval(function () { imgs[k].classList.remove("on"); k = (k + 1) % imgs.length; imgs[k].classList.add("on"); }, 4200);
+        };
+      } else if (type === "terminal") {
+        f._play = typer(f);
+      } else if (type === "schematic" && window.SightLine) {
+        window.SightLine.attach(f.querySelector(".sl-media"));
+        f._play = window.SightLine.play;
+      }
+    });
+    if (reduce.matches || !("IntersectionObserver" in window)) return;
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { e.target._in = e.isIntersecting; if (e.target._play) e.target._play(e.isIntersecting && !document.hidden); });
+    }, { threshold: 0.35 });
+    figs.forEach(function (f) { io.observe(f); });
+    document.addEventListener("visibilitychange", function () { figs.forEach(function (f) { if (f._play) f._play(!!f._in && !document.hidden); }); });
+  }
+  /* Types the real interpreter session line by line: inputs character by character, outputs at once. */
+  function typer(f) {
+    var lines = f.querySelectorAll(".tl[data-k]"), last = f.querySelector(".tl:not([data-k])"), tm = 0, li = 0, ci = 0, on = false;
+    function reset() { lines.forEach(function (l) { l.classList.add("hid"); var x = l.querySelector(".tx"); x.textContent = ""; }); last.classList.add("hid"); li = 0; ci = 0; }
+    function step() {
+      if (!on) return;
+      if (li >= lines.length) { last.classList.remove("hid"); tm = setTimeout(function () { reset(); step(); }, 3600); return; }
+      var l = lines[li], x = l.querySelector(".tx"), t = x.dataset.t;
+      l.classList.remove("hid");
+      if (l.dataset.k === "out") { x.textContent = t; li++; tm = setTimeout(step, 520); return; }
+      ci++; x.textContent = t.slice(0, ci);
+      if (ci >= t.length) { li++; ci = 0; tm = setTimeout(step, 380); } else tm = setTimeout(step, 26 + Math.random() * 40);
+    }
+    return function (v) {
+      if (v === on) return; on = v; clearTimeout(tm);
+      if (on) { if (!f._started) { f._started = true; reset(); } step(); }
+    };
   }
 
   /* Courses */
@@ -137,20 +225,24 @@
       }).join("") + '</div>';
   }
 
-  function renderFoot() {
+  function renderContact() {
     var c = D.contact;
-    el("contact").innerHTML =
-      '<div class="foot-in"><h2 class="foot-h">Contact me at</h2>' +
-      '<a class="foot-mail" href="mailto:' + c.email + '">' + c.email.replace("@", "<wbr>@") + '</a>' +
-      '<div class="foot-row meta"><span>' + D.name + '</span><a href="#top" data-go="top">Back to top</a></div></div>';
+    el("contact").innerHTML = '<header class="sect-head rv"><h2 id="h-contact">Contact</h2></header>' +
+      '<div class="ct-card rv">' +
+        '<p class="ct-note">Reach out to me at</p>' +
+        '<a class="ct-mail" href="mailto:' + c.email + '">' + c.email + ARROW + '</a>' +
+        ext(c.linkedin, "ct-li", ICO_LI + 'or DM me on LinkedIn') +
+      '</div>';
+    el("credit").innerHTML = '<p>&copy; ' + new Date().getFullYear() + ' ' + D.name + '</p>';
   }
 
   /* Navigation */
   function barH() { return el("bar").getBoundingClientRect().height; }
   function go(id, smooth) {
     if (id === "about") id = "home";
-    var target = id === "top" ? null : el(id);
-    var y = target ? target.getBoundingClientRect().top + window.scrollY - barH() + 1 : 0;
+    if (id === "leadership") id = "experience";
+    var target = id === "top" ? null : (el(id).querySelector(".sect-head") || el(id));
+    var y = target ? target.getBoundingClientRect().top + window.scrollY - barH() - 32 : 0;
     window.scrollTo({ top: y, behavior: smooth && !reduce.matches ? "smooth" : "auto" });
     try { history.replaceState(null, "", id === "top" ? location.pathname : "#" + id); } catch (e) {}
   }
@@ -169,64 +261,6 @@
     el("bar").classList.toggle("solid", window.scrollY > el("top").offsetHeight - barH() - 8);
   }
 
-  /* Featured set piece driver */
-  function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
-  function ease(v) { return v * v * (3 - 2 * v); }
-  var feat, steps, strip, phoneScreen, pinned = false;
-  function setupFeature() {
-    feat = el("feat"); if (!feat) return;
-    steps = feat.querySelectorAll(".feat-step");
-    strip = feat.querySelector(".strip"); phoneScreen = feat.querySelector(".dev-phone-screen");
-    var mq = window.matchMedia("(min-width: 1000px) and (min-height: 680px)");
-    var lastH = window.innerHeight;
-    function mode() {
-      if (window.innerHeight !== lastH) { lastH = window.innerHeight; feat._tooTall = false; feat._pw = null; }
-      pinned = mq.matches && !reduce.matches && !feat._tooTall;
-      feat.classList.toggle("pinned", pinned);
-      feat.classList.toggle("static", !pinned);
-      if (!pinned) {
-        feat.style.removeProperty("--e1"); feat.style.removeProperty("--e2"); feat.style.removeProperty("--sy"); feat.style.removeProperty("--p");
-        feat.dataset.step = "all";
-      }
-      driveFeature();
-    }
-    feat._mode = mode;
-    window.addEventListener("resize", function () { if (window.innerHeight !== lastH) mode(); });
-    if (mq.addEventListener) mq.addEventListener("change", mode); else if (mq.addListener) mq.addListener(mode);
-    if (reduce.addEventListener) reduce.addEventListener("change", mode);
-    mode();
-    if (strip) strip.addEventListener("load", driveFeature);
-    if ("IntersectionObserver" in window && !reduce.matches) {
-      new IntersectionObserver(function (es) { if (es[0].isIntersecting) feat.classList.add("inview"); }, { threshold: 0.25 }).observe(feat);
-    } else feat.classList.add("inview");
-  }
-  function driveFeature() {
-    if (!feat) return;
-    if (phoneScreen) feat.style.setProperty("--screen-h", phoneScreen.offsetHeight + "px");
-    if (!pinned) return;
-    var w = steps[0].querySelector("p").offsetWidth, key = w + ":" + window.innerHeight;
-    if (w && key !== feat._pw) {
-      feat._pw = key;
-      var tallest = 0;
-      steps.forEach(function (s) { tallest = Math.max(tallest, s.querySelector("p").scrollHeight); });
-      feat.style.setProperty("--step-h", tallest + "px");
-      var copy = feat.querySelector(".feat-copy");
-      if (copy.offsetHeight > window.innerHeight - barH() - 12) { feat._tooTall = true; feat._mode(); return; }
-    }
-    var r = feat.getBoundingClientRect();
-    var span = r.height - window.innerHeight;
-    var p = clamp(-r.top / Math.max(1, span));
-    var i = Math.min(steps.length - 1, Math.floor(p * steps.length * 0.999));
-    feat.dataset.step = String(i);
-    feat.style.setProperty("--p", p.toFixed(4));
-    feat.style.setProperty("--e1", ease(clamp(p / 0.3)).toFixed(4));
-    feat.style.setProperty("--e2", ease(clamp((p - 0.4) / 0.2)).toFixed(4));
-    if (strip && phoneScreen) {
-      var travel = Math.max(0, strip.offsetHeight - phoneScreen.offsetHeight);
-      feat.style.setProperty("--sy", (-travel * ease(clamp((p - 0.62) / 0.33))).toFixed(1) + "px");
-    }
-  }
-
   /* Reveal on scroll */
   function setupReveal() {
     var items = document.querySelectorAll(".rv");
@@ -239,8 +273,9 @@
   }
 
   function init() {
-    renderBar(); renderHero(); renderHome(); renderExperience(); renderProjects(); renderLeadership(); renderCourses(); renderFoot();
-    setupFeature(); setupReveal();
+    renderBar(); renderHero(); renderHome(); renderExperience(); renderProjects(); renderCourses(); renderContact();
+    setupExperienceTabs(); setupDemos(); setupReveal();
+    if (window.Hero) window.Hero.init();
 
     document.addEventListener("keydown", function (e) {
       if ((e.key === "Enter" || e.key === " ") && e.target.classList && e.target.classList.contains("xp-head")) { e.preventDefault(); e.target.click(); }
@@ -265,14 +300,14 @@
     var ticking = false;
     function onScroll() {
       if (ticking) return; ticking = true;
-      requestAnimationFrame(function () { ticking = false; spy(); driveFeature(); });
+      requestAnimationFrame(function () { ticking = false; spy(); });
     }
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
     window.addEventListener("hashchange", function () { go(location.hash.slice(1) || "top", false); });
 
     var start = location.hash.slice(1);
-    if (start && (IDS.indexOf(start) > -1 || start === "about")) {
+    if (start && (IDS.indexOf(start) > -1 || start === "about" || start === "leadership" || start === "contact")) {
       requestAnimationFrame(function () { go(start, false); spy(); });
     }
     spy();
