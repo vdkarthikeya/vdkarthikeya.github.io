@@ -4,9 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dhana Karthikeya Ventrapragada</title>
+<meta name="description" content="Karthik Ventrapragada, a senior at UC Berkeley studying Data Science and Applied Mathematics. Experience, projects, teaching and courses.">
+<meta property="og:title" content="Dhana Karthikeya Ventrapragada">
+<meta property="og:description" content="Senior at UC Berkeley studying Data Science and Applied Mathematics.">
+<meta property="og:image" content="https://vdkarthikeya.github.io/og.jpg">
+<meta property="og:url" content="https://vdkarthikeya.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b0c0a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f3f4f0" media="(prefers-color-scheme: light)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Fragment+Mono&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap" rel="stylesheet">
 <link rel="icon" href="favicon.ico?v=2" sizes="any">
 <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
@@ -15,23 +23,38 @@
 <script>var __l=false;try{__l=localStorage.getItem("theme")==="light"}catch(e){}if(!__l)document.documentElement.classList.add("dark");</script>
 </head>
 <body>
-  <button class="theme-corner" id="themeBtn" aria-label="Toggle dark mode"><span id="themeIco">&#9728;</span></button>
+  <a class="skip" href="#home">Skip to content</a>
 
-  <div class="wrap">
-    <div class="grid">
-      <aside class="rail" id="rail"></aside>
-      <main class="content">
-        <nav class="tabs" id="tabs" aria-label="Sections"></nav>
-        <section class="page active" id="page-home"></section>
-        <section class="page" id="page-experience"></section>
-        <section class="page" id="page-leadership"></section>
-        <section class="page" id="page-projects"></section>
-        <section class="page" id="page-courses"></section>
-      </main>
+  <header class="bar" id="bar">
+    <div class="bar-in">
+      <a class="mark" href="#top" id="mark" aria-label="Back to top"></a>
+      <nav class="tabs" id="tabs" aria-label="Sections"></nav>
+      <div class="bar-tools">
+        <a class="bar-resume" id="barResume" target="_blank" rel="noopener">Resume</a>
+        <button class="theme" id="themeBtn" aria-label="Switch between dark and light mode"><span id="themeIco"></span></button>
+      </div>
     </div>
-  </div>
+  </header>
+
+  <section class="hero" id="top" aria-label="Introduction">
+    <canvas class="hero-field" id="heroField" aria-hidden="true"></canvas>
+    <canvas class="hero-dots" id="heroDots" aria-hidden="true"></canvas>
+    <div class="hero-copy" id="heroCopy"></div>
+    <div class="hud" id="hud" aria-hidden="true"></div>
+  </section>
+
+  <main class="content" id="content">
+    <section class="sect" id="home" aria-labelledby="h-home"></section>
+    <section class="sect" id="experience" aria-labelledby="h-experience"></section>
+    <section class="sect" id="projects" aria-labelledby="h-projects"></section>
+    <section class="sect" id="leadership" aria-labelledby="h-leadership"></section>
+    <section class="sect" id="courses" aria-labelledby="h-courses"></section>
+  </main>
+
+  <footer class="foot" id="contact"></footer>
 
 <script src="data.js"></script>
+<script src="hero.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

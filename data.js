@@ -14,10 +14,17 @@ const siteData = {
     "Transfer Representative, CDSS Dean's Cabinet",
     "Fung Fellow, Health Track"
   ],
+  "hero": {
+    "kicker": "Dhana Karthikeya Ventrapragada",
+    "name": "Karthik",
+    "line": "Senior at UC Berkeley studying Data Science and Applied Mathematics. I'm into AI/ML, I teach on course staff, and I build things with data.",
+    "caption": "Each dot runs noisy gradient descent on a drifting loss surface, and its noise cools as it ages. Move your cursor to add a minimum. Click to reseed.",
+    "captionTouch": "Each dot runs noisy gradient descent on a drifting loss surface, and its noise cools as it ages. Touch to add a minimum."
+  },
   "greeting": "Hi, I'm Karthik.",
   "intro": [
-    "I'm a senior at <a class='hl' href='https://www.berkeley.edu' target='_blank' rel='noopener'>UC Berkeley</a> studying <a class='hl' href='https://cdss.berkeley.edu/dsus' target='_blank' rel='noopener'>Data Science</a>, and a <span class='hl'>proud transfer student</span>. I came from Vijayawada, India, through De Anza College, mostly figuring out the path on my own.",
-    "That's a big part of why I teach. I'm on course staff for CDSS 198: Transfer Seminar and CDSS 198: Career Seminar, and I'm a Fung Fellow working on an AI recovery coach for wildfire survivors. I'm into AI/ML and still exploring where I fit."
+    "I'm a senior at <a class='hl' href='https://www.berkeley.edu' target='_blank' rel='noopener'>UC Berkeley</a> studying <a class='hl' href='https://cdss.berkeley.edu/dsus' target='_blank' rel='noopener'>Data Science and Applied Mathematics</a>, and a <span class='hl'>proud transfer student</span>. I came from Vijayawada, India, through De Anza College, mostly figuring out the path on my own.",
+    "That's a big part of why I teach. I'm on course staff for CDSS 198: Transfer Seminar and CDSS 198: Career Seminar, and I'm a Fung Fellow building <a class='hl' href='#projects' data-go='projects'>Next Step</a>, a free tool that helps wildfire survivors write to their insurer. I'm into AI/ML and still exploring where I fit."
   ],
   "about": {
     "bio": [
@@ -28,7 +35,7 @@ const siteData = {
     "education": [
       {
         "school": "University of California, Berkeley",
-        "degree": "B.A. in Data Science",
+        "degree": "B.A. in Data Science and Applied Mathematics",
         "gpaValue": "3.85",
         "gpaMax": "4.00",
         "location": "Berkeley, CA",
@@ -277,7 +284,35 @@ const siteData = {
       "line": "Next Step is a free website that helps California wildfire survivors deal with the aftermath of a disaster. It is built with plain JavaScript on Cloudflare Pages, with a hosted Llama model on Cloudflare Workers AI grounded in 15 numbered source notes, and its chat replies stream as they are written.",
       "when": "",
       "site": "https://next-step-2fg.pages.dev",
-      "repo": "https://github.com/nextstep-wildfire/next-step"
+      "repo": "https://github.com/nextstep-wildfire/next-step",
+      "featured": {
+        "label": "Featured Project",
+        "summary": "A free website that helps California wildfire survivors write one clear letter to their insurer.",
+        "desk": [
+          { "src": "assets/projects/next-step/desk-home.webp", "alt": "Next Step home page on a desktop browser" },
+          { "src": "assets/projects/next-step/desk-letter.webp", "alt": "Next Step demo with a finished letter to an insurer" }
+        ],
+        "phone": { "src": "assets/projects/next-step/phone-strip.webp", "alt": "Next Step on a phone, from the home page to a finished letter" },
+        "steps": [
+          {
+            "title": "Start From the Survivor",
+            "text": "I led interviews and prototype sessions with wildfire survivors, recovery group leaders and insurance professionals. Our team narrowed in on the person who runs a household's insurance claim."
+          },
+          {
+            "title": "One Letter, One Clear Ask",
+            "text": "A few taps turn what happened into a finished letter to the insurer that asks for one thing. Letters come out in English, Spanish or Chinese."
+          },
+          {
+            "title": "Grounded in Sources",
+            "text": "Chat runs on a hosted Llama 3.3 70B model on Cloudflare Workers AI. Answers are grounded in 15 numbered source notes, the server strips any citation the model was not shown, and replies stream as they are written."
+          },
+          {
+            "title": "Rebuilt After Testing",
+            "text": "Users did not find the reply helper on their own, so I rebuilt the start screen around the letter. It is plain JavaScript on Cloudflare Pages, and chats and letters stay in the browser."
+          }
+        ],
+        "note": "Student prototype. General information, not legal or insurance advice."
+      }
     },
     {
       "title": "Hindsight",
@@ -346,31 +381,11 @@ const siteData = {
     }
   ],
   "sections": [
-    [
-      "home",
-      "About",
-      "Education and timeline"
-    ],
-    [
-      "experience",
-      "Experience",
-      "Internships and fellowships"
-    ],
-    [
-      "leadership",
-      "Leadership & Involvement",
-      "Teaching, cabinet and clubs"
-    ],
-    [
-      "projects",
-      "Projects",
-      "Things I've built"
-    ],
-    [
-      "courses",
-      "Courses",
-      "Classes, grades and GPA"
-    ]
+    ["home", "About", "About"],
+    ["experience", "Experience", "Experience"],
+    ["projects", "Projects", "Projects"],
+    ["leadership", "Leadership & Involvement", "Leadership"],
+    ["courses", "Courses", "Courses"]
   ]
 };
 
