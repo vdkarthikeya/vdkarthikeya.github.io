@@ -15,11 +15,11 @@ const siteData = {
     "Fung Fellow, Health Track"
   ],
   "hero": {
-    "kicker": "Dhana Karthikeya Ventrapragada",
     "name": "Karthik",
     "line": "Senior at UC Berkeley studying Data Science and Applied Mathematics. I'm into AI/ML, I teach on course staff, and I build things with data.",
-    "caption": "Each dot runs noisy gradient descent on a drifting loss surface, and its noise cools as it ages. Move your cursor to add a minimum. Click to reseed.",
-    "captionTouch": "Each dot runs noisy gradient descent on a drifting loss surface, and its noise cools as it ages. Touch to add a minimum."
+    "caption": "The background is noisy gradient descent on a drifting loss surface.",
+    "hint": "Move your cursor to add a minimum.",
+    "hintTouch": "Touch to add a minimum."
   },
   "greeting": "Hi, I'm Karthik.",
   "intro": [
@@ -286,7 +286,6 @@ const siteData = {
       "site": "https://next-step-2fg.pages.dev",
       "repo": "https://github.com/nextstep-wildfire/next-step",
       "featured": {
-        "label": "Featured Project",
         "summary": "A free website that helps California wildfire survivors write one clear letter to their insurer.",
         "desk": [
           { "src": "assets/projects/next-step/desk-home.webp", "alt": "Next Step home page on a desktop browser" },

@@ -25,7 +25,7 @@
   }
   function head(id) {
     var i = IDS.indexOf(id), s = D.sections[i];
-    return '<header class="sect-head rv"><span class="sect-no">' + String(i + 1).padStart(2, "0") + '</span><h2 id="h-' + id + '">' + s[1] + '</h2></header>';
+    return '<header class="sect-head rv"><h2 id="h-' + id + '">' + s[1] + '</h2></header>';
   }
 
   /* Bar and hero */
@@ -39,8 +39,8 @@
   function renderHero() {
     var h = D.hero, c = D.contact;
     var touch = window.matchMedia && window.matchMedia("(hover: none)").matches;
+    var note = h.caption + (reduce.matches ? "" : " " + (touch ? h.hintTouch : h.hint));
     el("heroCopy").innerHTML =
-      '<p class="hero-kicker">' + h.kicker + '</p>' +
       '<h1 class="hero-name">' + h.name + '</h1>' +
       '<p class="hero-line">' + h.line + '</p>' +
       '<div class="hero-acts">' +
@@ -48,12 +48,8 @@
         '<a class="btn" href="mailto:' + c.email + '">Email</a>' +
         ext(c.github, "btn", "GitHub" + ARROW) +
         ext(c.linkedin, "btn", "LinkedIn" + ARROW) +
-      '</div>';
-    var hud = el("hud");
-    var cap = document.createElement("p");
-    cap.className = "hud-cap";
-    cap.textContent = reduce.matches ? h.caption.split(". ")[0] + "." : (touch ? h.captionTouch : h.caption);
-    hud.appendChild(cap);
+      '</div>' +
+      '<p class="hero-note">' + note + '</p>';
   }
 
   /* About */
@@ -100,7 +96,6 @@
     return '<div class="feat" id="feat" data-step="0">' +
       '<div class="feat-stage">' +
         '<div class="feat-copy">' +
-          '<p class="label accent">01 / ' + f.label + '</p>' +
           '<h3 class="feat-title">' + p.title + '</h3>' +
           '<p class="feat-sum">' + f.summary + '</p>' +
           '<ol class="feat-steps">' + f.steps.map(function (s, i) {
@@ -120,7 +115,7 @@
     '</div>';
   }
   function pjRow(p, i) {
-    return '<li class="pj rv"><span class="pj-no meta">' + String(i + 2).padStart(2, "0") + '</span>' +
+    return '<li class="pj rv">' +
       '<div class="pj-main"><h3 class="pj-title">' + p.title + '</h3><p class="pj-line">' + p.line + '</p></div>' +
       '<div class="pj-links">' + (p.site ? ext(p.site, "lnk", "Site" + ARROW) : "") + (p.repo ? ext(p.repo, "lnk", "Code" + ARROW) : "") + '</div></li>';
   }

@@ -12,14 +12,14 @@
   var LR = 0.00011, BETA = 0.84, NOISE = 0.0016, VMAX = 0.012;
   var ANNEAL = 90;      // noise decays with each particle's age (simulated annealing)
 
-  var field, dots, ctx, gl, prog, uni = {}, hud, hudText, hudSpark;
+  var field, dots, ctx, gl, prog, uni = {};
   var W = 0, H = 0, DPR = 1, ASPECT = 1;
   var reduce = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : { matches: false };
   var running = false, visible = true, raf = 0, t0 = 0, simT = 0, steps = 0;
   var wells = [], WX = new Float32Array(8), WY = new Float32Array(8), WI = new Float32Array(8), WD = new Float32Array(8);
   var mouse = { x: 0, y: 0, tx: 0, ty: 0, d: 0, td: 0, inv: 1 / (2 * 0.11 * 0.11), last: 0 };
   var N = 0, PX, PY, VX, VY, QX, QY, LIFE, MAXL, LOSS;
-  var Lmin = -1, Lmax = 1, history = [], frameMs = [], colors = {};
+  var Lmin = -1, Lmax = 1, frameMs = [], colors = {};
   var SAMPLE = new Float32Array(256);  // random subsample of losses; its quantiles set the color buckets
 
   function rand(a, b) { return a + Math.random() * (b - a); }
@@ -229,19 +229,6 @@
     gl.drawArrays(gl.TRIANGLES, 0, 3);
   }
 
-  function fmt(n) { return n.toLocaleString("en-US"); }
-  function updateHud(mean) {
-    if (!hudText) return;
-    var v = Math.max(0, mean - Lmin);
-    history.push(v); if (history.length > 90) history.shift();
-    var hi = Math.max.apply(null, history), lo = Math.min.apply(null, history), span = Math.max(1e-4, hi - lo);
-    var pts = history.map(function (h, i) { return (i * 120 / 89).toFixed(1) + "," + (2 + 22 * (1 - (h - lo) / span)).toFixed(1); }).join(" ");
-    hudText.innerHTML =
-      '<span><i>particles</i> ' + fmt(N) + '</span><span><i>step</i> ' + fmt(steps) + '</span>' +
-      '<span><i>mean loss</i> ' + v.toFixed(3) + '</span>';
-    hudSpark.setAttribute("points", pts);
-  }
-
   function resize() {
     var r = field.parentNode.getBoundingClientRect();
     var oldA = ASPECT;
@@ -260,23 +247,20 @@
     ctx.clearRect(0, 0, dots.width, dots.height);
     allocate();
     for (var i = 0; i < N; i++) LIFE[i] = rand(1, 60);
-    var mean = 0;
-    for (var s = 0; s < 150; s++) { mean = step(1); if (s % 2 === 0) draw(0.03); }
+    for (var s = 0; s < 150; s++) { step(1); if (s % 2 === 0) draw(0.03); }
     sampleRange(); draw(0.0);
-    updateHud(mean);
   }
 
-  var lastHud = 0, lastRange = 0;
+  var lastRange = 0;
   function frame(now) {
     raf = 0;
     if (!running || !visible || document.hidden) return;
     var dt = t0 ? Math.min(2.5, (now - t0) / 16.667) : 1;
     var ms = t0 ? now - t0 : 16;
     t0 = now;
-    var mean = step(dt);
+    step(dt);
     if (now - lastRange > 500) { sampleRange(); lastRange = now; }
     draw(0.075);
-    if (now - lastHud > 250) { updateHud(mean); lastHud = now; }
     frameMs.push(ms); if (frameMs.length > 90) frameMs.shift();
     if (frameMs.length === 90 && N > 1000) {
       var avg = frameMs.reduce(function (a, b) { return a + b; }, 0) / 90;
@@ -298,20 +282,14 @@
   function reseed() {
     seedWells();
     for (var i = 0; i < N; i++) spawn(i);
-    history = [];
     updateWells(simT); sampleRange();
   }
 
   function init() {
     field = document.getElementById("heroField");
     dots = document.getElementById("heroDots");
-    hud = document.getElementById("hud");
     if (!field || !dots) return;
     ctx = dots.getContext("2d");
-    if (hud) {
-      hud.innerHTML = '<div class="hud-stats"></div><svg class="hud-spark" viewBox="0 0 120 26" preserveAspectRatio="none"><polyline points="" /></svg>';
-      hudText = hud.querySelector(".hud-stats"); hudSpark = hud.querySelector("polyline");
-    }
     readColors();
     initGL();
     document.documentElement.classList.toggle("no-webgl", !gl);
